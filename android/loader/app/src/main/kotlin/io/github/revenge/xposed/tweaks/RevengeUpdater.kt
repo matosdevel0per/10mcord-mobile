@@ -139,8 +139,11 @@ object RevengeUpdater {
     /** The server's release, checked before any bundle is taken; null when it has none and that's allowed */
     private suspend fun fetchRelease(timeoutMillis: Long?): SignedRelease? {
         val folder = DEFAULT_BUNDLE_URL.substringBeforeLast('/')
-        val manifest = fetchOptional("$folder/$RELEASE_MANIFEST", timeoutMillis)
-        val signature = fetchOptional("$folder/$RELEASE_SIGNATURE", timeoutMillis)
+        // builds-next publishes the signed manifest in a second commit after the files it pins. A branch URL can
+        // therefore have a cached 404 (or a manifest/signature from different commits); bypass that cache for both.
+        val cacheBust = System.currentTimeMillis()
+        val manifest = fetchOptional("$folder/$RELEASE_MANIFEST?t=$cacheBust", timeoutMillis)
+        val signature = fetchOptional("$folder/$RELEASE_SIGNATURE?t=$cacheBust", timeoutMillis)
         if (manifest == null || signature == null) {
             if (BuildConfig.REQUIRE_SIGNED) throw SecurityException("No signed release could be fetched")
             return null
