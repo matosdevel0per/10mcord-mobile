@@ -3125,12 +3125,6 @@
         "es": "Oculta los mensajes con las palabras sensibles que elijas tras un spoiler que se revela al tocarlo",
         "fr": "Masque les messages contenant les mots déclencheurs de votre choix derrière un spoiler à toucher pour l'afficher"
     },
-    "Highest": {
-        "tr": "En yüksek",
-        "ru": "Наивысший",
-        "es": "Máximo",
-        "fr": "Maximum"
-    },
     "How it should answer": {
         "tr": "Nasıl cevap vermeli",
         "ru": "Как отвечать",
@@ -6695,12 +6689,6 @@
         "es": "Muestra información sobre un rol (solo tú lo ves)",
         "fr": "Afficher des informations sur un rôle (vous seul le voyez)"
     },
-    "Show information about this server (only you see it)": {
-        "tr": "Bu sunucu hakkında bilgi göster (yalnızca sen görürsün)",
-        "ru": "Показать информацию о сервере (видите только вы)",
-        "es": "Muestra información de este servidor (solo la ves tú)",
-        "fr": "Afficher des informations sur ce serveur (vous seul les voyez)"
-    },
     "Show less": {
         "tr": "Daha az göster",
         "ru": "Свернуть",
@@ -8441,12 +8429,6 @@
         "es": "URL personalizada",
         "fr": "URL personnalisée"
     },
-    "Verification level": {
-        "tr": "Doğrulama seviyesi",
-        "ru": "Уровень проверки",
-        "es": "Nivel de verificación",
-        "fr": "Niveau de vérification"
-    },
     "Versions": {
         "tr": "Sürümler",
         "ru": "Версии",
@@ -9886,5 +9868,82 @@
         "ru": "Выберите изображение PNG, JPG, GIF или WebP с устройства.",
         "es": "Elige una imagen PNG, JPG, GIF o WebP de tu dispositivo.",
         "fr": "Choisissez une image PNG, JPG, GIF ou WebP sur votre appareil."
+    },
+    "Discovery banner": {
+        "tr": "Keşif afişi",
+        "ru": "Баннер поиска серверов",
+        "es": "Banner de descubrimiento",
+        "fr": "Bannière de découverte",
+        "pt": "Banner de descoberta"
+    },
+    "Invite background": {
+        "tr": "Davet arka planı",
+        "ru": "Фон приглашения",
+        "es": "Fondo de invitación",
+        "fr": "Arrière-plan d’invitation",
+        "pt": "Imagem de convite"
+    },
+    "Members online": {
+        "tr": "Çevrimiçi üyeler",
+        "ru": "Участники в сети",
+        "es": "Miembros en línea",
+        "fr": "Membres en ligne",
+        "pt": "Membros online"
+    },
+    "Not available": {
+        "tr": "Mevcut değil",
+        "ru": "Недоступно",
+        "es": "No disponible",
+        "fr": "Indisponible",
+        "pt": "Não disponível"
+    },
+    "Server banner": {
+        "tr": "Sunucu afişi",
+        "ru": "Баннер сервера",
+        "es": "Banner del servidor",
+        "fr": "Bannière du serveur",
+        "pt": "Banner do servidor"
+    },
+    "Server icon": {
+        "tr": "Sunucu simgesi",
+        "ru": "Значок сервера",
+        "es": "Icono del servidor",
+        "fr": "Icône du serveur",
+        "pt": "Ícone do servidor"
+    },
+    "Server information": {
+        "tr": "Sunucu bilgileri",
+        "ru": "Информация о сервере",
+        "es": "Información del servidor",
+        "fr": "Informations sur le serveur",
+        "pt": "Informações do servidor"
+    },
+    "Show a detailed server card with its owner, members, and images": {
+        "tr": "Sunucu sahibini, üyelerini ve görsellerini içeren ayrıntılı bir kart gösterir",
+        "ru": "Показывает подробную карточку сервера с владельцем, участниками и изображениями",
+        "es": "Muestra una ficha detallada del servidor con propietario, miembros e imágenes",
+        "fr": "Affiche une fiche détaillée du serveur avec son propriétaire, ses membres et ses images",
+        "pt": "Mostra um cartão detalhado do servidor com proprietário, membros e imagens"
+    },
+    "Show detailed information about this server": {
+        "tr": "Bu sunucu hakkında ayrıntılı bilgi göster",
+        "ru": "Показать подробную информацию об этом сервере",
+        "es": "Muestra información detallada de este servidor",
+        "fr": "Afficher des informations détaillées sur ce serveur",
+        "pt": "Mostra informações detalhadas deste servidor"
+    },
+    "This command only works in a server.": {
+        "tr": "Bu komut yalnızca bir sunucuda çalışır.",
+        "ru": "Эта команда работает только на сервере.",
+        "es": "Este comando solo funciona en un servidor.",
+        "fr": "Cette commande ne fonctionne que sur un serveur.",
+        "pt": "Este comando só funciona em um servidor."
+    },
+    "Couldn't load your Discord account.": {
+        "tr": "Discord hesabın yüklenemedi.",
+        "ru": "Не удалось загрузить ваш аккаунт Discord.",
+        "es": "No se pudo cargar tu cuenta de Discord.",
+        "fr": "Impossible de charger votre compte Discord.",
+        "pt": "Não foi possível carregar sua conta do Discord."
     }
 }

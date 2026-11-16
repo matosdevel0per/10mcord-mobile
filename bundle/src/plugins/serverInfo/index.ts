@@ -4,52 +4,109 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-import { t, tx } from "@core/i18n";
+import { getLanguage, t, tx } from "@core/i18n";
 
 import { definePlugin } from "../api";
-import { getStore, guildRoles } from "../common";
-import { botMessage, command, getGuild } from "../hooks";
-import { CDN, unix } from "../shared/lookup";
+import { getStore } from "../common";
+import { botMessage, command, getGuild, localSnowflake, receiveLocalMessage } from "../hooks";
+import { CDN } from "../shared/lookup";
 
-const snowflakeMs = (id: string) => Math.floor(Number(id) / 4194304) + 1420070400000;
-
-const VERIFICATION = [tx("None"), tx("Low"), tx("Medium"), tx("High"), tx("Highest")];
+const COMPONENTS_V2 = 1 << 15;
+const snowflakeMs = (id: string) => Number((BigInt(id) >> 22n) + 1420070400000n);
+const number = (value: number) => new Intl.NumberFormat(getLanguage() === "pt" ? "pt-BR" : getLanguage()).format(value);
+const escapeMarkdown = (value: string) => [...value].map(character => "\\`*_{}[]()#+-.!|>~".includes(character) ? `\\${character}` : character).join("");
+const assetUrl = (base: string, id: string, hash: string, size = 2048) =>
+    `${CDN}/${base}/${id}/${hash}.${hash.startsWith("a_") ? "gif" : "png"}?size=${size}`;
 
 export default definePlugin({
     id: "10MCord.server-info",
     name: "ServerInfo",
-    description: tx("Allows you to view info about a server"),
+    description: tx("Show a detailed server card with its owner, members, and images"),
     icon: "ServerIcon",
     tags: ["Servers", "Utility"],
     start({ cleanup }) {
         cleanup(command({
             name: "serverinfo",
-            description: tx("Show information about this server (only you see it)"),
+            description: tx("Show detailed information about this server"),
             run: (_, ctx) => {
-                const guild = getGuild(ctx.channel.guild_id);
+                const guildId = ctx.channel.guild_id;
+                const guild = getGuild(guildId);
                 if (!guild) {
-                    botMessage(ctx.channel.id, t("This only works in a server."));
+                    botMessage(ctx.channel.id, t("This command only works in a server."));
                     return;
                 }
-                const created = snowflakeMs(guild.id);
-                const members = getStore("GuildMemberCountStore")?.getMemberCount?.(guild.id);
+
+                const counts = getStore("GuildMemberCountStore");
+                const members = counts?.getMemberCount?.(guild.id) ?? guild.memberCount;
+                const online = counts?.getOnlineCount?.(guild.id);
                 const channels = Object.values(getStore("ChannelStore")?.getMutableGuildChannelsForGuild?.(guild.id) ?? {}).length;
-                const roles = Object.keys(guildRoles(guild.id)).length;
-                const icon = guild.icon ? `${CDN}/icons/${guild.id}/${guild.icon}.${guild.icon.startsWith("a_") ? "gif" : "png"}?size=1024` : null;
-                const lines = [
-                    `**${guild.name}**`,
-                    `> **${t("ID")}**: \`${guild.id}\``,
-                    `> **${t("Owner")}**: <@${guild.ownerId}>`,
-                    `> **${t("Created")}**: <t:${unix(created)}:D> (<t:${unix(created)}:R>)`,
-                    members != null && `> **${t("Members")}**: ${members}`,
-                    channels && `> **${t("Channels")}**: ${channels}`,
-                    roles && `> **${t("Roles")}**: ${roles}`,
-                    `> **${t("Boosts")}**: ${guild.premiumSubscriberCount ?? 0} (${t("Level {level}", { level: guild.premiumTier ?? 0 })})`,
-                    `> **${t("Verification level")}**: ${t(VERIFICATION[guild.verificationLevel] ?? VERIFICATION[0])}`,
-                    guild.vanityURLCode && `> **${t("Vanity URL")}**: discord.gg/${guild.vanityURLCode}`,
-                    icon && `> **${t("Icon")}**: <${icon}>`,
-                ].filter(Boolean);
-                botMessage(ctx.channel.id, lines.join("\n"));
+                const roles = Object.keys(getStore("GuildRoleStore")?.getRoles?.(guild.id)
+                    ?? getStore("GuildRoleStore")?.getUnsafeMutableRoles?.(guild.id)
+                    ?? guild.roles
+                    ?? {}).length;
+                const owner = getStore("UserStore")?.getUser?.(guild.ownerId);
+                const ownerName = owner?.globalName ?? owner?.global_name ?? owner?.username ?? guild.ownerId ?? t("Not available");
+                const icon = guild.icon ? assetUrl("icons", guild.id, guild.icon, 1024) : undefined;
+                const images = [
+                    guild.banner && { url: assetUrl("banners", guild.id, guild.banner), description: t("Server banner") },
+                    guild.splash && { url: assetUrl("splashes", guild.id, guild.splash), description: t("Invite background") },
+                    guild.discoverySplash && { url: assetUrl("discovery-splashes", guild.id, guild.discoverySplash), description: t("Discovery banner") },
+                ].filter(Boolean) as { url: string; description: string }[];
+                const channelsValue = channels ? number(channels) : t("Not available");
+                const rolesValue = roles ? number(roles) : t("Not available");
+                const memberValue = members != null ? number(Number(members)) : t("Not available");
+                const onlineValue = online != null ? number(Number(online)) : t("Not available");
+                const created = Math.floor(snowflakeMs(guild.id) / 1000);
+
+                const components: any[] = [
+                    icon
+                        ? {
+                            type: 9,
+                            components: [{ type: 10, content: `## ${escapeMarkdown(guild.name)}\n${t("Server information")}` }],
+                            accessory: { type: 11, media: { url: icon }, description: t("Server icon") },
+                        }
+                        : { type: 10, content: `## ${escapeMarkdown(guild.name)}\n${t("Server information")}` },
+                    { type: 14, divider: true, spacing: 1 },
+                    { type: 10, content: `**${t("Owner")}**\n${escapeMarkdown(ownerName)}` },
+                    { type: 14, divider: true, spacing: 1 },
+                    { type: 10, content: `**${t("Members")}**: ${memberValue}\n**${t("Members online")}**: ${onlineValue}` },
+                    { type: 14, divider: true, spacing: 1 },
+                    { type: 10, content: `**${t("Channels")}**: ${channelsValue} · **${t("Roles")}**: ${rolesValue}\n**${t("Boosts")}**: ${number(Number(guild.premiumSubscriberCount ?? 0))} · **${t("Level {level}", { level: guild.premiumTier ?? 0 })}**` },
+                    { type: 14, divider: true, spacing: 1 },
+                    { type: 10, content: `**${t("Created")}**: <t:${created}:D> · <t:${created}:R>\n**${t("ID")}**: \`${guild.id}\`${guild.vanityURLCode ? `\n**${t("Vanity URL")}**: discord.gg/${guild.vanityURLCode}` : ""}` },
+                ];
+                if (images.length) components.push({ type: 12, items: images.map(image => ({ media: { url: image.url }, description: image.description })) });
+
+                const user = getStore("UserStore")?.getCurrentUser?.();
+                if (!user?.id) {
+                    botMessage(ctx.channel.id, t("Couldn't load your Discord account."));
+                    return;
+                }
+
+                // This command used to be local-only. Keep it private and never send a forged V2 message to Discord.
+                receiveLocalMessage(ctx.channel.id, {
+                    id: localSnowflake(),
+                    channel_id: ctx.channel.id,
+                    content: "",
+                    timestamp: new Date().toISOString(),
+                    edited_timestamp: null,
+                    type: 0,
+                    flags: COMPONENTS_V2,
+                    mentions: [],
+                    mention_roles: [],
+                    attachments: [],
+                    embeds: [],
+                    components: [{ type: 17, components }],
+                    author: {
+                        id: user.id,
+                        username: user.username ?? "?",
+                        global_name: user.globalName ?? user.global_name ?? null,
+                        discriminator: user.discriminator ?? "0",
+                        avatar: user.avatar ?? null,
+                        bot: false,
+                    },
+                    state: "SENT",
+                });
             },
         }));
     },

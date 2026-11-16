@@ -23,7 +23,7 @@ import { fileURLToPath } from "url";
 import vm from "vm";
 import yargs from "yargs-parser";
 
-const LANGS = ["tr", "ru", "es", "fr"];
+const LANGS = ["tr", "ru", "es", "fr", "pt"];
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const i18nDir = path.join(root, "src/core/i18n");
 const args = yargs(process.argv.slice(2));
@@ -77,7 +77,7 @@ function evalObjectAfter(source, marker) {
         else if (c === ")" || c === "}") { if (--depth === 0) break; }
     }
     const tables = vm.runInNewContext(source.slice(open, i + 1));
-    return Object.fromEntries(LANGS.map(l => [l, tables[l]()]));
+    return Object.fromEntries(LANGS.map(l => [l, tables[l]?.() ?? {}]));
 }
 
 let pc = null;
@@ -130,18 +130,19 @@ for (const lang of LANGS) {
 
     for (const text of [...needed].sort()) {
         const value = overrides[text]?.[lang]
-            ?? pc?.dict[lang][text]
-            ?? (pc?.descByText[text] && pc.pluginDesc[lang][pc.descByText[text]])
-            ?? (pc ? undefined : previous[text]);
+            ?? pc?.dict[lang]?.[text]
+            ?? (pc?.descByText[text] && pc.pluginDesc[lang]?.[pc.descByText[text]])
+            ?? (pc && lang !== "pt" ? undefined : previous[text]);
         if (value != null) out[text] = value;
         else missing.push(text);
     }
 
     writeFileSync(file, JSON.stringify(out, null, 4) + "\n");
     writeFileSync(path.join(i18nDir, "compiled", `${lang}.json`), JSON.stringify(Object.fromEntries(Object.entries(out).map(([k, v]) => [textHash(k), v]))));
-    missingTotal += missing.length;
+    // Portuguese is intentionally a partial locale for now; missing entries use the English source text at runtime.
+    if (lang !== "pt") missingTotal += missing.length;
     console.log(`${lang}: ${Object.keys(out).length}/${needed.size} translated`);
-    for (const m of missing) console.log(`   missing: ${m}`);
+    if (lang !== "pt") for (const m of missing) console.log(`   missing: ${m}`);
 }
 
 const unused = Object.keys(overrides).filter(k => !needed.has(k));

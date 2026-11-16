@@ -217,7 +217,7 @@
     "10MCord.self-destruct": "Sends messages that are automatically deleted after a configurable delay. Red timer visible on each message.",
     "10MCord.send-timestamps": "Times written like `14:30` become timestamps everyone sees in their own time zone; a chat bar button inserts the current time",
     "10MCord.server-backup": "Export a server's channels, roles and permissions to a backup file with /serverbackup",
-    "10MCord.server-info": "Allows you to view info about a server",
+    "10MCord.server-info": "Show a detailed server card with its owner, members, and images",
     "10MCord.server-list-indicators": "See how many of your friends are online and how many servers you're in with /indicators",
     "10MCord.server-pinner": "Pin servers to the top of your server list with /pinserver, without changing your folders",
     "10MCord.server-search": "Find a server by name with /servers and open it from the result",

@@ -7,26 +7,28 @@ import langDefault from "./default.json";
 
 const IntlMessageFormat = findByNameLazy("MessageFormat") as typeof import("intl-messageformat").default;
 
-export type TenMCordLanguage = "en" | "tr" | "ru" | "es" | "fr";
+export type TenMCordLanguage = "en" | "tr" | "ru" | "es" | "fr" | "pt";
 
-/** The languages 10MCord is translated into, the same five as 10MCord PC */
+/** Languages 10MCord recognizes; Portuguese falls back to English for untranslated text. */
 export const LANGUAGES: { code: TenMCordLanguage; nativeName: string; }[] = [
     { code: "en", nativeName: "English" },
     { code: "tr", nativeName: "Türkçe" },
     { code: "ru", nativeName: "Русский" },
     { code: "es", nativeName: "Español" },
     { code: "fr", nativeName: "Français" },
+    { code: "pt", nativeName: "Português (Brasil)" },
 ];
 
 type Translated = Exclude<TenMCordLanguage, "en">;
 
-// Built from 10MCord PC's translations by scripts/i18n-sync.mjs. Only the language in use is loaded: the others stay
+// Built from translations by scripts/i18n-sync.mjs. Only the language in use is loaded: the others stay
 // unparsed in the bundle, which matters on slower phones.
 const loaders: Record<Translated, () => Record<string, string>> = {
     tr: () => require("./compiled/tr.json"),
     ru: () => require("./compiled/ru.json"),
     es: () => require("./compiled/es.json"),
     fr: () => require("./compiled/fr.json"),
+    pt: () => require("./compiled/pt.json"),
 };
 const tables: Partial<Record<Translated, Record<string, string>>> = {};
 
@@ -78,7 +80,7 @@ function discordLocale(): string | undefined {
 
 export function normalizeLanguage(locale?: string | null): TenMCordLanguage {
     const code = locale?.toLowerCase().trim() ?? "";
-    for (const lang of ["tr", "ru", "es", "fr"] as const) {
+    for (const lang of ["tr", "ru", "es", "fr", "pt"] as const) {
         if (code === lang || code.startsWith(`${lang}-`) || code.startsWith(`${lang}_`)) return lang;
     }
     return "en";
