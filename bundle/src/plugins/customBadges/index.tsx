@@ -35,7 +35,7 @@ const refreshProfiles = () => {
     redrawChannel();
 };
 
-/** Keep the image small enough for local settings storage and independent of the original file location. */
+/** Save the selected source bytes so transparent PNG/WebP icons aren't flattened onto a black JPEG background. */
 function pickImage(): Promise<string | undefined> {
     const picker = getNativeModule("ImagePickerManager");
     if (typeof picker?.launchImageLibrary !== "function") return Promise.reject(new Error(t("Couldn't open the photo picker")));
@@ -43,9 +43,9 @@ function pickImage(): Promise<string | undefined> {
         {
             mediaType: "photo",
             videoQuality: "high",
-            quality: 0.8,
-            maxWidth: 256,
-            maxHeight: 256,
+            quality: 1,
+            maxWidth: 0,
+            maxHeight: 0,
             includeBase64: true,
             cameraType: "back",
             selectionLimit: 1,
@@ -58,7 +58,8 @@ function pickImage(): Promise<string | undefined> {
             if (res?.didCancel) return resolve(undefined);
             const asset = res?.assets?.[0];
             if (res?.errorCode || !asset?.base64) return reject(new Error(res?.errorMessage || t("Couldn't open the photo picker")));
-            resolve(`data:${asset.type || "image/jpeg"};base64,${asset.base64}`);
+            const mime = asset.type || (String(asset.fileName ?? "").toLowerCase().endsWith(".png") ? "image/png" : "image/jpeg");
+            resolve(`data:${mime};base64,${asset.base64}`);
         },
     ));
 }
