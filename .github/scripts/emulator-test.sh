@@ -8,8 +8,8 @@ set -uo pipefail
 
 mkdir -p results
 SCRIPTS="$(dirname "$0")"
-INSTALLER_PKG=com.10MCord.installer.next
-TENMCORD_PKG=com.10MCord.next
+INSTALLER_PKG=com.tenmcord.installer
+TENMCORD_PKG=com.tenmcord.next
 STATUS=0
 
 step() { echo "::group::$*"; }
