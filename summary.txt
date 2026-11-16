@@ -1,0 +1,14 @@
+PASS: bundle served
+PASS: download: installer finished
+PASS: download: 10MCord installed
+PASS: download: 10MCord loaded and ran its self-test
+PASS: stock Discord installed
+PASS: installed: installer finished
+PASS: installed: 10MCord installed
+PASS: installed: 10MCord loaded and ran its self-test
+PASS: installed: stock Discord still installed
+PASS: refused: forged-release
+PASS: forged-release: 10MCord still running
+PASS: refused: rollback
+PASS: rollback: 10MCord still running
+PASS: the bytecode bundle was loaded, from the signed release's own address
