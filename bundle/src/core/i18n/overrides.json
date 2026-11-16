@@ -9833,12 +9833,6 @@
         "es": "Toca para copiar este acceso y abrir el inicio de sesión normal de Discord",
         "fr": "Touchez pour copier cet identifiant et ouvrir la connexion normale de Discord"
     },
-    "Create profile badges with a name and an HTTPS image link. They are stored only on this device and are visible only to you; they do not change your Discord account.": {
-        "tr": "Bir ad ve HTTPS görsel bağlantısıyla profil rozetleri oluştur. Yalnızca bu cihazda saklanır ve sadece sana görünür; Discord hesabını değiştirmez.",
-        "ru": "Создавайте значки профиля с названием и HTTPS-ссылкой на изображение. Они хранятся только на этом устройстве и видны только вам; ваш аккаунт Discord не меняется.",
-        "es": "Crea insignias de perfil con un nombre y un enlace HTTPS a una imagen. Solo se guardan en este dispositivo y solo tú las ves; no cambian tu cuenta de Discord.",
-        "fr": "Créez des badges de profil avec un nom et un lien HTTPS vers une image. Ils sont stockés uniquement sur cet appareil et visibles uniquement par vous ; ils ne modifient pas votre compte Discord."
-    },
     "Badge name": {
         "tr": "Rozet adı",
         "ru": "Название значка",
@@ -9850,24 +9844,6 @@
         "ru": "Например: Основатель",
         "es": "Por ejemplo: Fundador",
         "fr": "Par exemple : Fondateur"
-    },
-    "Badge icon URL": {
-        "tr": "Rozet simgesi URL'si",
-        "ru": "URL значка",
-        "es": "URL del icono de la insignia",
-        "fr": "URL de l’icône du badge"
-    },
-    "Paste a direct HTTPS link to a PNG, JPG, GIF, or WebP image.": {
-        "tr": "PNG, JPG, GIF veya WebP görseline doğrudan HTTPS bağlantısı yapıştır.",
-        "ru": "Вставьте прямую HTTPS-ссылку на изображение PNG, JPG, GIF или WebP.",
-        "es": "Pega un enlace HTTPS directo a una imagen PNG, JPG, GIF o WebP.",
-        "fr": "Collez un lien HTTPS direct vers une image PNG, JPG, GIF ou WebP."
-    },
-    "Enter a valid HTTPS image link.": {
-        "tr": "Geçerli bir HTTPS görsel bağlantısı gir.",
-        "ru": "Введите действительную HTTPS-ссылку на изображение.",
-        "es": "Introduce un enlace HTTPS válido a una imagen.",
-        "fr": "Saisissez un lien HTTPS valide vers une image."
     },
     "Add Badge": {
         "tr": "Rozet ekle",
@@ -9886,5 +9862,29 @@
         "ru": "Создавайте собственные локальные значки профиля с названием и иконкой. Видны только вам.",
         "es": "Crea insignias de perfil locales con nombre e icono personalizados. Solo tú las ves.",
         "fr": "Créez des badges de profil locaux avec un nom et une icône personnalisés. Vous seul pouvez les voir."
+    },
+    "Create profile badges with a name and an image from your device. They are stored only on this device and are visible only to you; they do not change your Discord account.": {
+        "tr": "Cihazındaki bir görselle profil rozeti oluştur. Yalnızca bu cihazda saklanır ve sadece sana görünür; Discord hesabını değiştirmez.",
+        "ru": "Создавайте значки профиля с изображением с вашего устройства. Они хранятся только на этом устройстве и видны только вам; аккаунт Discord не меняется.",
+        "es": "Crea insignias de perfil con una imagen de tu dispositivo. Solo se guardan en este dispositivo y solo tú las ves; no cambian tu cuenta de Discord.",
+        "fr": "Créez des badges de profil avec une image de votre appareil. Ils sont stockés uniquement sur cet appareil et visibles uniquement par vous ; ils ne modifient pas votre compte Discord."
+    },
+    "Change Image": {
+        "tr": "Görseli değiştir",
+        "ru": "Изменить изображение",
+        "es": "Cambiar imagen",
+        "fr": "Changer l’image"
+    },
+    "Choose Image": {
+        "tr": "Görsel seç",
+        "ru": "Выбрать изображение",
+        "es": "Elegir imagen",
+        "fr": "Choisir une image"
+    },
+    "Choose a PNG, JPG, GIF, or WebP image from your device.": {
+        "tr": "Cihazından PNG, JPG, GIF veya WebP görseli seç.",
+        "ru": "Выберите изображение PNG, JPG, GIF или WebP с устройства.",
+        "es": "Elige una imagen PNG, JPG, GIF o WebP de tu dispositivo.",
+        "fr": "Choisissez une image PNG, JPG, GIF ou WebP sur votre appareil."
     }
 }

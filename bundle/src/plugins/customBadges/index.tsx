@@ -7,23 +7,27 @@
 import { t, tx } from "@core/i18n";
 import { createMMKVBackend, createStorage, useProxy, wrapSync } from "@core/vendetta/storage";
 import { findAssetId } from "@lib/api/assets";
+import { getNativeModule } from "@lib/api/native/modules";
 import { Button, Card, IconButton, Stack, Text, TextInput } from "@metro/common/components";
 import { useState } from "react";
 import { Image, View } from "react-native";
 
 import { definePlugin } from "../api";
 import { currentUserId, getStore } from "../common";
-import { redrawChannel } from "../hooks";
+import { redrawChannel, toastError } from "../hooks";
 import { extendProfileBadges, linkedBadge } from "../profileBadges";
 
 interface CustomBadge {
     id: string;
     name: string;
-    iconUrl: string;
+    /** Base64 data URL created by the native picker; iconUrl remains for badges made by the previous version. */
+    iconData?: string;
+    iconUrl?: string;
 }
 
 const saved = wrapSync(createStorage<{ badges: CustomBadge[] }>(createMMKVBackend("ENDCORD_CUSTOM_BADGES", { badges: [] })));
 const badgeList = (): CustomBadge[] => Array.isArray(saved.badges) ? saved.badges : [];
+const iconOf = (badge: CustomBadge) => badge.iconData || badge.iconUrl || "";
 const refreshProfiles = () => {
     try {
         getStore("UserProfileStore")?.emitChange?.();
@@ -31,24 +35,42 @@ const refreshProfiles = () => {
     redrawChannel();
 };
 
-const validHttpsImage = (value: string) => {
-    try {
-        const url = new URL(value.trim());
-        return url.protocol === "https:" && !!url.hostname;
-    } catch {
-        return false;
-    }
-};
+/** Keep the image small enough for local settings storage and independent of the original file location. */
+function pickImage(): Promise<string | undefined> {
+    const picker = getNativeModule("ImagePickerManager");
+    if (typeof picker?.launchImageLibrary !== "function") return Promise.reject(new Error(t("Couldn't open the photo picker")));
+    return new Promise((resolve, reject) => picker.launchImageLibrary(
+        {
+            mediaType: "photo",
+            videoQuality: "high",
+            quality: 0.8,
+            maxWidth: 256,
+            maxHeight: 256,
+            includeBase64: true,
+            cameraType: "back",
+            selectionLimit: 1,
+            saveToPhotos: false,
+            durationLimit: 0,
+            includeExtra: false,
+            presentationStyle: "pageSheet",
+        },
+        (res: any) => {
+            if (res?.didCancel) return resolve(undefined);
+            const asset = res?.assets?.[0];
+            if (res?.errorCode || !asset?.base64) return reject(new Error(res?.errorMessage || t("Couldn't open the photo picker")));
+            resolve(`data:${asset.type || "image/jpeg"};base64,${asset.base64}`);
+        },
+    ));
+}
 
 function CustomBadgesSettings() {
-    const store = useProxy(saved);
+    useProxy(saved);
     const [name, setName] = useState("");
-    const [iconUrl, setIconUrl] = useState("");
+    const [iconData, setIconData] = useState("");
     const cleanName = name.trim().slice(0, 32);
-    const cleanUrl = iconUrl.trim();
-    const urlIsValid = validHttpsImage(cleanUrl);
-    const canAdd = !!cleanName && urlIsValid;
+    const canAdd = !!cleanName && !!iconData;
 
+    const chooseImage = () => pickImage().then(image => image && setIconData(image)).catch(toastError);
     const addBadge = () => {
         if (!canAdd) return;
         const current = badgeList();
@@ -56,10 +78,10 @@ function CustomBadgesSettings() {
         saved.badges = [...current, {
             id: `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`,
             name: cleanName,
-            iconUrl: cleanUrl,
+            iconData,
         }];
         setName("");
-        setIconUrl("");
+        setIconData("");
         refreshProfiles();
     };
 
@@ -70,7 +92,7 @@ function CustomBadgesSettings() {
 
     return <Stack spacing={12}>
         <Text variant="text-sm/medium" color="text-muted">
-            {t("Create profile badges with a name and an HTTPS image link. They are stored only on this device and are visible only to you; they do not change your Discord account.")}
+            {t("Create profile badges with a name and an image from your device. They are stored only on this device and are visible only to you; they do not change your Discord account.")}
         </Text>
         <TextInput
             label={t("Badge name")}
@@ -79,17 +101,15 @@ function CustomBadgesSettings() {
             onChange={setName}
             maxLength={32}
         />
-        <TextInput
-            label={t("Badge icon URL")}
-            description={t("Paste a direct HTTPS link to a PNG, JPG, GIF, or WebP image.")}
-            placeholder="https://example.com/badge.png"
-            value={iconUrl}
-            onChange={setIconUrl}
-            autoCapitalize="none"
-            autoCorrect={false}
-            state={cleanUrl && !urlIsValid ? "error" : undefined}
-            errorMessage={cleanUrl && !urlIsValid ? t("Enter a valid HTTPS image link.") : undefined}
+        <Button
+            text={iconData ? t("Change Image") : t("Choose Image")}
+            variant="secondary"
+            icon={findAssetId("ImageIcon")}
+            onPress={chooseImage}
         />
+        {iconData ? <View style={{ alignItems: "center" }}>
+            <Image source={{ uri: iconData }} style={{ width: 64, height: 64, borderRadius: 32 }} resizeMode="cover" resizeMethod="resize" />
+        </View> : <Text variant="text-sm/medium" color="text-muted">{t("Choose a PNG, JPG, GIF, or WebP image from your device.")}</Text>}
         <Button
             text={t("Add Badge")}
             variant="primary"
@@ -101,7 +121,7 @@ function CustomBadgesSettings() {
             <Stack direction="horizontal" style={{ alignItems: "center", justifyContent: "space-between" }}>
                 <Stack direction="horizontal" style={{ alignItems: "center", gap: 10, flex: 1 }}>
                     <View style={{ width: 36, height: 36, borderRadius: 18, overflow: "hidden" }}>
-                        <Image source={{ uri: badge.iconUrl }} style={{ width: 36, height: 36 }} resizeMode="cover" />
+                        <Image source={{ uri: iconOf(badge) }} style={{ width: 36, height: 36 }} resizeMode="cover" resizeMethod="resize" />
                     </View>
                     <Text variant="text-md/semibold" color="text-strong" numberOfLines={1}>{badge.name}</Text>
                 </Stack>
@@ -126,7 +146,7 @@ export default definePlugin({
     async start({ cleanup }) {
         cleanup(extendProfileBadges("custom-badges", (userId, badges) => {
             if (!userId || userId !== currentUserId()) return badges;
-            const custom = badgeList().map(badge => linkedBadge(`10mcord.custom-badges.${badge.id}`, badge.name, badge.iconUrl));
+            const custom = badgeList().map(badge => linkedBadge(`10mcord.custom-badges.${badge.id}`, badge.name, iconOf(badge)));
             return [...custom, ...badges];
         }));
     },
