@@ -9718,5 +9718,119 @@
         "ru": "Темы можно устанавливать только по ссылке https://.",
         "es": "Los temas solo se pueden instalar desde un enlace https://.",
         "fr": "Les thèmes ne peuvent être installés que depuis un lien https://."
+    },
+    "This account is already saved": {
+        "tr": "Bu hesap zaten kaydedilmiş",
+        "ru": "Этот аккаунт уже сохранён",
+        "es": "Esta cuenta ya está guardada",
+        "fr": "Ce compte est déjà enregistré"
+    },
+    "10MCord will copy {account} and sign you out. Discord's normal login screen will open; enter your password there. 10MCord does not save passwords or login tokens.": {
+        "tr": "10MCord {account} bilgisini panoya kopyalayacak ve oturumunuzu kapatacak. Discord'un normal giriş ekranı açılacak; parolanızı oraya girin. 10MCord parolaları veya oturum belirteçlerini kaydetmez.",
+        "ru": "10MCord скопирует {account} и завершит сеанс. Откроется обычный экран входа Discord; введите там пароль. 10MCord не сохраняет пароли или токены входа.",
+        "es": "10MCord copiará {account} y cerrará tu sesión. Se abrirá la pantalla de inicio de sesión normal de Discord; escribe allí tu contraseña. 10MCord no guarda contraseñas ni tokens de acceso.",
+        "fr": "10MCord copiera {account} et vous déconnectera. L'écran de connexion normal de Discord s'ouvrira ; saisissez-y votre mot de passe. 10MCord n'enregistre ni mots de passe ni jetons de connexion."
+    },
+    "Accounts": {
+        "tr": "Hesaplar",
+        "ru": "Аккаунты",
+        "es": "Cuentas",
+        "fr": "Comptes"
+    },
+    "Add an account": {
+        "tr": "Hesap ekle",
+        "ru": "Добавить аккаунт",
+        "es": "Añadir una cuenta",
+        "fr": "Ajouter un compte"
+    },
+    "Add an email, phone number or username below. Passwords are never stored.": {
+        "tr": "Aşağıya e-posta, telefon numarası veya kullanıcı adı ekleyin. Parolalar asla kaydedilmez.",
+        "ru": "Добавьте ниже адрес электронной почты, номер телефона или имя пользователя. Пароли не сохраняются.",
+        "es": "Añade abajo un correo, número de teléfono o nombre de usuario. Las contraseñas nunca se guardan.",
+        "fr": "Ajoutez ci-dessous une adresse e-mail, un numéro de téléphone ou un nom d'utilisateur. Les mots de passe ne sont jamais enregistrés."
+    },
+    "Choose an account and sign in with Discord's normal login": {
+        "tr": "Bir hesap seçin ve Discord'un normal giriş ekranından oturum açın",
+        "ru": "Выберите аккаунт и войдите через обычную форму Discord",
+        "es": "Elige una cuenta e inicia sesión con el acceso normal de Discord",
+        "fr": "Choisissez un compte et connectez-vous avec la procédure normale de Discord"
+    },
+    "Copy and sign out": {
+        "tr": "Kopyala ve çıkış yap",
+        "ru": "Скопировать и выйти",
+        "es": "Copiar y cerrar sesión",
+        "fr": "Copier et se déconnecter"
+    },
+    "Couldn't open login": {
+        "tr": "Giriş ekranı açılamadı",
+        "ru": "Не удалось открыть вход",
+        "es": "No se pudo abrir el inicio de sesión",
+        "fr": "Impossible d'ouvrir la connexion"
+    },
+    "Email, phone or username": {
+        "tr": "E-posta, telefon veya kullanıcı adı",
+        "ru": "Электронная почта, телефон или имя пользователя",
+        "es": "Correo, teléfono o nombre de usuario",
+        "fr": "E-mail, téléphone ou nom d'utilisateur"
+    },
+    "No accounts saved yet": {
+        "tr": "Henüz kaydedilmiş hesap yok",
+        "ru": "Сохранённых аккаунтов пока нет",
+        "es": "Aún no hay cuentas guardadas",
+        "fr": "Aucun compte enregistré pour le moment"
+    },
+    "Only this identifier is saved. Enter your password on Discord's login screen.": {
+        "tr": "Yalnızca bu tanımlayıcı kaydedilir. Parolanızı Discord'un giriş ekranında girin.",
+        "ru": "Сохраняется только этот идентификатор. Введите пароль на экране входа Discord.",
+        "es": "Solo se guarda este identificador. Introduce tu contraseña en la pantalla de inicio de sesión de Discord.",
+        "fr": "Seul cet identifiant est enregistré. Saisissez votre mot de passe sur l'écran de connexion de Discord."
+    },
+    "Remove saved accounts": {
+        "tr": "Kaydedilmiş hesapları kaldır",
+        "ru": "Удалить сохранённые аккаунты",
+        "es": "Eliminar cuentas guardadas",
+        "fr": "Supprimer les comptes enregistrés"
+    },
+    "Remove {account}": {
+        "tr": "{account} hesabını kaldır",
+        "ru": "Удалить {account}",
+        "es": "Eliminar {account}",
+        "fr": "Supprimer {account}"
+    },
+    "Save account": {
+        "tr": "Hesabı kaydet",
+        "ru": "Сохранить аккаунт",
+        "es": "Guardar cuenta",
+        "fr": "Enregistrer le compte"
+    },
+    "Saved accounts": {
+        "tr": "Kaydedilmiş hesaplar",
+        "ru": "Сохранённые аккаунты",
+        "es": "Cuentas guardadas",
+        "fr": "Comptes enregistrés"
+    },
+    "Sign in": {
+        "tr": "Giriş yap",
+        "ru": "Войти",
+        "es": "Iniciar sesión",
+        "fr": "Se connecter"
+    },
+    "Sign out from Discord's own account settings, then sign in with the saved account. The saved identifier remains in this list.": {
+        "tr": "Discord'un kendi hesap ayarlarından çıkış yapın ve kaydedilmiş hesapla giriş yapın. Kaydedilmiş tanımlayıcı bu listede kalır.",
+        "ru": "Выйдите через настройки аккаунта Discord и войдите в сохранённый аккаунт. Сохранённый идентификатор останется в этом списке.",
+        "es": "Cierra sesión desde los ajustes de cuenta de Discord e inicia sesión con la cuenta guardada. El identificador seguirá en esta lista.",
+        "fr": "Déconnectez-vous depuis les paramètres de compte de Discord, puis connectez-vous avec le compte enregistré. L'identifiant restera dans cette liste."
+    },
+    "Switch account?": {
+        "tr": "Hesap değiştirilsin mi?",
+        "ru": "Сменить аккаунт?",
+        "es": "¿Cambiar de cuenta?",
+        "fr": "Changer de compte ?"
+    },
+    "Tap to copy this login and open Discord's normal sign-in": {
+        "tr": "Bu giriş bilgisini kopyalayıp Discord'un normal girişini açmak için dokunun",
+        "ru": "Нажмите, чтобы скопировать данные и открыть обычный вход Discord",
+        "es": "Toca para copiar este acceso y abrir el inicio de sesión normal de Discord",
+        "fr": "Touchez pour copier cet identifiant et ouvrir la connexion normale de Discord"
     }
 }

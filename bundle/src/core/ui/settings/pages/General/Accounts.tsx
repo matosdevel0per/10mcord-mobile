@@ -33,14 +33,14 @@ export default function Accounts() {
             actions={<AlertActions>
                 <AlertActionButton text={t("Copy and sign out")} variant="destructive" onPress={() => {
                     try {
+                        clipboard.setString(identifier);
                         const auth = findByProps("logout") as { logout?: () => void } | undefined;
                         if (typeof auth?.logout !== "function") throw new Error("Discord logout action unavailable");
-                        clipboard.setString(identifier);
                         auth.logout();
                     } catch {
                         openAlert("10MCord-account-switch-unavailable", <AlertModal
                             title={t("Couldn't open login")}
-                            content={t("Sign out from Discord's own account settings, then sign in with the saved account. The account identifier is still on your clipboard.")}
+                            content={t("Sign out from Discord's own account settings, then sign in with the saved account. The saved identifier remains in this list.")}
                             actions={<AlertActionButton text={t("OK")} variant="primary" />}
                         />);
                     }
