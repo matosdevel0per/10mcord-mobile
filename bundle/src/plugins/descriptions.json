@@ -56,6 +56,7 @@
     "10MCord.country-info": "Look up a country's capital, population, languages and currency with /country",
     "10MCord.crypto-prices": "See a cryptocurrency's price and its change today with /crypto",
     "10MCord.currency-converter": "Convert between currencies at today's rates with /currency",
+    "10MCord.custom-badges": "Create your own local profile badges with a custom name and icon. Only visible to you.",
     "10MCord.custom-commands": "Allows you to create custom slash commands / tags",
     "10MCord.custom-idle": "Stops Discord from marking you idle while the app is in the background",
     "10MCord.custom-profile": "Visually customize your Discord profile (username, PFP, banner, badges, bio...) — persistent, only visible to you.",
