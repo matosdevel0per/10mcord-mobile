@@ -25,7 +25,7 @@ export function openPage(title: string, Page: PageComponent, navigation?: any) {
     if (typeof modals?.push !== "function" || !Navigator || typeof getHeaderCloseButton !== "function") throw new Error("Discord's screens weren't found");
     const close = () => modals.pop();
     modals.push(() => <Navigator
-        initialRouteName="ENDCORD_PAGE"
+        initialRouteName="TENMCORD_PAGE"
         screens={{
             TENMCORD_PAGE: {
                 title,
