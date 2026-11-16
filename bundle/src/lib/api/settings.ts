@@ -12,7 +12,7 @@ export interface Settings {
     };
     enableEvalCommand?: boolean;
     /** "auto" (or unset) follows Discord's language */
-    language?: "auto" | import("@core/i18n").10MCordLanguage;
+    language?: "auto" | import("@core/i18n").TenMCordLanguage;
 }
 
 export interface LoaderConfig {

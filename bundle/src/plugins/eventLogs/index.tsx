@@ -75,8 +75,8 @@ export default definePlugin({
         };
         cleanup(
             () => clearTimeout(timer),
-            onAction<{ id: string; channelId: string; 10MCordLocal?: boolean; }>("MESSAGE_DELETE", ({ id, channelId, 10MCordLocal }) => {
-                const m = !10MCordLocal && store.messages ? message(channelId, id) : undefined;
+            onAction<{ id: string; channelId: string; "10MCordLocal"?: boolean; }>("MESSAGE_DELETE", ({ id, channelId, "10MCordLocal": tenMCordLocal }) => {
+                const m = !tenMCordLocal && store.messages ? message(channelId, id) : undefined;
                 if (m?.content) add({ kind: "deleted", text: `${t("Deleted")} · ${displayName(m.author)} · ${where(channelId)}: ${preview(m.content)}`, channelId, messageId: id });
             }, { first: true }),
             onAction<{ message?: any; }>("MESSAGE_UPDATE", ({ message: update }) => {

@@ -39,7 +39,7 @@ export interface PluginContext<S extends SettingsSchema> {
     cleanup(...fns: Array<(() => unknown) | undefined | null | void>): void;
 }
 
-export interface 10MCordPluginDefinition<S extends SettingsSchema = SettingsSchema> {
+export interface TenMCordPluginDefinition<S extends SettingsSchema = SettingsSchema> {
     /** Stable ID, used for its settings: 10MCord.<name> */
     id: string;
     /** The plugin's name, the same as on 10MCord PC */
@@ -61,13 +61,13 @@ export interface 10MCordPluginDefinition<S extends SettingsSchema = SettingsSche
     SettingsComponent?: ComponentType<{ store: SettingsValues<S>; }>;
 }
 
-export interface 10MCordPlugin<S extends SettingsSchema = SettingsSchema> extends 10MCordPluginDefinition<S> {
+export interface TenMCordPlugin<S extends SettingsSchema = SettingsSchema> extends TenMCordPluginDefinition<S> {
     store: SettingsValues<S>;
     /** Set when the plugin failed to start, until it is started again */
     error?: unknown;
 }
 
-export function definePlugin<S extends SettingsSchema>(def: 10MCordPluginDefinition<S>): 10MCordPlugin<S> {
+export function definePlugin<S extends SettingsSchema>(def: TenMCordPluginDefinition<S>): TenMCordPlugin<S> {
     const defaults = Object.fromEntries(Object.entries(def.settings ?? {}).map(([k, v]) => [k, v.default]));
     let store: SettingsValues<S> | undefined;
     // Opened the first time something reads it, so the settings of plugins that are off aren't loaded at startup
@@ -75,7 +75,7 @@ export function definePlugin<S extends SettingsSchema>(def: 10MCordPluginDefinit
         enumerable: true,
         get: () => store ??= wrapSync(createStorage<SettingsValues<S>>(createMMKVBackend(`ENDCORD_PLUGIN_${def.id}`, defaults))),
     });
-    return def as 10MCordPlugin<S>;
+    return def as TenMCordPlugin<S>;
 }
 
 /** Calls back with the setting's key whenever one of the store's settings changes, wherever it is changed from */
@@ -122,7 +122,7 @@ const describeArg = (arg: unknown) => {
  * Discord's logger, which also keeps the plugin's warnings and errors: Discord's own doesn't hand them back, and a
  * plugin that can't find what it patches says so with a warning
  */
-function pluginLogger(plugin: 10MCordPlugin): Logger {
+function pluginLogger(plugin: TenMCordPlugin): Logger {
     const base: Logger = new LoggerClass(`10MCord/${plugin.name}`);
     const keep = (level: PluginLogEntry["level"]) => (...args: unknown[]) => {
         base[level](...args);
@@ -143,7 +143,7 @@ function pluginLogger(plugin: 10MCordPlugin): Logger {
 }
 
 /** Fills in settings added after the plugin's storage was first created */
-async function loadStore(plugin: 10MCordPlugin) {
+async function loadStore(plugin: TenMCordPlugin) {
     await awaitStorage(plugin.store);
     for (const [key, def] of Object.entries(plugin.settings ?? {})) {
         const value = (plugin.store as any)[key];
@@ -166,7 +166,7 @@ function runCleanups(id: string) {
     for (const fn of fns?.reverse() ?? []) runCleanup(id, fn);
 }
 
-export async function start10MCordPlugin(plugin: 10MCordPlugin) {
+export async function start10MCordPlugin(plugin: TenMCordPlugin) {
     if (running.has(plugin.id)) return;
 
     const cleanups: Array<() => unknown> = [];
@@ -209,7 +209,7 @@ export async function start10MCordPlugin(plugin: 10MCordPlugin) {
     }
 }
 
-export function stop10MCordPlugin(plugin: 10MCordPlugin) {
+export function stop10MCordPlugin(plugin: TenMCordPlugin) {
     try {
         plugin.stop?.({
             store: plugin.store,

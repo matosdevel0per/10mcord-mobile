@@ -11,17 +11,17 @@ import type { PluginInstanceInternal } from "@lib/addons/plugins/types";
 import compareNames from "@lib/utils/compareNames";
 import { createElement } from "react";
 
-import { 10MCordPlugin, is10MCordPluginRunning, start10MCordPlugin, stop10MCordPlugin } from "./api";
+import { is10MCordPluginRunning, start10MCordPlugin, stop10MCordPlugin,TenMCordPlugin } from "./api";
 import { loaders, manifest, PluginInfo } from "./manifest";
 
-const loaded = new Map<string, 10MCordPlugin<any>>();
+const loaded = new Map<string, TenMCordPlugin<any>>();
 
 let descriptions: Record<string, string> | undefined;
 /** English descriptions, read the first time the plugin list shows one */
 const descriptionOf = (id: string) => (descriptions ??= require("./descriptions.json") as Record<string, string>)[id] ?? "";
 
 /** A plugin's code, loaded the first time it's needed */
-export function load10MCordPlugin(id: string): 10MCordPlugin<any> {
+export function load10MCordPlugin(id: string): TenMCordPlugin<any> {
     const cached = loaded.get(id);
     if (cached) return cached;
     const load = loaders[id];
@@ -36,7 +36,7 @@ export function load10MCordPlugin(id: string): 10MCordPlugin<any> {
 export const loadedPluginCount = () => loaded.size;
 
 /** Every built-in plugin, loading all of their code (for the self-test) */
-export function get10MCordPlugins(): 10MCordPlugin<any>[] {
+export function get10MCordPlugins(): TenMCordPlugin<any>[] {
     return sorted().map(p => load10MCordPlugin(p.id));
 }
 
@@ -65,7 +65,7 @@ export function get10MCordCorePlugins(): Record<string, { default: PluginInstanc
                     },
                 },
                 extras: {
-                    10MCord: true,
+                    "10MCord": true,
                     popular: info.popular,
                     icon: info.icon,
                     tags: info.tags,

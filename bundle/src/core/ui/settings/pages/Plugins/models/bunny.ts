@@ -1,5 +1,5 @@
 import { t } from "@core/i18n";
-import { 10MCordIcon } from "@core/ui/settings";
+import { TenMCordIcon } from "@core/ui/settings";
 import { disablePlugin, enablePlugin, getPluginSettingsComponent, isPluginEnabled, pluginSettings } from "@lib/addons/plugins";
 import { BunnyPluginManifest } from "@lib/addons/plugins/types";
 import { findAssetId } from "@lib/api/assets";
@@ -13,16 +13,16 @@ export default function unifyBunnyPlugin(manifest: BunnyPluginManifest): Unified
         id: manifest.id,
         name: manifest.display.name,
         // 10MCord's plugins carry English text that is translated where it is shown
-        description: manifest.extras?.10MCord ? t(manifest.display.description ?? "") : manifest.display.description,
+        description: manifest.extras?.["10MCord"] ? t(manifest.display.description ?? "") : manifest.display.description,
         authors: manifest.display.authors,
         icon: manifest.extras?.icon,
-        10MCord: !!manifest.extras?.10MCord,
+        "10MCord": !!manifest.extras?.["10MCord"],
         popular: manifest.extras?.popular,
         tags: manifest.extras?.tags,
 
         getBadges() {
             // 10MCord's own plugins don't need a badge saying where they come from
-            return manifest.extras?.10MCord ? [] : [{ source: { uri: 10MCordIcon } }];
+            return manifest.extras?.["10MCord"] ? [] : [{ source: { uri: TenMCordIcon } }];
         },
         isEnabled: () => isPluginEnabled(manifest.id),
         isInstalled: () => manifest.id in pluginSettings,

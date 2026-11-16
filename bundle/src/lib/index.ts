@@ -8,7 +8,7 @@ export * as api from "./api";
 export * as ui from "./ui";
 export * as utils from "./utils";
 export * as metro from "@metro";
-export * as 10MCord from "@plugins/public";
+export * as TenMCord from "@plugins/public";
 
 import * as fonts from "./addons/fonts/index.js";
 import * as plugins from "./addons/plugins/index.js";

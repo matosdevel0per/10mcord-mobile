@@ -1,4 +1,5 @@
 {
+    "10MCord.10MCord-toolbox": "Adds a button beside the message box with 10MCord quick actions: reload, turn off plugins, debug info and safe mode",
     "10MCord.advice": "Send a random piece of advice with /advice",
     "10MCord.always-animate": "Animates anything that can be animated",
     "10MCord.always-trust": "Removes the annoying untrusted domain and suspicious file popup",
@@ -76,7 +77,6 @@
     "10MCord.embedded-urls": "Turns plain social links into embeddable URLs so posts and videos are fully viewable in Discord instead of forcing users to open the external site.",
     "10MCord.emojify": "Write a message in big letter emojis with /emojify",
     "10MCord.encrypted-message": "Send messages encrypted with a password with /encrypt; only people with the password can read them",
-    "10MCord.10MCord-toolbox": "Adds a button beside the message box with 10MCord quick actions: reload, turn off plugins, debug info and safe mode",
     "10MCord.event-logs": "Keeps a log of deleted and edited messages, friends added and removed, and servers you join and leave",
     "10MCord.exit-sounds": "Play soundboard sounds when you disconnect from voice.",
     "10MCord.experiments": "Enable Access to Experiments & other dev-only features in Discord!",

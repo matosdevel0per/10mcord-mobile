@@ -14,7 +14,7 @@ export interface UnifiedPluginModel {
     authors?: Author[];
     icon?: string;
     /** 10MCord's own plugins, built into the app */
-    10MCord?: boolean;
+    "10MCord"?: boolean;
     /** Position in 10MCord PC's list of popular plugins */
     popular?: number;
     /** 10MCord PC's tags */

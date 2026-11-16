@@ -1,4 +1,4 @@
-import 10MCordIcon from "@assets/icons/10MCord.png";
+import TenMCordIcon from "@assets/icons/10MCord.png";
 import { Strings } from "@core/i18n";
 import { useProxy } from "@core/vendetta/storage";
 import { findAssetId } from "@lib/api/assets";
@@ -7,7 +7,7 @@ import { settings } from "@lib/api/settings";
 import { registerSection } from "@ui/settings";
 import { version } from "bunny-build-info";
 
-export { 10MCordIcon };
+export { TenMCordIcon };
 
 export default function initSettings() {
 
@@ -17,7 +17,7 @@ export default function initSettings() {
             {
                 key: "BUNNY",
                 title: () => Strings.BUNNY,
-                icon: { uri: 10MCordIcon },
+                icon: { uri: TenMCordIcon },
                 render: () => import("@core/ui/settings/pages/General"),
                 useTrailing: () => `(${version})`
             },

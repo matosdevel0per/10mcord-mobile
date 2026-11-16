@@ -139,7 +139,7 @@ function PluginPage(props: PluginPageProps) {
 
 /** 10MCord's popular plugins first, in 10MCord PC's order, then 10MCord's others, then installed plugins, by name */
 function byPopularity(a: UnifiedPluginModel, b: UnifiedPluginModel) {
-    const rank = (p: UnifiedPluginModel) => p.popular ?? (p.10MCord ? 1000 : 2000);
+    const rank = (p: UnifiedPluginModel) => p.popular ?? (p["10MCord"] ? 1000 : 2000);
     return rank(a) - rank(b) || compareNames(a.name, b.name);
 }
 
@@ -154,7 +154,7 @@ export default function Plugins() {
     const vdPlugins = Object.values(VdPluginManager.plugins).map(unifyVdPlugin);
     // Core plugins stay hidden, except 10MCord's own, which users turn on and off
     const bnPlugins = [...registeredPlugins.values()]
-        .filter(p => isPluginInstalled(p.id) && (!isCorePlugin(p.id) || p.extras?.10MCord))
+        .filter(p => isPluginInstalled(p.id) && (!isCorePlugin(p.id) || p.extras?.["10MCord"]))
         .map(unifyBunnyPlugin);
     const all = [...bnPlugins, ...vdPlugins].sort(byPopularity);
 

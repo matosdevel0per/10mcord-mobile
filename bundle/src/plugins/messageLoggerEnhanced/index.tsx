@@ -69,8 +69,8 @@ export default definePlugin({
         const skip = (m: any) => !m?.content || store.ignoreSelf && m.author?.id === currentUserId() || store.ignoreBots && m.author?.bot;
         cleanup(
             () => clearTimeout(timer),
-            onAction<{ id: string; channelId: string; 10MCordLocal?: boolean; }>("MESSAGE_DELETE", ({ id, channelId, 10MCordLocal }) => {
-                const m = 10MCordLocal ? undefined : getStore("MessageStore")?.getMessage?.(channelId, id);
+            onAction<{ id: string; channelId: string; "10MCordLocal"?: boolean; }>("MESSAGE_DELETE", ({ id, channelId, "10MCordLocal": tenMCordLocal }) => {
+                const m = tenMCordLocal ? undefined : getStore("MessageStore")?.getMessage?.(channelId, id);
                 if (m && !skip(m)) add({ id, channelId, author: displayName(m.author), content: m.content, at: Date.now(), kind: "deleted" });
             }, { first: true }),
             onAction<{ message?: any; }>("MESSAGE_UPDATE", ({ message: update }) => {

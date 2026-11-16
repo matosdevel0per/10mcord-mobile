@@ -66,9 +66,9 @@ export default definePlugin({
                 for (const key of keys.slice(0, Math.max(0, keys.length - store.maxCacheSize))) delete messages[key];
                 cache.messages = messages;
             }),
-            onAction<{ id: string; channelId: string; 10MCordLocal?: boolean; }>("MESSAGE_DELETE", ({ id, channelId, 10MCordLocal }) => {
+            onAction<{ id: string; channelId: string; "10MCordLocal"?: boolean; }>("MESSAGE_DELETE", ({ id, channelId, "10MCordLocal": tenMCordLocal }) => {
                 const saved = cache.messages?.[id];
-                if (!saved || !store.enabled || 10MCordLocal) return;
+                if (!saved || !store.enabled || tenMCordLocal) return;
                 const { [id]: _, ...rest } = cache.messages;
                 cache.messages = rest;
                 if (deletedByMe.delete(id) || saved.guildId && ids(store.serverBlacklist).has(saved.guildId)) return;

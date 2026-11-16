@@ -350,7 +350,7 @@ export function onIncomingMessage(key: string, fn: IncomingFilter) {
 
 /** Removes a message from your chat without deleting it; it comes back when the chat is loaded again */
 export function hideLocally(channelId: string, messageId: string) {
-    dispatchSoon({ type: "MESSAGE_DELETE", id: messageId, channelId, 10MCordLocal: true });
+    dispatchSoon({ type: "MESSAGE_DELETE", id: messageId, channelId, "10MCordLocal": true });
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -489,7 +489,7 @@ function hideSheet() {
     findByProps("openLazy", "hideActionSheet")?.hideActionSheet?.();
 }
 
-function 10MCordActions({ message, channel }: { message: any; channel: any; }) {
+function TenMCordActions({ message, channel }: { message: any; channel: any; }) {
     const rows: ReactNode[] = [];
     for (const action of messageActions.values()) {
         try {
@@ -530,7 +530,7 @@ export function addMessageAction(action: MessageAction) {
                 const sheet = findSheet(tree);
                 if (sheet && message) {
                     const children = [sheet.props.children].flat().filter(Boolean);
-                    children.push(<10MCordActions key="10MCord-actions" message={message} channel={channel} />);
+                    children.push(<TenMCordActions key="10MCord-actions" message={message} channel={channel} />);
                     sheet.props.children = children;
                 }
             } catch (e) {

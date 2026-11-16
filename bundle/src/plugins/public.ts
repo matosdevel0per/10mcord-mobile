@@ -3,26 +3,26 @@
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
- * 10MCord's built-in plugins as bunny.10MCord, like 10MCord PC's 10MCord.Plugins: for DevTools and the self-test.
+ * 10MCord's built-in plugins as bunny["10MCord"], like 10MCord PC's 10MCord.Plugins: for DevTools and the self-test.
  * Only the manifest is loaded with it; everything else is required when used, so it costs nothing at startup.
  */
 
-import type { 10MCordPlugin } from "./api";
+import type { TenMCordPlugin } from "./api";
 import { manifest } from "./manifest";
 
 export { manifest };
 
 /** A plugin by ID, loading its code */
-export const getPlugin = (id: string): 10MCordPlugin => require("./index").load10MCordPlugin(id);
+export const getPlugin = (id: string): TenMCordPlugin => require("./index").load10MCordPlugin(id);
 /** Every plugin, loading all of their code */
-export const getPlugins = (): 10MCordPlugin[] => require("./index").get10MCordPlugins();
+export const getPlugins = (): TenMCordPlugin[] => require("./index").get10MCordPlugins();
 
-const resolve = (plugin: string | 10MCordPlugin) => typeof plugin === "string" ? getPlugin(plugin) : plugin;
+const resolve = (plugin: string | TenMCordPlugin) => typeof plugin === "string" ? getPlugin(plugin) : plugin;
 
 /** Starts a plugin, by ID or as returned by getPlugin, without turning it on in the settings */
-export const start = (plugin: string | 10MCordPlugin): Promise<void> => require("./api").start10MCordPlugin(resolve(plugin));
+export const start = (plugin: string | TenMCordPlugin): Promise<void> => require("./api").start10MCordPlugin(resolve(plugin));
 /** Stops a plugin, by ID or as returned by getPlugin, without turning it off in the settings */
-export const stop = (plugin: string | 10MCordPlugin): void => require("./api").stop10MCordPlugin(resolve(plugin));
+export const stop = (plugin: string | TenMCordPlugin): void => require("./api").stop10MCordPlugin(resolve(plugin));
 export const isRunning = (id: string): boolean => require("./api").is10MCordPluginRunning(id);
 
 /** What the running plugins have registered, by kind: a plugin that leaves any of these behind when it stops leaks */

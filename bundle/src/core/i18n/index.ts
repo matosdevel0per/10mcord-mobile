@@ -7,10 +7,10 @@ import langDefault from "./default.json";
 
 const IntlMessageFormat = findByNameLazy("MessageFormat") as typeof import("intl-messageformat").default;
 
-export type 10MCordLanguage = "en" | "tr" | "ru" | "es" | "fr";
+export type TenMCordLanguage = "en" | "tr" | "ru" | "es" | "fr";
 
 /** The languages 10MCord is translated into, the same five as 10MCord PC */
-export const LANGUAGES: { code: 10MCordLanguage; nativeName: string; }[] = [
+export const LANGUAGES: { code: TenMCordLanguage; nativeName: string; }[] = [
     { code: "en", nativeName: "English" },
     { code: "tr", nativeName: "Türkçe" },
     { code: "ru", nativeName: "Русский" },
@@ -18,7 +18,7 @@ export const LANGUAGES: { code: 10MCordLanguage; nativeName: string; }[] = [
     { code: "fr", nativeName: "Français" },
 ];
 
-type Translated = Exclude<10MCordLanguage, "en">;
+type Translated = Exclude<TenMCordLanguage, "en">;
 
 // Built from 10MCord PC's translations by scripts/i18n-sync.mjs. Only the language in use is loaded: the others stay
 // unparsed in the bundle, which matters on slower phones.
@@ -38,7 +38,7 @@ function textHash(text: string) {
 }
 
 const translated = new Map<string, string>();
-let translatedLang: 10MCordLanguage = "en";
+let translatedLang: TenMCordLanguage = "en";
 
 function lookup(lang: Translated, text: string) {
     if (translatedLang !== lang) {
@@ -76,7 +76,7 @@ function discordLocale(): string | undefined {
     return NativeModules.I18nManager?.localeIdentifier;
 }
 
-export function normalizeLanguage(locale?: string | null): 10MCordLanguage {
+export function normalizeLanguage(locale?: string | null): TenMCordLanguage {
     const code = locale?.toLowerCase().trim() ?? "";
     for (const lang of ["tr", "ru", "es", "fr"] as const) {
         if (code === lang || code.startsWith(`${lang}-`) || code.startsWith(`${lang}_`)) return lang;
@@ -85,7 +85,7 @@ export function normalizeLanguage(locale?: string | null): 10MCordLanguage {
 }
 
 /** The language 10MCord is shown in: the one picked in 10MCord's settings, or Discord's own */
-export function getLanguage(): 10MCordLanguage {
+export function getLanguage(): TenMCordLanguage {
     const picked = settings.language;
     return picked && picked !== "auto" ? picked : normalizeLanguage(discordLocale());
 }

@@ -11,7 +11,7 @@ import { ErrorBoundary } from "@ui/components";
 import { useState } from "react";
 import { ScrollView, View } from "react-native";
 
-import type { 10MCordPlugin, SettingDef } from "../api";
+import type { SettingDef,TenMCordPlugin } from "../api";
 
 function NumberSetting({ def, value, onChange }: { def: Extract<SettingDef, { type: "number"; }>; value: number; onChange(v: number): void; }) {
     const [text, setText] = useState(String(value));
@@ -69,7 +69,7 @@ function Setting({ id, def, store }: { id: string; def: SettingDef; store: any; 
     }
 }
 
-export default function PluginSettings({ plugin }: { plugin: 10MCordPlugin<any>; }) {
+export default function PluginSettings({ plugin }: { plugin: TenMCordPlugin<any>; }) {
     const store = useProxy(plugin.store);
     // Drawn once the settings have loaded, so fields start with the saved values
     if (!(store as any)[Symbol.for("vendetta.storage.emitter")]) return null;
