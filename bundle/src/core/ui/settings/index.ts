@@ -17,7 +17,7 @@ export default function initSettings() {
             {
                 key: "BUNNY",
                 title: () => Strings.BUNNY,
-                icon: { uri: TenMCordIcon },
+                icon: findAssetId("SparklesIcon"),
                 render: () => import("@core/ui/settings/pages/General"),
                 useTrailing: () => `(${version})`
             },

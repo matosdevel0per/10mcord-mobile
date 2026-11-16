@@ -1,7 +1,7 @@
 import { isSafeMode, toggleSafeMode } from "@core/debug/safeMode";
 import { getLanguage, LANGUAGES, Strings, t } from "@core/i18n";
-import { TenMCordIcon } from "@core/ui/settings";
 import About from "@core/ui/settings/pages/General/About";
+import Accounts from "@core/ui/settings/pages/General/Accounts";
 import Backup from "@core/ui/settings/pages/General/Backup";
 import Updates from "@core/ui/settings/pages/General/Updates";
 import { useProxy } from "@core/vendetta/storage";
@@ -10,7 +10,7 @@ import { getDebugInfo } from "@lib/api/debug";
 import { BundleUpdaterManager } from "@lib/api/native/modules";
 import { settings } from "@lib/api/settings";
 import { openAlert } from "@lib/ui/alerts";
-import { DISCORD_SERVER, GITHUB } from "@lib/utils/constants";
+import { DISCORD_SERVER } from "@lib/utils/constants";
 import { NavigationNative } from "@metro/common";
 import { AlertActionButton, AlertActions, AlertModal, Stack, TableRadioGroup, TableRadioRow, TableRow, TableRowGroup, TableSwitchRow } from "@metro/common/components";
 import { Linking, ScrollView } from "react-native";
@@ -27,7 +27,7 @@ export default function General() {
                 <TableRowGroup title={Strings.INFO}>
                     <TableRow
                         label={Strings.BUNNY}
-                        icon={<TableRow.Icon source={{ uri: TenMCordIcon }} />}
+                        icon={<TableRow.Icon source={findAssetId("SparklesIcon")!} />}
                         trailing={<TableRow.TrailingText text={debugInfo.bunny.version} />}
                     />
                     <TableRow
@@ -59,13 +59,16 @@ export default function General() {
                     {LANGUAGES.map(l => <TableRadioRow key={l.code} label={l.nativeName} value={l.code} />)}
                 </TableRadioGroup>
                 <Backup />
-                <TableRowGroup title={t("Support 10MCord")}>
+                <TableRowGroup title={t("Accounts")}>
                     <TableRow
-                        arrow={true}
-                        label={t("Star on GitHub")}
-                        subLabel={t("Free and open source, always")}
-                        icon={<TableRow.Icon source={findAssetId("StarIcon")!} />}
-                        onPress={() => Linking.openURL(GITHUB)}
+                        arrow
+                        label={t("Saved accounts")}
+                        subLabel={t("Choose an account and sign in with Discord's normal login")}
+                        icon={<TableRow.Icon source={findAssetId("ClydeIcon")!} />}
+                        onPress={() => navigation.push("BUNNY_CUSTOM_PAGE", {
+                            title: t("Saved accounts"),
+                            render: () => <Accounts />,
+                        })}
                     />
                 </TableRowGroup>
                 <TableRowGroup title={Strings.LINKS}>
@@ -74,12 +77,6 @@ export default function General() {
                         label={Strings.DISCORD_SERVER}
                         icon={<TableRow.Icon source={findAssetId("ClydeIcon")!} />}
                         onPress={() => Linking.openURL(DISCORD_SERVER)}
-                    />
-                    <TableRow
-                        arrow={true}
-                        label={Strings.GITHUB}
-                        icon={<TableRow.Icon source={findAssetId("img_account_sync_github_white")!} />}
-                        onPress={() => Linking.openURL(GITHUB)}
                     />
                 </TableRowGroup>
                 <TableRowGroup title={Strings.ACTIONS}>

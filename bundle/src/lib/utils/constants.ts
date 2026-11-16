@@ -1,4 +1,4 @@
-export const DISCORD_SERVER = "https://discord.gg/10MCord";
+export const DISCORD_SERVER = "https://discord.gg/q5ny7wg9ap";
 export const GITHUB = "https://github.com/matosdevel0per/10mcord-mobile/tree/next";
 /** 10MCord Classic: Aliucord-based, on an older Discord, with Aliucord plugin support */
 export const CLASSIC_URL = "https://github.com/matosdevel0per/10mcord-mobile/tree/main";

@@ -13,6 +13,8 @@ export interface Settings {
     enableEvalCommand?: boolean;
     /** "auto" (or unset) follows Discord's language */
     language?: "auto" | import("@core/i18n").TenMCordLanguage;
+    /** Login identifiers only. Passwords and Discord session tokens are never stored here. */
+    savedLoginAccounts?: string[];
 }
 
 export interface LoaderConfig {
