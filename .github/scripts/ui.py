@@ -151,8 +151,9 @@ def install_flow(source):
             tap(confirm)
             time.sleep(3)
             continue
-        # Android asks once to allow installs from the installer, like it does for a real user
-        if find(r".*install unknown apps.*", all_nodes):
+        # Match Android's blocking prompt, not the Settings page titled "Install unknown apps".
+        # On Android 15 the broad match re-entered this branch on the Settings screen and flipped the toggle back off.
+        if find(r".*allowed to install unknown apps from this source.*", all_nodes):
             screenshot(f"installer-{source}-{shot}-unknown-sources")
             shot += 1
             tap_text(r"Settings", 10)
