@@ -102,13 +102,13 @@ const useStyles = createStyles({
         height: 1,
         backgroundColor: semanticColorOf("BORDER_SUBTLE", "BACKGROUND_MOD_NORMAL", "BACKGROUND_MOD_STRONG"),
     },
-    footer: {
+    toolbar: {
         flexDirection: "row",
         gap: 8,
         paddingHorizontal: 12,
         paddingVertical: 10,
-        borderTopWidth: 1,
-        borderTopColor: semanticColorOf("BORDER_SUBTLE", "BACKGROUND_MOD_NORMAL", "BACKGROUND_MOD_STRONG"),
+        borderBottomWidth: 1,
+        borderBottomColor: semanticColorOf("BORDER_SUBTLE", "BACKGROUND_MOD_NORMAL", "BACKGROUND_MOD_STRONG"),
         backgroundColor: semanticColorOf("BACKGROUND_BASE_LOWER", "BACKGROUND_BASE_LOW"),
     },
 });
@@ -569,6 +569,12 @@ export default function CustomProfileEditor({ onClose }: { onClose: () => void; 
     };
 
     return <View style={{ flex: 1 }}>
+        <View style={styles.toolbar}>
+            <Button size="sm" variant="secondary" text={t("Cancel")} onPress={onClose} grow={true} />
+            <Button size="sm" variant="destructive" text={t("Reset")} icon={findAssetId("TrashIcon")} onPress={reset} grow={true} />
+            <Button size="sm" variant="secondary" text={t("Repair")} onPress={runRepair} grow={true} />
+            <Button size="sm" variant="primary" text={saving ? t("Saving...") : t("Save")} loading={saving} onPress={save} grow={true} />
+        </View>
         <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingHorizontal: 12, paddingVertical: 16 }} keyboardShouldPersistTaps="handled">
             <Stack spacing={18}>
                 {accounts.length > 1 && <TableRowGroup title={t("Select Account")}>
@@ -625,11 +631,5 @@ export default function CustomProfileEditor({ onClose }: { onClose: () => void; 
                 <Text variant="text-xs/medium" color="text-muted">{t("Only you see these changes. Clear them before you edit your real profile, so they don't end up in it.")}</Text>
             </Stack>
         </ScrollView>
-        <View style={styles.footer}>
-            <Button size="sm" variant="secondary" text={t("Cancel")} onPress={onClose} grow={true} />
-            <Button size="sm" variant="destructive" text={t("Reset")} icon={findAssetId("TrashIcon")} onPress={reset} grow={true} />
-            <Button size="sm" variant="secondary" text={t("Repair")} onPress={runRepair} grow={true} />
-            <Button size="sm" variant="primary" text={saving ? t("Saving...") : t("Save")} loading={saving} onPress={save} grow={true} />
-        </View>
     </View>;
 }
