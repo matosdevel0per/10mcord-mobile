@@ -1,0 +1,11 @@
+Package: com.10MCord.tweak
+Name: 10MCord
+Version: 1.0.7
+Architecture: iphoneos-arm
+Description: 10MCord for Discord on iOS: plugins, themes and privacy
+Maintainer: rootpoi
+Author: rootpoi and contributors, based on RainTweak by cocobo1 and Bwlok
+Icon: <https://raw.githubusercontent.com/matosdevel0per/10mcord-mobile/next/bundle/src/assets/icons/10MCord.png>
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)
+Conflicts: app.enmity, mod.vendetta, app.unbound, com.cloudysnow.btloader, app.pyoncord, cocobo1.kettu.tweak, dev.raincord.tweak
