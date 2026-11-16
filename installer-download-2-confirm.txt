@@ -1,0 +1,4 @@
+10MCord
+Do you want to install this app?
+Cancel
+Install

@@ -1,0 +1,20 @@
+Successful
+Download APKs
+74.63s
+Expand
+Successful
+Patching
+19.25s
+Expand
+Successful
+Installing
+0.49s
+Collapse
+Successful
+Installing APKs
+0.49s
+Launch
+Share logs
+Clear cache
+Go back
+Installer

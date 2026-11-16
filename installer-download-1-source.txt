@@ -1,0 +1,24 @@
+Which 10MCord?
+10MCord Classic
+10MCord
+On the current Discord app, with 300+ 10MCord plugins
+10MCord
+Latest: 354.12 - Stable
+Install
+matosdevel0per
+•
+23e9d07
+11/16/26
+Fix plugin page initial route name
+matosdevel0per
+•
+c2bb0e3
+11/16/26
+Use device image uploads for custom badges
+matosdevel0per
+•
+d083b0a
+11/16/26
+10MCord Installer
+Reload
+Open about

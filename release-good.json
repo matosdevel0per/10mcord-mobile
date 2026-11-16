@@ -1,0 +1,27 @@
+{
+    "format": 1,
+    "sequence": 1794861992,
+    "commit": "23e9d07cb6d21719bebbe3c839412ab520926ebd",
+    "files": {
+        "10MCord-xposed.apk": {
+            "size": 6995962,
+            "sha256": "1c0722fd28d8337ae37f071ef2cc930fb276f1f1b354548055cae30358d3278a",
+            "url": "http://10.0.2.2:4040/pinned/10MCord-xposed.apk"
+        },
+        "10MCord.min.js": {
+            "size": 1273753,
+            "sha256": "01d291a35d0f1327b2a916df7db1c856129c1e3c1a00fcb220dd4a9d43d378ff",
+            "url": "http://10.0.2.2:4040/pinned/10MCord.min.js"
+        },
+        "10MCord.v98.hbc": {
+            "size": 2574316,
+            "sha256": "5ade2d621e44e12ab378675f6618b9b5939382907c33b201ce8860291c048dcf",
+            "url": "http://10.0.2.2:4040/pinned/10MCord.v98.hbc"
+        },
+        "10MCord.v99.hbc": {
+            "size": 2551711,
+            "sha256": "a7cb7742bb8e2f970824e9c37f0355f823ad4b823366db6904f6cf534082ce7b",
+            "url": "http://10.0.2.2:4040/pinned/10MCord.v99.hbc"
+        }
+    }
+}
