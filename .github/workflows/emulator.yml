@@ -66,6 +66,7 @@ jobs:
           TENMCORD_RELEASE_KEY="$(cat release-test.pem)" TENMCORD_RELEASE_PUBLIC_KEY_FILE=release-test.pub \
             TENMCORD_RELEASE_BASE_URL=http://10.0.2.2:4040/pinned/ node bundle/scripts/sign-release.mjs serve
           mkdir serve/pinned && cp serve/10MCord.min.js serve/10MCord.v*.hbc serve/10MCord-xposed.apk serve/pinned/
+          zip -j serve/10MCord-release.zip serve/10MCord-xposed.apk serve/10MCord-release.json serve/10MCord-release.sig
 
       - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
         with:
@@ -76,6 +77,7 @@ jobs:
         run: |
           chmod +x gradlew
           ./gradlew --no-daemon :app:assembleDebug -P10MCord.loaderUrl=http://10.0.2.2:4040/10MCord-xposed.apk \
+            -P10MCord.archiveUrl=http://10.0.2.2:4040/10MCord-release.zip \
             -P10MCord.releaseKey="$(cat ../../release-test.pub)"
           cp app/build/outputs/apk/debug/*.apk ../../installer.apk
 
