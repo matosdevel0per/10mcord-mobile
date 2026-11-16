@@ -1,0 +1,7 @@
+PASS: bundle served
+FAIL: download: installer didn't finish
+FAIL: download: 10MCord not installed
+PASS: stock Discord installed
+FAIL: installed: installer didn't finish
+FAIL: installed: 10MCord not installed
+FAIL: no bytecode bundle for this Discord: it ran the plain one
