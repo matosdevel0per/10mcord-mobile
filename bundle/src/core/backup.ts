@@ -57,7 +57,7 @@ export interface Backup {
     format: typeof FORMAT;
     version: number;
     /** The 10MCord version that made it */
-    10MCord: string;
+    "10MCord": string;
     createdAt: string;
     settings: Partial<Record<typeof SETTINGS_KEYS[number], Json>>;
     /** Built-in plugins by ID, and whether each is on */
@@ -129,7 +129,7 @@ export async function createBackup(): Promise<string> {
     const backup: Backup = {
         format: FORMAT,
         version: VERSION,
-        10MCord: version,
+        "10MCord": version,
         createdAt: new Date().toISOString(),
         settings: Object.fromEntries(SETTINGS_KEYS.filter(k => settings[k] !== undefined).map(k => [k, settings[k] as Json])),
         plugins,
@@ -184,7 +184,7 @@ export function parseBackup(text: string): Backup {
     return {
         format: FORMAT,
         version: parsed.version,
-        10MCord: typeof parsed.10MCord === "string" ? parsed.10MCord : "?",
+        "10MCord": typeof parsed["10MCord"] === "string" ? parsed["10MCord"] : "?",
         createdAt: typeof parsed.createdAt === "string" ? parsed.createdAt : "",
         settings: backupSettings,
         plugins,

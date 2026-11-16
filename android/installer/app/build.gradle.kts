@@ -26,7 +26,7 @@ android {
         buildConfigField("String", "REPO", "\"matosdevel0per/10mcord-mobile\"")
         buildConfigField("String", "ORG_LINK", "\"https://github.com/matosdevel0per/10mcord-mobile/tree/next\"")
         buildConfigField("String", "INVITE_LINK", "\"https://discord.gg/10MCord\"")
-        buildConfigField("String", "MODDED_APP_PACKAGE_NAME", "\"com.10MCord.next\"")
+        buildConfigField("String", "MODDED_APP_PACKAGE_NAME", "\"com.tenmcord.next\"")
         // Where the Build workflow publishes the loader. Pass -P10MCord.loaderUrl=http://10.0.2.2:4040/10MCord-xposed.apk
         // to install a loader you serve yourself while developing; the signed release has to be served next to it
         // (bundle/scripts/sign-release.mjs), as the emulator test does.
@@ -45,7 +45,7 @@ android {
             .orElse("${loaderUrl.substringBeforeLast('/')}/10MCord-classic-installer.apk")
             .get()
         buildConfigField("String", "CLASSIC_INSTALLER_URL", "\"$classicInstallerUrl\"")
-        buildConfigField("String", "CLASSIC_INSTALLER_PACKAGE", "\"com.10MCord.installer\"")
+        buildConfigField("String", "CLASSIC_INSTALLER_PACKAGE", "\"com.tenmcord.classicinstaller\"")
         // A tracker mirror to try before the public ones, e.g. -P10MCord.mirrorUrl=http://10.0.2.2:4040 for a copy of
         // the Discord APKs served from the developer's machine. Empty in normal builds.
         val mirrorUrl = providers.gradleProperty("10MCord.mirrorUrl").orElse("").get()
