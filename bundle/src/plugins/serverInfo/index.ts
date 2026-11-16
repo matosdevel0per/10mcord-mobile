@@ -18,6 +18,12 @@ const escapeMarkdown = (value: string) => [...value].map(character => "\\`*_{}[]
 const assetUrl = (base: string, id: string, hash: string, size = 2048) =>
     `${CDN}/${base}/${id}/${hash}.${hash.startsWith("a_") ? "gif" : "png"}?size=${size}`;
 
+const unfurledMediaItem = (url: string) => ({
+    url,
+    proxyUrl: url,
+    loadingState: 2,
+});
+
 export default definePlugin({
     id: "10MCord.server-info",
     name: "ServerInfo",
@@ -63,7 +69,7 @@ export default definePlugin({
                         ? {
                             type: 9,
                             components: [{ type: 10, content: `## ${escapeMarkdown(guild.name)}\n${t("Server information")}` }],
-                            accessory: { type: 11, media: { url: icon }, description: t("Server icon") },
+                            accessory: { type: 11, media: unfurledMediaItem(icon), description: t("Server icon") },
                         }
                         : { type: 10, content: `## ${escapeMarkdown(guild.name)}\n${t("Server information")}` },
                     { type: 14, divider: true, spacing: 1 },
@@ -75,7 +81,7 @@ export default definePlugin({
                     { type: 14, divider: true, spacing: 1 },
                     { type: 10, content: `**${t("Created")}**: <t:${created}:D> · <t:${created}:R>\n**${t("ID")}**: \`${guild.id}\`${guild.vanityURLCode ? `\n**${t("Vanity URL")}**: discord.gg/${guild.vanityURLCode}` : ""}` },
                 ];
-                if (images.length) components.push({ type: 12, items: images.map(image => ({ media: { url: image.url }, description: image.description })) });
+                if (images.length) components.push({ type: 12, items: images.map(image => ({ media: unfurledMediaItem(image.url), description: image.description })) });
 
                 const user = getStore("UserStore")?.getCurrentUser?.();
                 if (!user?.id) {
