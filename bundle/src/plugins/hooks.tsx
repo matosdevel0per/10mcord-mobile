@@ -206,9 +206,79 @@ export function localDay(ms = Date.now()) {
 /** A snowflake for now, for messages that only exist in your client; exact, since it's too big for a number */
 export const localSnowflake = () => String(BigInt(Date.now() - 1420070400000) << 22n | BigInt(Math.floor(Math.random() * 4194304)));
 
+// Discord's UnfurledMediaItem loading state: UNKNOWN. A local message has not been unfurled by Discord's servers.
+const UNKNOWN_MEDIA_LOADING_STATE = 0;
+
+function normalizeUnfurledMediaItem(item: any) {
+    if (!item || typeof item !== "object" || Array.isArray(item) || typeof item.url !== "string") return item;
+    const proxyUrl = item.proxyUrl ?? item.proxy_url ?? item.url;
+    const loadingState = item.loadingState ?? item.loading_state ?? UNKNOWN_MEDIA_LOADING_STATE;
+    if (item.proxyUrl === proxyUrl && item.proxy_url === proxyUrl && item.loadingState === loadingState && item.loading_state === loadingState) return item;
+    return { ...item, proxyUrl, proxy_url: proxyUrl, loadingState, loading_state: loadingState };
+}
+
+function normalizeComponentMedia(component: any): any {
+    if (!component || typeof component !== "object" || Array.isArray(component)) return component;
+    let normalized = component;
+    const set = (key: string, value: any) => {
+        if (value !== component[key]) {
+            if (normalized === component) normalized = { ...component };
+            normalized[key] = value;
+        }
+    };
+
+    if (component.type === 11) set("media", normalizeUnfurledMediaItem(component.media));
+    if (component.type === 12 && Array.isArray(component.items)) {
+        const items = component.items.map((item: any) => {
+            if (!item || typeof item !== "object") return item;
+            const media = normalizeUnfurledMediaItem(item.media);
+            return media === item.media ? item : { ...item, media };
+        });
+        if (items.some((item: any, index: number) => item !== component.items[index])) set("items", items);
+    }
+    if (component.type === 13) set("file", normalizeUnfurledMediaItem(component.file));
+    if (Array.isArray(component.components)) {
+        const children = component.components.map(normalizeComponentMedia);
+        if (children.some((child: any, index: number) => child !== component.components[index])) set("components", children);
+    }
+    if (component.accessory) set("accessory", normalizeComponentMedia(component.accessory));
+    return normalized;
+}
+
+function normalizeEmbedMedia(embed: any): any {
+    if (!embed || typeof embed !== "object" || Array.isArray(embed)) return embed;
+    let normalized = embed;
+    for (const key of ["image", "thumbnail", "video"]) {
+        const media = normalizeUnfurledMediaItem(embed[key]);
+        if (media !== embed[key]) {
+            if (normalized === embed) normalized = { ...embed };
+            normalized[key] = media;
+        }
+    }
+    return normalized;
+}
+
+// This boundary handles locally injected media only. Ordinary attachment objects and Discord-received messages keep their API data unchanged.
+function mapIfChanged(items: any[], mapItem: (item: any) => any) {
+    let changed = false;
+    const mapped = items.map(item => {
+        const next = mapItem(item);
+        if (next !== item) changed = true;
+        return next;
+    });
+    return changed ? mapped : items;
+}
+
+function normalizeLocalMessageMedia(message: Record<string, any>) {
+    const components = Array.isArray(message.components) ? mapIfChanged(message.components, normalizeComponentMedia) : message.components;
+    const embeds = Array.isArray(message.embeds) ? mapIfChanged(message.embeds, normalizeEmbedMedia) : message.embeds;
+    if (components === message.components && embeds === message.embeds) return message;
+    return { ...message, components, embeds };
+}
+
 /** Puts a message into the chat that only you see, as if it was sent by someone (like 10MCord PC's FakeMessage) */
 export function receiveLocalMessage(channelId: string, message: Record<string, any>) {
-    (MessageActions()?.receiveMessage ?? messageUtil?.receiveMessage)?.(channelId, message);
+    (MessageActions()?.receiveMessage ?? messageUtil?.receiveMessage)?.(channelId, normalizeLocalMessageMedia(message));
 }
 
 // ---------------------------------------------------------------------------------------------------------------------

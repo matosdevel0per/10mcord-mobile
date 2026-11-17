@@ -514,6 +514,8 @@
     "Download All Attachments": "Descargar todos los archivos adjuntos",
     "Download Voice Message": "Descargar mensaje de voz",
     "Download every attachment of a message at once from the message menu": "Descarga todos los archivos adjuntos de un mensaje a la vez desde el menú del mensaje",
+    "Download server banner": "Descargar el banner del servidor",
+    "Download server icon": "Descargar el icono del servidor",
     "Download the fonts again": "Volver a descargar las fuentes",
     "Download voice messages from the message menu": "Descarga mensajes de voz desde el menú del mensaje",
     "Downloading {count} attachments": "Descargando {count} archivos adjuntos",

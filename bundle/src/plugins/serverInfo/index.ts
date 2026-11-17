@@ -18,12 +18,6 @@ const escapeMarkdown = (value: string) => [...value].map(character => "\\`*_{}[]
 const assetUrl = (base: string, id: string, hash: string, size = 2048) =>
     `${CDN}/${base}/${id}/${hash}.${hash.startsWith("a_") ? "gif" : "png"}?size=${size}`;
 
-const unfurledMediaItem = (url: string) => ({
-    url,
-    proxyUrl: url,
-    loadingState: 2,
-});
-
 export default definePlugin({
     id: "10MCord.server-info",
     name: "ServerInfo",
@@ -53,8 +47,9 @@ export default definePlugin({
                 const owner = getStore("UserStore")?.getUser?.(guild.ownerId);
                 const ownerName = owner?.globalName ?? owner?.global_name ?? owner?.username ?? guild.ownerId ?? t("Not available");
                 const icon = guild.icon ? assetUrl("icons", guild.id, guild.icon, 1024) : undefined;
+                const banner = guild.banner ? assetUrl("banners", guild.id, guild.banner) : undefined;
                 const images = [
-                    guild.banner && { url: assetUrl("banners", guild.id, guild.banner), description: t("Server banner") },
+                    banner && { url: banner, description: t("Server banner") },
                     guild.splash && { url: assetUrl("splashes", guild.id, guild.splash), description: t("Invite background") },
                     guild.discoverySplash && { url: assetUrl("discovery-splashes", guild.id, guild.discoverySplash), description: t("Discovery banner") },
                 ].filter(Boolean) as { url: string; description: string }[];
@@ -69,7 +64,7 @@ export default definePlugin({
                         ? {
                             type: 9,
                             components: [{ type: 10, content: `## ${escapeMarkdown(guild.name)}\n${t("Server information")}` }],
-                            accessory: { type: 11, media: unfurledMediaItem(icon), description: t("Server icon") },
+                            accessory: { type: 11, media: { url: icon }, description: t("Server icon") },
                         }
                         : { type: 10, content: `## ${escapeMarkdown(guild.name)}\n${t("Server information")}` },
                     { type: 14, divider: true, spacing: 1 },
@@ -81,7 +76,12 @@ export default definePlugin({
                     { type: 14, divider: true, spacing: 1 },
                     { type: 10, content: `**${t("Created")}**: <t:${created}:D> · <t:${created}:R>\n**${t("ID")}**: \`${guild.id}\`${guild.vanityURLCode ? `\n**${t("Vanity URL")}**: discord.gg/${guild.vanityURLCode}` : ""}` },
                 ];
-                if (images.length) components.push({ type: 12, items: images.map(image => ({ media: unfurledMediaItem(image.url), description: image.description })) });
+                if (images.length) components.push({ type: 12, items: images.map(image => ({ media: { url: image.url }, description: image.description })) });
+                const downloadButtons = [
+                    icon && { type: 2, style: 5, label: t("Download server icon"), url: icon },
+                    banner && { type: 2, style: 5, label: t("Download server banner"), url: banner },
+                ].filter(Boolean);
+                if (downloadButtons.length) components.push({ type: 1, components: downloadButtons });
 
                 const user = getStore("UserStore")?.getCurrentUser?.();
                 if (!user?.id) {

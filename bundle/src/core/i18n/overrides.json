@@ -9945,5 +9945,19 @@
         "es": "No se pudo cargar tu cuenta de Discord.",
         "fr": "Impossible de charger votre compte Discord.",
         "pt": "Não foi possível carregar sua conta do Discord."
+    },
+    "Download server banner": {
+        "tr": "Sunucu afişini indir",
+        "ru": "Скачать баннер сервера",
+        "es": "Descargar el banner del servidor",
+        "fr": "Télécharger la bannière du serveur",
+        "pt": "Baixar banner"
+    },
+    "Download server icon": {
+        "tr": "Sunucu simgesini indir",
+        "ru": "Скачать значок сервера",
+        "es": "Descargar el icono del servidor",
+        "fr": "Télécharger l’icône du serveur",
+        "pt": "Baixar ícone"
     }
 }

@@ -514,6 +514,8 @@
     "Download All Attachments": "Tüm Ekleri İndir",
     "Download Voice Message": "Sesli Mesajı İndir",
     "Download every attachment of a message at once from the message menu": "Bir mesajın tüm eklerini mesaj menüsünden tek seferde indir",
+    "Download server banner": "Sunucu afişini indir",
+    "Download server icon": "Sunucu simgesini indir",
     "Download the fonts again": "Yazı tiplerini yeniden indir",
     "Download voice messages from the message menu": "Sesli mesajları mesaj menüsünden indir",
     "Downloading {count} attachments": "{count} ek indiriliyor",
