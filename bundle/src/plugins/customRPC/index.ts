@@ -1,5 +1,5 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -26,7 +26,7 @@ export default definePlugin({
     tags: ["Customisation"],
     settings: {
         type: { type: "select", label: tx("Activity type"), default: "0", options: ACTIVITY_TYPES },
-        name: { type: "string", label: tx("Name"), description: tx("The game or app name people see"), default: "10MCord" },
+        name: { type: "string", label: tx("Name"), description: tx("The game or app name people see"), default: "ShiftCord" },
         details: { type: "string", label: tx("Details"), description: tx("The first line under the name"), default: "" },
         state: { type: "string", label: tx("State"), description: tx("The second line under the name"), default: "" },
         largeImage: { type: "string", label: tx("Large image"), description: tx("A link to an image"), placeholder: "https://…", default: "" },
@@ -51,7 +51,7 @@ export default definePlugin({
             if (current !== generation) return;
             const buttons = [[store.button1Text, store.button1Url], [store.button2Text, store.button2Url]].filter(([text, url]) => text.trim() && /^https?:\/\//.test(url.trim()));
             setActivity(CUSTOM_RPC, {
-                name: store.name.trim() || "10MCord",
+                name: store.name.trim() || "ShiftCord",
                 application_id: appId,
                 type: Number(store.type),
                 flags: 1,

@@ -21,7 +21,7 @@ android {
         versionCode = versionName!!.removePrefix("v").split("-").first().replace(".", "").toInt()
 
 
-        buildConfigField("String", "MOD_NAME", "\"10MCord\"")
+        buildConfigField("String", "MOD_NAME", "\"ShiftCord\"")
         buildConfigField("String", "MANAGER_NAME", "\"10MCordInstaller\"")
         buildConfigField("String", "REPO", "\"matosdevel0per/10mcord-mobile\"")
         buildConfigField("String", "ORG_LINK", "\"https://github.com/matosdevel0per/10mcord-mobile/tree/next\"")
@@ -39,7 +39,7 @@ android {
             .orElse("https://raw.githubusercontent.com/matosdevel0per/10mcord-mobile/builds-next/10MCord-release.zip")
             .get()
         buildConfigField("String", "MOBILE_ARCHIVE_URL", "\"$mobileArchiveUrl\"")
-        // 10MCord Classic (on Aliucord's older Discord) is installed by its own installer, which is published next to
+        // ShiftCord Classic (on Aliucord's older Discord) is installed by its own installer, which is published next to
         // the loader. -P10MCord.classicInstallerUrl=... points at another copy.
         val classicInstallerUrl = providers.gradleProperty("10MCord.classicInstallerUrl")
             .orElse("${loaderUrl.substringBeforeLast('/')}/10MCord-classic-installer.apk")

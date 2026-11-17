@@ -1,6 +1,6 @@
-# 10MCord for iOS
+# ShiftCord for iOS
 
-The tweak that loads 10MCord into Discord on iPhone and iPad: the same bundle as on Android
+The tweak that loads ShiftCord into Discord on iPhone and iPad: the same bundle as on Android
 (`../bundle`), which it downloads from the `builds-next` branch. It needs Discord 332 or newer, where React Native
 runs bridgeless; the tweak starts the bundle from `RCTHost`'s `instance:didInitializeRuntime:` through JSI.
 
@@ -16,11 +16,11 @@ The iOS workflow (`.github/workflows/ios.yml`) builds it on macOS with [Theos](h
   secret, or else RainTweak's public IPA, pinned by hash, with RainTweak taken out of it (`scripts/remove-dylib.cjs`)
 
 On `next` they're published as the `ios-v<version>` release, whose files each new Discord replaces, and
-`builds-ios/apps.json` is the source AltStore and SideStore install and update 10MCord from:
+`builds-ios/apps.json` is the source AltStore and SideStore install and update ShiftCord from:
 `https://raw.githubusercontent.com/matosdevel0per/10mcord-mobile/builds-ios/apps.json`. For a new Discord, change the secret
 and re-run the latest iOS run on `next`.
 
-Shake the device for the recovery menu (safe mode, a custom bundle URL, deleting plugins or themes). 10MCord's files
+Shake the device for the recovery menu (safe mode, a custom bundle URL, deleting plugins or themes). ShiftCord's files
 are in the Files app too with `10MCord.ipa` (On My iPhone → 10MCord: `pyoncord`, and its settings in `vd_mmkv`).
 
 ## Tests
@@ -34,7 +34,7 @@ release is only published when it passes.
 
 Pushing to an `ios-real/` branch runs the real iOS Discord on the simulator (`Tests/real-discord.sh`, the `iOS real
 Discord` workflow): a decrypted device build runs on an Apple silicon simulator once its binaries are retagged for it,
-so the bundle's self-test starts and stops every plugin inside Discord itself, logged out, and screenshots 10MCord's
+so the bundle's self-test starts and stops every plugin inside Discord itself, logged out, and screenshots ShiftCord's
 pages. Nothing from it is published.
 
 ## Bundle signing

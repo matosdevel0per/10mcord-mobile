@@ -1,16 +1,16 @@
-# Developing 10MCord Mobile
+# Developing ShiftCord Mobile
 
-10MCord Mobile, for Android and iOS, is a fork of [Revenge](https://github.com/revenge-mod) and lives on the `next` branch of
-`10MCord-mobile`, next to the classic-app 10MCord on `main`; the two are separate apps and separate code.
+ShiftCord Mobile, for Android and iOS, is a fork of [Revenge](https://github.com/revenge-mod) and lives on the `next` branch of
+`10MCord-mobile`, next to the classic-app ShiftCord on `main`; the two are separate apps and separate code.
 [UPSTREAM.md](../UPSTREAM.md) lists the exact upstream commits.
 
 ## What is in this repository
 
 | Directory | What it is | Upstream |
 | --- | --- | --- |
-| `bundle/` | The JavaScript that runs inside Discord: 10MCord's plugins (`src/plugins`), the plugin system, settings UI, themes, fonts and translations (`src/core/i18n`). Built with Bun into `10MCord.min.js`. | revenge-bundle (BSD-3) |
+| `bundle/` | The JavaScript that runs inside Discord: ShiftCord's plugins (`src/plugins`), the plugin system, settings UI, themes, fonts and translations (`src/core/i18n`). Built with Bun into `10MCord.min.js`. | revenge-bundle (BSD-3) |
 | `android/loader/` | The Xposed module that loads the bundle into Discord. Works both embedded by the installer (no root) and as a regular LSPosed module (root). | revenge-xposed (GPL-3) |
-| `android/installer/` | 10MCord Installer: takes the installed or the latest Discord, embeds the loader with LSPatch, re-signs and installs it as a separate app. | revenge-manager (OSL-3) |
+| `android/installer/` | ShiftCord \| Installer: takes the installed or the latest Discord, embeds the loader with LSPatch, re-signs and installs it as a separate app. | revenge-manager (OSL-3) |
 | `ios/` | The tweak that loads the same bundle into Discord on iOS and iPadOS, with its tests. See [ios/README.md](../ios/README.md) | [RainTweak](https://codeberg.org/raincord/RainTweak) |
 
 Every push to `next` is built by the [Build workflow](../.github/workflows/build.yml) and published to the
@@ -35,11 +35,11 @@ cd android/installer && ./gradlew :app:assembleDebug
 ```
 
 Package names: the installer is `com.10MCord.installer.next`, the patched Discord is `com.10MCord.next` (the
-classic-app 10MCord uses `com.10MCord`, so both can be installed at once), the loader module is `com.10MCord.xposed`.
+classic-app ShiftCord uses `com.10MCord`, so both can be installed at once), the loader module is `com.10MCord.xposed`.
 
 ## Plugins
 
-10MCord's plugins live one per folder, like 10MCord PC's: `bundle/src/plugins/<pluginName>/index.ts(x)`, with what
+ShiftCord's plugins live one per folder, like ShiftCord PC's: `bundle/src/plugins/<pluginName>/index.ts(x)`, with what
 several plugins share in `bundle/src/plugins/shared/`. Each is defined with `definePlugin` from
 `bundle/src/plugins/api.ts`: a settings schema (the settings page is generated from it), `start` with a `cleanup`
 helper for every patch, and an optional extra settings component. Plugins find Discord's modules by their source path
@@ -47,20 +47,20 @@ helper for every patch, and an optional extra settings component. Plugins find D
 missing: a plugin that throws while starting is turned off with a notice, never crashing Discord. Most plugins use the
 shared hooks in `bundle/src/plugins/hooks.tsx` (`onSend`, `onIncomingMessage`, `onMessageRow`, `addMessageAction`,
 `command`), each patched into Discord once. The build generates `bundle/src/plugins/manifest.ts` from the plugin
-folders, so 10MCord starts knowing every plugin's name and description but loads a plugin's code only when it is
+folders, so ShiftCord starts knowing every plugin's name and description but loads a plugin's code only when it is
 turned on. The full list and how to write one are in [PLUGINS.md](PLUGINS.md).
 
 ## Translations
 
 User-visible text is English in the code, passed through `t()` (or marked with `tx()`). `bun run i18n` (or
-`node scripts/i18n-sync.mjs --pc <path to 10MCord PC>`) builds `src/core/i18n/locales/*.json` from 10MCord PC's
+`node scripts/i18n-sync.mjs --pc <path to ShiftCord PC>`) builds `src/core/i18n/locales/*.json` from ShiftCord PC's
 translations, with mobile-specific wording in `src/core/i18n/overrides.json`. CI fails if a string is untranslated.
 
 ## Testing
 
 The [Emulator test workflow](../.github/workflows/emulator.yml) runs on every push to a `ci/**` branch: it installs
-10MCord Installer on an Android emulator, installs 10MCord both by downloading Discord and from a pre-installed
-Discord (tapping through the installer like a user), launches 10MCord and runs the bundle's self-test (built with
+ShiftCord | Installer on an Android emulator, installs ShiftCord both by downloading Discord and from a pre-installed
+Discord (tapping through the installer like a user), launches ShiftCord and runs the bundle's self-test (built with
 `--test`) inside Discord. Screenshots, logs and the self-test report are pushed to the `test-results/<branch>` branch.
 The same push runs the Build workflow too, which builds everything a release does without publishing it.
 
@@ -73,7 +73,7 @@ The same push runs the Build workflow too, which builds everything a release doe
 - Installer releases: run **Release Installer** by hand with a version number, or push a `next-installer-v<version>`
   tag (`git tag next-installer-v1.0.1 && git push origin next-installer-v1.0.1`). It needs `INSTALLER_KEYSTORE`
   (base64), `INSTALLER_KEYSTORE_PASSWORD`, `INSTALLER_KEY_ALIAS` and `INSTALLER_KEY_PASSWORD`; with them, every push
-  to `next` signs its installer the same way, so one can update the other. The 10MCord Classic installer is signed
+  to `next` signs its installer the same way, so one can update the other. The ShiftCord Classic installer is signed
   with the same key, both in `builds-next` and in `main`'s own releases. The README's download links name the
   version, so update them with each release.
 - Without the secrets, every build is signed with a new throwaway key, and Android won't install one over another.

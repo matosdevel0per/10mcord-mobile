@@ -4,7 +4,7 @@ import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.ui.graphics.Color
 
-/** Monochrome 10MCord installer palette: black, white and neutral grays. */
+/** Monochrome ShiftCord installer palette: black, white and neutral grays. */
 object Ink {
     val Night = Color(0xFF0A0A0A)
     val Panel = Color(0xFF171717)

@@ -29,7 +29,7 @@ export default function Accounts() {
     function switchTo(identifier: string) {
         openAlert("10MCord-switch-account", <AlertModal
             title={t("Switch account?")}
-            content={t("10MCord will copy {account} and sign you out. Discord's normal login screen will open; enter your password there. 10MCord does not save passwords or login tokens.", { account: identifier })}
+            content={t("ShiftCord will copy {account} and sign you out. Discord's normal login screen will open; enter your password there. ShiftCord does not save passwords or login tokens.", { account: identifier })}
             actions={<AlertActions>
                 <AlertActionButton text={t("Copy and sign out")} variant="destructive" onPress={() => {
                     try {

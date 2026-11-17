@@ -1,5 +1,5 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -20,7 +20,7 @@ export type SettingDef =
 
 export type SettingsSchema = Record<string, SettingDef>;
 
-/** 10MCord PC's plugin tags that apply on mobile */
+/** ShiftCord PC's plugin tags that apply on mobile */
 export const PLUGIN_TAGS = ["Appearance", "Chat", "Customisation", "Emotes", "Friends", "Fun", "Media", "Notifications", "Privacy", "Servers", "Utility", "Voice"] as const;
 export type PluginTag = typeof PLUGIN_TAGS[number];
 
@@ -42,17 +42,17 @@ export interface PluginContext<S extends SettingsSchema> {
 export interface TenMCordPluginDefinition<S extends SettingsSchema = SettingsSchema> {
     /** Stable ID, used for its settings: 10MCord.<name> */
     id: string;
-    /** The plugin's name, the same as on 10MCord PC */
+    /** The plugin's name, the same as on ShiftCord PC */
     name: string;
     /** English, marked with tx() so it is translated where it is shown */
     description: string;
-    /** Position in 10MCord PC's list of popular plugins, which are listed first */
+    /** Position in ShiftCord PC's list of popular plugins, which are listed first */
     popular?: number;
     /** Named asset shown next to the name */
     icon?: string;
-    /** 10MCord PC's tags, for the plugin page's filters */
+    /** ShiftCord PC's tags, for the plugin page's filters */
     tags?: PluginTag[];
-    /** On until the user turns it off, also for those who had 10MCord before the plugin was added */
+    /** On until the user turns it off, also for those who had ShiftCord before the plugin was added */
     enabledByDefault?: boolean;
     settings?: S;
     start(ctx: PluginContext<S>): void | Promise<void>;
@@ -86,7 +86,7 @@ export function onSettingChange(store: object, cb: (key: string) => void) {
         try {
             cb(data.path[0]);
         } catch (e) {
-            console.error("[10MCord] setting listener failed", e);
+            console.error("[ShiftCord] setting listener failed", e);
         }
     };
     emitter.on("SET", listener);
@@ -155,7 +155,7 @@ function runCleanup(id: string, fn: () => unknown) {
     try {
         fn();
     } catch (e) {
-        console.error(`[10MCord] ${id}: cleanup failed`, e);
+        console.error(`[ShiftCord] ${id}: cleanup failed`, e);
     }
 }
 
@@ -195,7 +195,7 @@ export async function start10MCordPlugin(plugin: TenMCordPlugin) {
         recordPluginStart(plugin.id, Date.now() - started);
         plugin.error = undefined;
     } catch (e) {
-        console.error(`[10MCord] ${plugin.name} failed to start`, e);
+        console.error(`[ShiftCord] ${plugin.name} failed to start`, e);
         // Nothing to report for a plugin that was turned off meanwhile
         if (stopped()) return;
         plugin.error = e;
@@ -217,7 +217,7 @@ export function stop10MCordPlugin(plugin: TenMCordPlugin) {
             cleanup: () => { }
         });
     } catch (e) {
-        console.error(`[10MCord] ${plugin.name}: stop failed`, e);
+        console.error(`[ShiftCord] ${plugin.name}: stop failed`, e);
     }
     runCleanups(plugin.id);
 }

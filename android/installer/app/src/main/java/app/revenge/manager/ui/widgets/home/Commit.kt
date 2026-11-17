@@ -47,7 +47,7 @@ fun Commit(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 // Commits made with an email GitHub doesn't know have no account; their git name is used then
-                val name = commit.author?.username ?: commit.info.author?.name ?: "10MCord"
+                val name = commit.author?.username ?: commit.info.author?.name ?: "ShiftCord"
                 commit.author?.avatar?.let { avatar ->
                     AsyncImage(
                         model = avatar,

@@ -5,10 +5,10 @@ import app.revenge.manager.domain.manager.PreferenceManager
 
 object Constants {
     val TEAM_MEMBERS = listOf(
-        TeamMember("rootpoi", "10MCord", "rootpoii"),
+        TeamMember("rootpoi", "ShiftCord", "rootpoii"),
     )
 
-    /** The Revenge team, whose bundle, loader and manager 10MCord for Android is built on. */
+    /** The Revenge team, whose bundle, loader and manager ShiftCord for Android is built on. */
     val REVENGE_TEAM = listOf(
         TeamMember("Palm", "Lead developer of Revenge", "palmdevs"),
         TeamMember("oSumAtrIX", "Developer of Revenge", "osumatrix"),

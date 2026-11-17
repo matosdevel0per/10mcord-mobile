@@ -1,5 +1,5 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -22,7 +22,7 @@ type State =
     | { kind: "failed"; };
 
 /**
- * 10MCord PC's updater, for the bundle: the loader downloads the newest 10MCord whenever the app starts, so updating
+ * ShiftCord PC's updater, for the bundle: the loader downloads the newest ShiftCord whenever the app starts, so updating
  * means reloading once a newer build is published.
  */
 export default function Updates() {
@@ -46,7 +46,7 @@ export default function Updates() {
     };
 
     const status = {
-        idle: t("10MCord updates itself every time the app starts."),
+        idle: t("ShiftCord updates itself every time the app starts."),
         checking: t("Loading..."),
         current: t("Up to date"),
         available: t("There is 1 Update"),

@@ -23,7 +23,7 @@ async function initializeRevenge() {
 
         console.log(stack ?? e?.toString?.() ?? e);
         alert([
-            "Failed to load 10MCord!\n",
+            "Failed to load ShiftCord!\n",
             `Build Number: ${NativeClientInfoModule?.getConstants?.().Build}`,
             `10MCord: ${version}`,
             stack || e?.toString?.(),

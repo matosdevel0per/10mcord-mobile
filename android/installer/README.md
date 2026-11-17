@@ -33,7 +33,7 @@
    </a>
 </p>
 
-# 10MCord Installer
+# ShiftCord | Installer
 
 ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/revenge-mod/revenge-manager/release.yml)
 ![Open Software License 3](https://img.shields.io/badge/License-OSL%20v3-yellow.svg)

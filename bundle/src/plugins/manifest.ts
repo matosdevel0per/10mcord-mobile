@@ -1,5 +1,5 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
@@ -20,7 +20,7 @@ export interface PluginInfo {
 
 /** Every built-in plugin, without its code; their descriptions are in descriptions.json, loaded for the plugin list */
 export const manifest: PluginInfo[] = [
-    { id: "10MCord.10MCord-toolbox", name: "10MCordToolbox", icon: "WrenchIcon", tags: ["Utility"], hasSettings: true },
+    { id: "10MCord.10MCord-toolbox", name: "ShiftCord Toolbox", icon: "WrenchIcon", tags: ["Utility"], hasSettings: true },
     { id: "10MCord.advice", name: "Advice", icon: "ChatIcon", tags: ["Fun"] },
     { id: "10MCord.always-animate", name: "AlwaysAnimate", icon: "GifIcon", tags: ["Appearance", "Media"] },
     { id: "10MCord.always-trust", name: "AlwaysTrust", icon: "LinkIcon", tags: ["Utility"] },
@@ -134,7 +134,7 @@ export const manifest: PluginInfo[] = [
     { id: "10MCord.greet-sticker-picker", name: "GreetStickerPicker", icon: "StickerIcon", tags: ["Fun", "Emotes"], hasSettings: true },
     { id: "10MCord.guild-picker-dumper", name: "GuildPickerDumper", icon: "ReactionIcon", tags: ["Emotes", "Servers"] },
     { id: "10MCord.hash", name: "Hash", icon: "LockIcon", tags: ["Utility"] },
-    { id: "10MCord.hide-10MCord", name: "Hide10MCord", popular: 3, icon: "EyeSlashIcon", tags: ["Privacy", "Utility"], hasSettings: true },
+    { id: "10MCord.hide-10MCord", name: "Hide ShiftCord", popular: 3, icon: "EyeSlashIcon", tags: ["Privacy", "Utility"], hasSettings: true },
     { id: "10MCord.hide-media", name: "HideMedia", icon: "EyeSlashIcon", tags: ["Media", "Chat"] },
     { id: "10MCord.hide-messages", name: "HideMessages", icon: "EyeSlashIcon", tags: ["Chat", "Privacy"] },
     { id: "10MCord.hide-servers", name: "HideServers", icon: "EyeSlashIcon", tags: ["Servers"], hasSettings: true },

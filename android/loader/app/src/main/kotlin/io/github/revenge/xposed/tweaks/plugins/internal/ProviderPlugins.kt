@@ -24,8 +24,8 @@ internal lateinit var DISCORD_VERSION: Version
 internal val apiProviderPlugin = internalPlugin(
     PluginManifest(
         id = API_DEPENDENCY_ID,
-        name = "10MCord Plugin API",
-        description = "Provides the 10MCord plugin API.",
+        name = "ShiftCord Plugin API",
+        description = "Provides the ShiftCord plugin API.",
         author = "Revenge",
         version = API_VERSION,
     ),

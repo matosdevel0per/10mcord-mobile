@@ -1,5 +1,5 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -42,7 +42,7 @@ const plugin = definePlugin({
                     message.timestamp = `${message.timestamp}  ${icons}`;
                 }
             } catch (e) {
-                console.error("[10MCord] PlatformIndicators couldn't decorate a message", e);
+                console.error("[ShiftCord] PlatformIndicators couldn't decorate a message", e);
             }
         }));
 

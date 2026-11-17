@@ -20,7 +20,7 @@ object Patcher {
             val spec = PatchSpec.builder()
                 .apks(apkPaths.map(::File))
                 .outputDir(outputDir)
-                // Signature bypass level 0: 10MCord doesn't need Discord's original signature
+                // Signature bypass level 0: ShiftCord doesn't need Discord's original signature
                 .sigBypassLevel(0)
                 .verbose(true)
                 .forceOverwrite(true)

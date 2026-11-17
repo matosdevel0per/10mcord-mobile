@@ -35,7 +35,7 @@ export function injectFluxInterceptor() {
                 res = entry.cb(payload);
             } catch (e) {
                 // One broken interceptor must not stop Discord from handling the action
-                console.error(`[10MCord] a Flux interceptor failed on ${payload?.type}`, e);
+                console.error(`[ShiftCord] a Flux interceptor failed on ${payload?.type}`, e);
                 continue;
             }
 

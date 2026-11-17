@@ -57,16 +57,16 @@ function AliucordNotice() {
     return <Card style={{ gap: 8 }}>
         <Text variant="text-md/semibold" color="text-strong">{t("Looking for Aliucord plugins?")}</Text>
         <Text variant="text-sm/medium" color="text-muted">
-            {t("Aliucord plugins only work on the older Discord that Aliucord is built on, so they can't run here. This 10MCord has 10MCord's own plugins for the latest Discord. For Aliucord plugins, use 10MCord Classic, which runs both.")}
+            {t("Aliucord plugins only work on the older Discord that Aliucord is built on, so they can't run here. This ShiftCord has ShiftCord's own plugins for the latest Discord. For Aliucord plugins, use ShiftCord Classic, which runs both.")}
         </Text>
         <View style={{ flexDirection: "row", gap: 8 }}>
-            <Button size="sm" variant="secondary" text={t("Get 10MCord Classic")} icon={findAssetId("LinkExternalSmallIcon")} onPress={() => Linking.openURL(CLASSIC_URL)} />
+            <Button size="sm" variant="secondary" text={t("Get ShiftCord Classic")} icon={findAssetId("LinkExternalSmallIcon")} onPress={() => Linking.openURL(CLASSIC_URL)} />
             <Button size="sm" variant="tertiary" text={t("Got it")} onPress={() => void (notices.aliucordDismissed = true)} />
         </View>
     </Card>;
 }
 
-/** Counters and filters, like 10MCord PC's plugin manager */
+/** Counters and filters, like ShiftCord PC's plugin manager */
 function FiltersHeader() {
     const f = useContext(FiltersContext);
     const navigation = NavigationNative.useNavigation();
@@ -137,9 +137,9 @@ function PluginPage(props: PluginPageProps) {
     />;
 }
 
-/** 10MCord's popular plugins first, in 10MCord PC's order, then 10MCord's others, then installed plugins, by name */
+/** ShiftCord's popular plugins first, in ShiftCord PC's order, then ShiftCord's others, then installed plugins, by name */
 function byPopularity(a: UnifiedPluginModel, b: UnifiedPluginModel) {
-    const rank = (p: UnifiedPluginModel) => p.popular ?? (p["10MCord"] ? 1000 : 2000);
+    const rank = (p: UnifiedPluginModel) => p.popular ?? (p.ShiftCord ? 1000 : 2000);
     return rank(a) - rank(b) || compareNames(a.name, b.name);
 }
 
@@ -152,9 +152,9 @@ export default function Plugins() {
     const [tag, setTag] = useState<string | null>(null);
 
     const vdPlugins = Object.values(VdPluginManager.plugins).map(unifyVdPlugin);
-    // Core plugins stay hidden, except 10MCord's own, which users turn on and off
+    // Core plugins stay hidden, except ShiftCord's own, which users turn on and off
     const bnPlugins = [...registeredPlugins.values()]
-        .filter(p => isPluginInstalled(p.id) && (!isCorePlugin(p.id) || p.extras?.["10MCord"]))
+        .filter(p => isPluginInstalled(p.id) && (!isCorePlugin(p.id) || p.extras?.ShiftCord))
         .map(unifyBunnyPlugin);
     const all = [...bnPlugins, ...vdPlugins].sort(byPopularity);
 

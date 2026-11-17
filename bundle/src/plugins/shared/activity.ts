@@ -1,9 +1,9 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
- * 10MCord PC's status, activity and sound plugins: statuses that follow what you're doing, what your profile shows,
+ * ShiftCord PC's status, activity and sound plugins: statuses that follow what you're doing, what your profile shows,
  * voice volumes, and Discord's own sounds.
  *
  * What more than one of these plugins uses.

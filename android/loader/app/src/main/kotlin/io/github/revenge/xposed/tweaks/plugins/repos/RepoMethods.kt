@@ -168,7 +168,7 @@ internal fun internalRepoJSPayload(): Map<String, Any?> = mapOf(
     "url" to INTERNAL_REPO_URL,
     "enabled" to true,
     "internal" to true,
-    "name" to "10MCord",
+    "name" to "ShiftCord",
     "description" to "Plugins built into 10MCord.",
     "icon" to null,
 )

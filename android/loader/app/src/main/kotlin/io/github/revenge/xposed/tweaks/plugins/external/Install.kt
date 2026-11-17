@@ -189,7 +189,7 @@ internal fun extractPluginZip(input: InputStream, root: File, tmpName: String): 
             val manifestEntry = zip.getEntry(MANIFEST_FILE)
                 ?: throw PluginSystemError(
                     PluginErrorCodes.INSTALL_INVALID_ZIP,
-                    "Not an 10MCord plugin ZIP: missing $MANIFEST_FILE",
+                    "Not an ShiftCord plugin ZIP: missing $MANIFEST_FILE",
                 )
 
             val manifest = try {

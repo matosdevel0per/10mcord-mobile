@@ -144,9 +144,9 @@ class HomeViewModel(
         }
     }
 
-    // 10MCord Classic --------------------------------------------------------------------------------------------------
+    // ShiftCord Classic --------------------------------------------------------------------------------------------------
 
-    /** Whether 10MCord Classic Installer is on the phone */
+    /** Whether ShiftCord Classic Installer is on the phone */
     var classicInstallerInstalled by mutableStateOf(isClassicInstallerInstalled())
         private set
     var isGettingClassic by mutableStateOf(false)
@@ -161,7 +161,7 @@ class HomeViewModel(
         classicInstallerInstalled = isClassicInstallerInstalled()
     }
 
-    /** Opens 10MCord Classic Installer, or downloads and installs it first */
+    /** Opens ShiftCord Classic Installer, or downloads and installs it first */
     fun openOrGetClassicInstaller() {
         refreshClassic()
         val intent = context.packageManager.getLaunchIntentForPackage(BuildConfig.CLASSIC_INSTALLER_PACKAGE)

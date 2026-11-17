@@ -1,4 +1,4 @@
-import TenMCordIcon from "@assets/icons/10MCord.png";
+import ShiftCordIcon from "@assets/icons/ShiftCord.png";
 import { Strings } from "@core/i18n";
 import { useProxy } from "@core/vendetta/storage";
 import { findAssetId } from "@lib/api/assets";
@@ -7,7 +7,7 @@ import { settings } from "@lib/api/settings";
 import { registerSection } from "@ui/settings";
 import { version } from "bunny-build-info";
 
-export { TenMCordIcon };
+export { ShiftCordIcon };
 
 export default function initSettings() {
 

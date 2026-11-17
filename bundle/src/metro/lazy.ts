@@ -90,7 +90,7 @@ export function patchWhenLoaded<T>(lazyModule: T, patch: (module: T) => (() => u
         try {
             undo = patch(module);
         } catch (e) {
-            console.error(`[10MCord] Couldn't patch ${context.filter.uniq}`, e);
+            console.error(`[ShiftCord] Couldn't patch ${context.filter.uniq}`, e);
         }
     });
     return () => {

@@ -28,7 +28,7 @@ class UpdateWorker(
     override suspend fun doWork(): Result {
         if (prefs.discordVersion.isNotBlank()) return Result.success()
 
-        // The worker outlives the screens, so the installed 10MCord is looked up again each time
+        // The worker outlives the screens, so the installed ShiftCord is looked up again each time
         installManager.getInstalled()
         val currentVersion = DiscordVersion.fromVersionCode(installManager.current?.versionCode.toString())
             ?: return Result.success()

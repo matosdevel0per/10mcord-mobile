@@ -537,7 +537,7 @@ ${e.stack}` : String(e) });
 
     await check("hide-10MCord hides 10MCord's settings sections", async () => {
         const { getVisibleSections } = require("@ui/settings");
-        const plugin = byName("Hide10MCord");
+        const plugin = byName("Hide ShiftCord");
         await start10MCordPlugin(plugin);
         const store = plugin.store as any;
         const previous = store.hidden;

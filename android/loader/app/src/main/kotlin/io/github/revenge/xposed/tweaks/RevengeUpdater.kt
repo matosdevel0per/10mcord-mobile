@@ -45,7 +45,7 @@ object RevengeUpdater {
     private const val RELEASE_MANIFEST = "10MCord-release.json"
     private const val RELEASE_SIGNATURE = "10MCord-release.sig"
     private const val RELEASE_SEQUENCE = "release-sequence"
-    /** Where the 10MCord bundle is published; overridable at build time with `-P10MCord.bundleUrl=...` for testing. */
+    /** Where the ShiftCord bundle is published; overridable at build time with `-P10MCord.bundleUrl=...` for testing. */
     private const val DEFAULT_BUNDLE_URL = BuildConfig.BUNDLE_URL
 
     private val log = logger("revengeUpdater")
@@ -243,7 +243,7 @@ object RevengeUpdater {
                         downloadManifest()
 
                         if (userInitiated) showSuccessDialog()
-                        // 10MCord already started from the copy it had: the update applies on a reload
+                        // ShiftCord already started from the copy it had: the update applies on a reload
                         else if (showDialog || bundleLoaded) showUpdateDialog()
                     }
 
@@ -253,7 +253,7 @@ object RevengeUpdater {
             }
         } catch (e: Throwable) {
             log.e("Failed to download script", e)
-            // With a downloaded copy 10MCord still starts, so a failed update check (offline, say) stays quiet
+            // With a downloaded copy ShiftCord still starts, so a failed update check (offline, say) stays quiet
             if (userInitiated || !hasUsableBundle()) showErrorDialog(e)
         } finally {
             _downloadReady.complete(Unit)

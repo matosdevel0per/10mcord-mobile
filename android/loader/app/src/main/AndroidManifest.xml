@@ -13,7 +13,7 @@
                 android:value="true"/>
         <meta-data
                 android:name="xposeddescription"
-                android:value="10MCord for the current Discord Android app: loads the 10MCord bundle and its plugins into Discord. Based on Revenge."/>
+                android:value="ShiftCord for the current Discord Android app: loads the ShiftCord bundle and its plugins into Discord. Based on Revenge."/>
         <meta-data
                 android:name="xposedminversion"
                 android:value="82"/>

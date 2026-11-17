@@ -1,9 +1,9 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
- * Pages of a plugin's own, like the windows 10MCord PC's plugins open.
+ * Pages of a plugin's own, like the windows ShiftCord PC's plugins open.
  */
 
 import { findByProps } from "@metro";
@@ -12,7 +12,7 @@ import type { ComponentType } from "react";
 export type PageComponent = ComponentType<{ close: () => void; }>;
 
 /**
- * Opens a page: inside Discord's settings, as the settings' next page; anywhere else (the chat, 10MCordToolbox), as a
+ * Opens a page: inside Discord's settings, as the settings' next page; anywhere else (the chat, ShiftCord Toolbox), as a
  * full-screen window with a close button, since the settings' pages can't be reached from outside them.
  */
 export function openPage(title: string, Page: PageComponent, navigation?: any) {

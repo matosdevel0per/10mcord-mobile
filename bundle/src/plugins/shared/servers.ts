@@ -1,9 +1,9 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
- * Server tools from 10MCord PC: moderation, roles, invites, emojis and finding your way around servers.
+ * Server tools from ShiftCord PC: moderation, roles, invites, emojis and finding your way around servers.
  *
  * What more than one of the AutoDisconnectAndAutoMute, BetterBanReasons, BetterRoleContext, InviteDefaults and MoreUserTags plugins uses.
  */

@@ -151,7 +151,7 @@ static BOOL savedBundleIsSigned(NSData *bundle)
 }
 
 /**
- * The saved bundle, if this Discord can run it and it came from where 10MCord loads from now. After Discord moves to a
+ * The saved bundle, if this Discord can run it and it came from where ShiftCord loads from now. After Discord moves to a
  * newer Hermes, the bytecode saved for the old one is as good as missing; so is a bundle from a custom URL that has
  * been turned off since, or the other way around. A published one has to match its signed release too.
  */
@@ -164,7 +164,7 @@ static NSData *usableSavedBundle(void)
     NSString *source = savedBundleSource()[0];
     if (source && ![[bundleURLs() valueForKey:@"absoluteString"] containsObject:source])
     {
-        BunnyLog(@"The saved bundle is from %@, which 10MCord doesn't load from now", source);
+        BunnyLog(@"The saved bundle is from %@, which ShiftCord doesn't load from now", source);
         return nil;
     }
     if (!canRunBundle(bundle, source ?: @"the saved bundle")) return nil;
@@ -404,7 +404,7 @@ static void forwardConsoleIfAsked(jsi::Runtime &runtime)
         [originalHook](jsi::Runtime &rt, const jsi::Value &thisVal, const jsi::Value *args, size_t count) -> jsi::Value {
             if (count > 0 && args[0].isString())
             {
-                NSLog(@"[10MCord JS] %@", [JSI toNSString:args[0] runtime:rt]);
+                NSLog(@"[ShiftCord JS] %@", [JSI toNSString:args[0] runtime:rt]);
             }
             if (originalHook->isObject() && originalHook->asObject(rt).isFunction(rt))
             {
@@ -516,7 +516,7 @@ static void load10MCord(jsi::Runtime &runtime)
     injectPreBundle(runtime);
 
     // Starts with the saved bundle and updates it for the next start. Without one (the first start, or Discord moved
-    // to a newer Hermes) this start waits for the download, so 10MCord is there from the first time Discord opens.
+    // to a newer Hermes) this start waits for the download, so ShiftCord is there from the first time Discord opens.
     NSData *bundle = usableSavedBundle();
     if (bundle)
     {
@@ -530,9 +530,9 @@ static void load10MCord(jsi::Runtime &runtime)
 
     if (!bundle)
     {
-        showErrorAlert(@"10MCord couldn't load",
-                       releaseRefused ? @"The download didn't pass 10MCord's security check, so it wasn't run."
-                                      : @"10MCord couldn't be downloaded. Check your connection and open Discord again.",
+        showErrorAlert(@"ShiftCord couldn't load",
+                       releaseRefused ? @"The download didn't pass ShiftCord's security check, so it wasn't run."
+                                      : @"ShiftCord couldn't be downloaded. Check your connection and open Discord again.",
                        nil);
         return;
     }
@@ -540,7 +540,7 @@ static void load10MCord(jsi::Runtime &runtime)
     NSString *error = [JSI evaluate:bundle tag:@"10MCord:bundle" runtime:runtime];
     if (error)
     {
-        showErrorAlert(@"10MCord couldn't start",
+        showErrorAlert(@"ShiftCord couldn't start",
                        [NSString stringWithFormat:@"%@\n\nShake your device for the recovery menu.",
                                                   [error componentsSeparatedByString:@"\n"].firstObject],
                        nil);
@@ -555,7 +555,7 @@ static void load10MCord(jsi::Runtime &runtime)
 {
     %orig;
 
-    // Whatever goes wrong in 10MCord, Discord itself starts
+    // Whatever goes wrong in ShiftCord, Discord itself starts
     @try
     {
         try
@@ -564,12 +564,12 @@ static void load10MCord(jsi::Runtime &runtime)
         }
         catch (const std::exception &e)
         {
-            BunnyLog(@"Loading 10MCord threw %s", e.what());
+            BunnyLog(@"Loading ShiftCord threw %s", e.what());
         }
     }
     @catch (NSException *exception)
     {
-        BunnyLog(@"Loading 10MCord threw %@: %@", exception.name, exception.reason);
+        BunnyLog(@"Loading ShiftCord threw %@: %@", exception.name, exception.reason);
     }
 }
 
@@ -612,8 +612,8 @@ static void load10MCord(jsi::Runtime &runtime)
         if (!isRNNewArchEnabled() || !host || !class_getInstanceMethod(host, @selector(instance:didInitializeRuntime:)))
         {
             dispatch_async(dispatch_get_main_queue(), ^{
-                showErrorAlert(@"Discord is too old for 10MCord",
-                              @"10MCord needs Discord 332 or newer.",
+                showErrorAlert(@"Discord is too old for ShiftCord",
+                              @"ShiftCord needs Discord 332 or newer.",
                               nil);
             });
             return;

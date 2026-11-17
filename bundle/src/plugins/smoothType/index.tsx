@@ -1,5 +1,5 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -99,8 +99,8 @@ const plugin = definePlugin({
                 logger.error("The loader can't draw the caret", syncError, e);
                 // The iOS tweak draws it since 1.0.1; reinstalling is the Android installer's
                 throw new Error(Platform.OS === "ios"
-                    ? t("This needs a newer 10MCord. Install the latest 10MCord IPA.")
-                    : t("This needs a newer 10MCord. Install it again with 10MCord Installer."));
+                    ? t("This needs a newer ShiftCord. Install the latest ShiftCord IPA.")
+                    : t("This needs a newer ShiftCord. Install it again with ShiftCord Installer."));
             }
         }
         cleanup(

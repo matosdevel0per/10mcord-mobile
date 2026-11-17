@@ -127,7 +127,7 @@ def dismiss_dialogs():
 
 
 def install_flow(source):
-    """10MCord Installer from its home screen to an installed 10MCord."""
+    """ShiftCord Installer from its home screen to an installed 10MCord."""
     screenshot(f"installer-{source}-0-home")
     dismiss_dialogs()
     if source == "installed":

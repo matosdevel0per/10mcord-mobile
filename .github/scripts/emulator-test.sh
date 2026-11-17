@@ -61,14 +61,14 @@ launch_10MCord() {
     done
     adb logcat -d > "results/$name-logcat.txt"
     grep -o 'TENMCORD_TEST .*' "results/$name-logcat.txt" | sed 's/^TENMCORD_TEST //' > "results/$name-selftest.jsonl"
-    grep -iE 'ReactNativeJS|10MCord|LSPatch|AndroidRuntime|FATAL' "results/$name-logcat.txt" > "results/$name-logcat-10MCord.txt"
+    grep -iE 'ReactNativeJS|ShiftCord|LSPatch|AndroidRuntime|FATAL' "results/$name-logcat.txt" > "results/$name-logcat-10MCord.txt"
     python3 "$SCRIPTS/ui.py" shot "$name-final"
-    if grep -q '"kind":"done"' "results/$name-selftest.jsonl"; then pass "$name: 10MCord loaded and ran its self-test"; else fail "$name: no self-test report"; fi
+    if grep -q '"kind":"done"' "results/$name-selftest.jsonl"; then pass "$name: ShiftCord loaded and ran its self-test"; else fail "$name: no self-test report"; fi
     if grep -q "FATAL EXCEPTION" "results/$name-logcat.txt"; then fail "$name: the app crashed"; fi
     adb shell am force-stop $TENMCORD_PKG
 }
 
-step "Install 10MCord Installer"
+step "Install ShiftCord Installer"
 adb install -r -g installer.apk || fail "installer apk didn't install"
 adb shell appops set $INSTALLER_PKG REQUEST_INSTALL_PACKAGES allow
 adb shell appops set $INSTALLER_PKG MANAGE_EXTERNAL_STORAGE allow
@@ -84,12 +84,12 @@ else
     fail "download: installer didn't finish"
 fi
 adb logcat -d > results/installer-download-logcat.txt
-adb shell pm list packages | grep -q "$TENMCORD_PKG" && pass "download: 10MCord installed" || fail "download: 10MCord not installed"
+adb shell pm list packages | grep -q "$TENMCORD_PKG" && pass "download: ShiftCord installed" || fail "download: ShiftCord not installed"
 adb shell am force-stop $INSTALLER_PKG
 endstep
 
 if adb shell pm list packages | grep -q "$TENMCORD_PKG"; then
-    step "Launch 10MCord (downloaded Discord)"
+    step "Launch ShiftCord (downloaded Discord)"
     launch_10MCord download
     endstep
 fi
@@ -106,7 +106,7 @@ if [ -d discord ]; then
         fail "installed: installer didn't finish"
     fi
     adb logcat -d > results/installer-installed-logcat.txt
-    adb shell pm list packages | grep -q "$TENMCORD_PKG" && pass "installed: 10MCord installed" || fail "installed: 10MCord not installed"
+    adb shell pm list packages | grep -q "$TENMCORD_PKG" && pass "installed: ShiftCord installed" || fail "installed: ShiftCord not installed"
     adb shell am force-stop $INSTALLER_PKG
     if adb shell pm list packages | grep -q "$TENMCORD_PKG"; then
         launch_10MCord installed
@@ -116,7 +116,7 @@ fi
 endstep
 
 step "Signed releases: what the loader refuses"
-# Starts 10MCord with the server serving something it shouldn't, and looks for the loader's refusal in the log
+# Starts ShiftCord with the server serving something it shouldn't, and looks for the loader's refusal in the log
 expect_refusal() {
     local name=$1 message=$2
     adb shell am force-stop $TENMCORD_PKG
@@ -129,7 +129,7 @@ expect_refusal() {
         if grep -q "$message" "results/refused-$name-logcat.txt"; then found=1; break; fi
     done
     [ -n "$found" ] && pass "refused: $name" || fail "not refused: $name"
-    adb shell pidof $TENMCORD_PKG > /dev/null && pass "$name: 10MCord still running" || fail "$name: 10MCord stopped"
+    adb shell pidof $TENMCORD_PKG > /dev/null && pass "$name: ShiftCord still running" || fail "$name: ShiftCord stopped"
 }
 if adb shell pm list packages | grep -q "$TENMCORD_PKG"; then
     cp serve/10MCord-release.json results/release-good.json
@@ -148,7 +148,7 @@ fi
 endstep
 
 # The loader asks for the bundle precompiled for this Discord's bytecode version first, and the plain one without it
-grep -oE '"GET /(pinned/)?10MCord[^ ]* HTTP/1\.[01]" [0-9]+' results/http.log | sort | uniq -c > results/bundle-requests.txt
+grep -oE '"GET /(pinned/)?ShiftCord[^ ]* HTTP/1\.[01]" [0-9]+' results/http.log | sort | uniq -c > results/bundle-requests.txt
 if grep -qE '"GET /pinned/10MCord\.v[0-9]+\.hbc HTTP/1\.[01]" 200' results/http.log; then
     pass "the bytecode bundle was loaded, from the signed release's own address"
 else

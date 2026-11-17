@@ -1,5 +1,5 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
@@ -129,7 +129,7 @@ const plugin = definePlugin({
                 try {
                     styleRow(row, args[0], (a: any) => original.call(this, a));
                 } catch (e) {
-                    console.error("[10MCord] MessageLogger couldn't style a message", e);
+                    console.error("[ShiftCord] MessageLogger couldn't style a message", e);
                 }
                 return row;
             }),

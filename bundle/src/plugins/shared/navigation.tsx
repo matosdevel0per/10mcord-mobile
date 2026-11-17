@@ -1,9 +1,9 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
- * 10MCord PC's plugins for getting around the app: pinning and hiding DMs and servers, recent channels, counts, themes,
+ * ShiftCord PC's plugins for getting around the app: pinning and hiding DMs and servers, recent channels, counts, themes,
  * hiding the chat while you share your screen, and quick actions.
  *
  * What more than one of these plugins uses.

@@ -1,9 +1,9 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
- * Helpers shared by 10MCord's plugins. Everything that touches Discord's modules is resolved lazily and tolerates the
+ * Helpers shared by ShiftCord's plugins. Everything that touches Discord's modules is resolved lazily and tolerates the
  * module not being there, so a Discord update can turn a feature off but never crash the app.
  */
 
@@ -57,7 +57,7 @@ export function subscribe(type: string, cb: (payload: any) => void) {
         try {
             cb(payload);
         } catch (e) {
-            console.error(`[10MCord] ${type} listener failed`, e);
+            console.error(`[ShiftCord] ${type} listener failed`, e);
         }
     };
     FluxDispatcher.subscribe(type, listener);
@@ -70,7 +70,7 @@ export function dispatchSoon(action: Record<string, any>) {
         try {
             FluxDispatcher.dispatch(action);
         } catch (e) {
-            console.error(`[10MCord] dispatching ${action.type} failed`, e);
+            console.error(`[ShiftCord] dispatching ${action.type} failed`, e);
         }
     }, 0);
 }
@@ -115,7 +115,7 @@ function insertButtons(tree: ReactElement, side: "left" | "right") {
             else children.unshift(element);
         }
     } catch (e) {
-        console.error("[10MCord] adding chat input buttons failed", e);
+        console.error("[ShiftCord] adding chat input buttons failed", e);
     }
     return tree;
 }
@@ -128,7 +128,7 @@ function patchChatInput() {
         // A memo on Android, a memo of a forwardRef on iOS
         const unpatch = actions?.default && afterRender(actions, "default", (_, tree) => insertButtons(tree, side));
         if (unpatch) unpatches.push(unpatch);
-        else console.warn(`[10MCord] chat input ${side} actions not found; plugin buttons won't show there`);
+        else console.warn(`[ShiftCord] chat input ${side} actions not found; plugin buttons won't show there`);
     }
     unpatchChatInput = () => unpatches.forEach(u => u());
 }
@@ -169,14 +169,14 @@ export interface ToolboxAction {
 
 const toolboxActions = new Map<string, ToolboxAction>();
 
-/** Adds an entry to 10MCordToolbox's menu while the plugin runs, like 10MCord PC's toolboxActions */
+/** Adds an entry to ShiftCord Toolbox's menu while the plugin runs, like ShiftCord PC's toolboxActions */
 export function addToolboxAction(key: string, action: ToolboxAction) {
     toolboxActions.set(key, action);
     return () => void toolboxActions.delete(key);
 }
 
 /**
- * Adds a page to 10MCord's section of Discord's settings while the plugin runs, like the entries 10MCord PC's
+ * Adds a page to ShiftCord's section of Discord's settings while the plugin runs, like the entries ShiftCord PC's
  * plugins add to its settings. It shows from the next time the settings open.
  */
 export function addSettingsPage(key: string, page: { title: () => string; icon: string; Page: ComponentType; after?: "BUNNY_PLUGINS" | "BUNNY_THEMES" | "BUNNY_FONTS"; }) {

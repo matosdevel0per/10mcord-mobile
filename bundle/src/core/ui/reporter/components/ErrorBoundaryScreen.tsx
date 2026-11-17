@@ -34,7 +34,7 @@ export default function ErrorBoundaryScreen(props: {
             <SafeAreaView style={styles.container}>
                 <View style={{ gap: 4 }}>
                     <Text variant="display-lg">{Strings.UH_OH}</Text>
-                    <Text variant="text-md/normal">{t("Part of the screen crashed while drawing. A plugin, 10MCord or Discord itself can cause this.")}</Text>
+                    <Text variant="text-md/normal">{t("Part of the screen crashed while drawing. A plugin, ShiftCord or Discord itself can cause this.")}</Text>
                     <Text variant="text-sm/normal" color="text-muted">{debugInfo.os.name}; {debugInfo.discord.build} ({debugInfo.discord.version}); {debugInfo.bunny.version}</Text>
                 </View>
                 <ScrollView fadingEdgeLength={64} contentContainerStyle={{ gap: 12 }}>

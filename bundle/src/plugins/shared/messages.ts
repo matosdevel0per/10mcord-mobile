@@ -1,9 +1,9 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
- * More of 10MCord PC's message plugins: links to messages, spoilers, emojis, quotes, secret messages and archives.
+ * More of ShiftCord PC's message plugins: links to messages, spoilers, emojis, quotes, secret messages and archives.
  *
  * What more than one of these plugins uses.
  */

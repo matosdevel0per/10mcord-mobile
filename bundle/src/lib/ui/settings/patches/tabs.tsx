@@ -12,10 +12,10 @@ const settingConstants = findByPropsLazy("SETTING_RENDERER_CONFIG");
 const createListModule = findByPropsLazy("createList");
 const SettingsOverviewScreen = findByNameLazy("SettingsOverviewScreen", false);
 
-/** Marks the sections 10MCord adds, whose titles change with the language */
+/** Marks the sections ShiftCord adds, whose titles change with the language */
 const OURS = "__10MCordSection";
 
-/** Takes 10MCord's sections out of Discord's list of settings sections */
+/** Takes ShiftCord's sections out of Discord's list of settings sections */
 function removeOurSections(sections: any[]) {
     // And by title, in case Discord copied the sections without the mark
     const titles = new Set(Object.keys(registeredSections).map(name => sectionOf(name).label));
@@ -101,7 +101,7 @@ export function patchTabsUI(unpatches: (() => void | boolean)[]) {
     }
 }
 
-/** Adds 10MCord's pages and rows to the renderer config of `constants`, Discord's module of its settings screens */
+/** Adds ShiftCord's pages and rows to the renderer config of `constants`, Discord's module of its settings screens */
 function patchRendererConfig(constants: any, getRows: () => Record<string, unknown>) {
     let rendererConfigValue = constants.SETTING_RENDERER_CONFIG;
 

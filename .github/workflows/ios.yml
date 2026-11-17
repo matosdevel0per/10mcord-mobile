@@ -145,7 +145,7 @@ jobs:
             echo "$IPA_SHA256  $RUNNER_TEMP/discord.ipa" | shasum -a 256 -c -
           fi
 
-          # Discord alone goes in: a tweak the IPA came with would run next to 10MCord
+          # Discord alone goes in: a tweak the IPA came with would run next to ShiftCord
           mkdir "$RUNNER_TEMP/source"
           unzip -q "$RUNNER_TEMP/discord.ipa" -d "$RUNNER_TEMP/source"
           if [ -f "$RUNNER_TEMP/source/Payload/Discord.app/Frameworks/RainTweak.dylib" ]; then
@@ -165,9 +165,9 @@ jobs:
           node ios/scripts/cgbi-to-png.cjs "$RUNNER_TEMP/discord-icon.png" "$RUNNER_TEMP/icon.png"
 
           # -u: any device, -w: no watch app, -s: fakesigned for TrollStore, -g: without encrypted extensions, -q: arm64 only,
-          # -d: 10MCord's files in the Files app, which the recovery menu's Open App Folder opens
+          # -d: ShiftCord's files in the Files app, which the recovery menu's Open App Folder opens
           cyan -i "$RUNNER_TEMP/discord.ipa" -o 10MCord.ipa -f "$RUNNER_TEMP"/tweak/*.deb \
-            -n 10MCord -k "$RUNNER_TEMP/icon.png" -uwsgqd
+            -n ShiftCord -k "$RUNNER_TEMP/icon.png" -uwsgqd
           ls -l 10MCord.ipa
 
           mkdir "$RUNNER_TEMP/10MCord" && unzip -q 10MCord.ipa -d "$RUNNER_TEMP/10MCord"
@@ -178,12 +178,12 @@ jobs:
           sips -z 180 180 "$RUNNER_TEMP/icon.png" --out "$app/$icon@3x.png"
 
           # The screen share extension loads the tweak too, for the app group it shares with the app (Sideloading.x),
-          # and is listed as 10MCord beside the App Store Discord's. cyan injects the main app only.
+          # and is listed as ShiftCord beside the App Store Discord's. cyan injects the main app only.
           extension="$app/PlugIns/BroadcastUpload.appex"
           if [ -f "$extension/BroadcastUpload" ]; then
             tools=$(python -c 'from cyan import tbhutils; print(tbhutils.get_tools_dir()[1])')
             node ios/scripts/insert-dylib.cjs "$extension/BroadcastUpload" "$extension/BroadcastUpload" "@rpath/10MCord.dylib"
-            plutil -replace CFBundleDisplayName -string 10MCord "$extension/Info.plist"
+            plutil -replace CFBundleDisplayName -string ShiftCord "$extension/Info.plist"
             # cyan's -s, again for this binary, for TrollStore; other installers sign it themselves
             "$tools/ldid" -S -M "$extension/BroadcastUpload" || echo "::warning::The extension isn't fakesigned"
           else
@@ -198,7 +198,7 @@ jobs:
             exit 1
           fi
           if ! otool -L "$app/Discord" | grep -q 10MCord.dylib; then
-            echo "::error::Discord doesn't load 10MCord"
+            echo "::error::Discord doesn't load ShiftCord"
             exit 1
           fi
 
@@ -217,7 +217,7 @@ jobs:
             exit 1
           fi
           echo "All $(wc -l < "$RUNNER_TEMP/needed.txt") JSI symbols the tweak uses are exported by Discord $version"
-          # The tweak loads 10MCord from RCTHost's instance:didInitializeRuntime:, which bridgeless Discord calls
+          # The tweak loads ShiftCord from RCTHost's instance:didInitializeRuntime:, which bridgeless Discord calls
           if ! grep -rqa "instance:didInitializeRuntime:" "$app"; then
             echo "::error::Discord $version has no instance:didInitializeRuntime: for the tweak to hook"
             exit 1
@@ -361,8 +361,8 @@ jobs:
           files=(10MCord.dylib *.deb)
           if [ -n "$DISCORD_VERSION" ]; then
             files=(10MCord.ipa "${files[@]}")
-            title="10MCord for iOS $TWEAK_VERSION (Discord $DISCORD_VERSION)"
-            notes="10MCord $TWEAK_VERSION in Discord $DISCORD_VERSION, built from ${{ github.sha }}.
+            title="ShiftCord for iOS $TWEAK_VERSION (Discord $DISCORD_VERSION)"
+            notes="ShiftCord $TWEAK_VERSION in Discord $DISCORD_VERSION, built from ${{ github.sha }}.
 
           - **10MCord.ipa**: install it with AltStore, SideStore, Feather, ESign, KSign, Sideloadly or TrollStore
           - **10MCord.dylib**: to inject into your own decrypted Discord IPA (332 or newer)
@@ -370,8 +370,8 @@ jobs:
 
           AltStore and SideStore source: https://raw.githubusercontent.com/${{ github.repository }}/builds-ios/apps.json"
           else
-            title="10MCord for iOS $TWEAK_VERSION"
-            notes="10MCord $TWEAK_VERSION, built from ${{ github.sha }}.
+            title="ShiftCord for iOS $TWEAK_VERSION"
+            notes="ShiftCord $TWEAK_VERSION, built from ${{ github.sha }}.
 
           - **10MCord.dylib**: to inject into your own decrypted Discord IPA (332 or newer) with Feather, ESign, KSign or Sideloadly
           - **.deb**: for jailbroken devices (rootless)"
@@ -387,7 +387,7 @@ jobs:
           echo "TAG=$tag" >> "$GITHUB_ENV"
       - name: Update the AltStore source
         if: needs.ipa.outputs.discord-version != ''
-        # builds-ios holds only apps.json, which AltStore and SideStore add as a source and update 10MCord from. Its one
+        # builds-ios holds only apps.json, which AltStore and SideStore add as a source and update ShiftCord from. Its one
         # version is the release's current IPA, which every rebuild replaces at the same URL.
         run: |
           mkdir source
@@ -399,15 +399,15 @@ jobs:
           const app = JSON.parse(fs.readFileSync(`${RUNNER_TEMP}/out/app.json`, "utf8"));
           const icon = `https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/next/bundle/src/assets/icons/10MCord.png`;
           const source = {
-            name: "10MCord",
+            name: "ShiftCord",
             identifier: "com.10MCord.source",
             subtitle: "Plugins, themes and privacy for Discord",
             iconURL: icon,
             website: "https://10MCord.com",
             apps: [{
-              name: "10MCord",
+              name: "ShiftCord",
               bundleIdentifier: "com.hammerandchisel.discord",
-              developerName: "10MCord",
+              developerName: "ShiftCord",
               subtitle: "Plugins, themes and privacy for Discord",
               localizedDescription: "Discord with 10MCord: 300+ plugins, themes and five languages.",
               iconURL: icon,
@@ -431,5 +431,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add apps.json
-          git commit -qm "10MCord $TWEAK_VERSION in Discord $DISCORD_VERSION"
+          git commit -qm "ShiftCord $TWEAK_VERSION in Discord $DISCORD_VERSION"
           git push -qf "https://x-access-token:$GH_TOKEN@github.com/$GITHUB_REPOSITORY.git" builds-ios

@@ -19,7 +19,7 @@ import { patchSettings } from "@ui/settings";
 import * as lib from "./lib";
 
 export default async () => {
-    // Before Discord registers its root component, which happens as soon as 10MCord has loaded
+    // Before Discord registers its root component, which happens as soon as ShiftCord has loaded
     const unpatchOverlay = initOverlayHost();
     if (unpatchOverlay) lib.unload.push(unpatchOverlay);
 
@@ -61,5 +61,5 @@ export default async () => {
     if (__TENMCORD_TEST__) require("@core/debug/testHarness").initTestHarness();
 
     markReady();
-    logger.log("10MCord is ready!");
+    logger.log("ShiftCord is ready!");
 };

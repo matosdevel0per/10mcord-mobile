@@ -29,11 +29,11 @@
         "es": "¿Cargar el paquete desde tu propio enlace?",
         "fr": "Charger le bundle depuis votre propre lien ?"
     },
-    "This turns off 10MCord's signature check: whatever that link serves runs in Discord with everything your account can do. Only use a link you control.": {
-        "tr": "Bu, 10MCord'un imza kontrolünü kapatır: o linkin sunduğu her şey Discord'da hesabının yapabildiği her şeyle çalışır. Yalnızca senin kontrolündeki bir link kullan.",
-        "ru": "Это отключает проверку подписи 10MCord: всё, что отдаёт эта ссылка, выполняется в Discord со всеми правами вашего аккаунта. Используйте только ссылку, которую контролируете.",
-        "es": "Esto desactiva la comprobación de firma de 10MCord: todo lo que sirva ese enlace se ejecuta en Discord con todo lo que puede hacer tu cuenta. Usa solo un enlace que controles.",
-        "fr": "Cela désactive la vérification de signature d'10MCord : tout ce que sert ce lien s'exécute dans Discord avec tout ce que votre compte peut faire. N'utilisez qu'un lien que vous contrôlez."
+    "This turns off ShiftCord's signature check: whatever that link serves runs in Discord with everything your account can do. Only use a link you control.": {
+        "tr": "Bu, ShiftCord'un imza kontrolünü kapatır: o linkin sunduğu her şey Discord'da hesabının yapabildiği her şeyle çalışır. Yalnızca senin kontrolündeki bir link kullan.",
+        "ru": "Это отключает проверку подписи ShiftCord: всё, что отдаёт эта ссылка, выполняется в Discord со всеми правами вашего аккаунта. Используйте только ссылку, которую контролируете.",
+        "es": "Esto desactiva la comprobación de firma de ShiftCord: todo lo que sirva ese enlace se ejecuta en Discord con todo lo que puede hacer tu cuenta. Usa solo un enlace que controles.",
+        "fr": "Cela désactive la vérification de signature d'ShiftCord : tout ce que sert ce lien s'exécute dans Discord avec tout ce que votre compte peut faire. N'utilisez qu'un lien que vous contrôlez."
     },
     "Turn it on": {
         "tr": "Aç",
@@ -509,11 +509,11 @@
         "es": "Añade un botón junto al cuadro de mensaje y /gameactivity para mostrar u ocultar a qué juegas",
         "fr": "Ajoute un bouton à côté de la zone de message et /gameactivity pour afficher ou masquer ce à quoi vous jouez"
     },
-    "Adds a button beside the message box with 10MCord quick actions: reload, turn off plugins, debug info and safe mode": {
-        "tr": "Mesaj kutusunun yanına 10MCord hızlı işlemlerini içeren bir düğme ekler: yeniden yükle, eklenti kapat, hata ayıklama bilgisi ve güvenli mod",
-        "ru": "Добавляет кнопку рядом с полем ввода с быстрыми действиями 10MCord: перезагрузка, отключение плагинов, отладочная информация и безопасный режим",
-        "es": "Añade un botón junto al cuadro de mensaje con acciones rápidas de 10MCord: recargar, desactivar plugins, información de depuración y modo seguro",
-        "fr": "Ajoute un bouton à côté de la zone de message avec les actions rapides d'10MCord : recharger, désactiver des plugins, infos de débogage et mode sans échec"
+    "Adds a button beside the message box with ShiftCord quick actions: reload, turn off plugins, debug info and safe mode": {
+        "tr": "Mesaj kutusunun yanına ShiftCord hızlı işlemlerini içeren bir düğme ekler: yeniden yükle, eklenti kapat, hata ayıklama bilgisi ve güvenli mod",
+        "ru": "Добавляет кнопку рядом с полем ввода с быстрыми действиями ShiftCord: перезагрузка, отключение плагинов, отладочная информация и безопасный режим",
+        "es": "Añade un botón junto al cuadro de mensaje con acciones rápidas de ShiftCord: recargar, desactivar plugins, información de depuración y modo seguro",
+        "fr": "Ajoute un bouton à côté de la zone de message avec les actions rapides d'ShiftCord : recharger, désactiver des plugins, infos de débogage et mode sans échec"
     },
     "Adds your signature to the end of every message you send": {
         "tr": "Gönderdiğin her mesajın sonuna imzanı ekler",
@@ -557,11 +557,11 @@
         "es": "En emisión",
         "fr": "En cours"
     },
-    "Aliucord plugins only work on the older Discord that Aliucord is built on, so they can't run here. This 10MCord has 10MCord's own plugins for the latest Discord. For Aliucord plugins, use 10MCord Classic, which runs both.": {
-        "tr": "Aliucord eklentileri yalnızca Aliucord'un dayandığı eski Discord sürümünde çalışır, bu yüzden burada çalışamaz. Bu 10MCord, en yeni Discord için 10MCord'un kendi eklentilerini içerir. Aliucord eklentileri için ikisini de çalıştıran 10MCord Classic'i kullan.",
-        "ru": "Плагины Aliucord работают только на старой версии Discord, на которой основан Aliucord, поэтому здесь они не запустятся. В этом 10MCord есть собственные плагины 10MCord для последней версии Discord. Для плагинов Aliucord используйте 10MCord Classic — он поддерживает и те, и другие.",
-        "es": "Los plugins de Aliucord solo funcionan en el Discord antiguo en el que se basa Aliucord, así que aquí no pueden ejecutarse. Este 10MCord trae los plugins propios de 10MCord para el Discord más reciente. Para plugins de Aliucord, usa 10MCord Classic, que ejecuta ambos.",
-        "fr": "Les plugins Aliucord ne fonctionnent que sur l'ancien Discord sur lequel Aliucord est basé, ils ne peuvent donc pas tourner ici. Cet 10MCord propose les plugins d'10MCord pour le Discord le plus récent. Pour les plugins Aliucord, utilisez 10MCord Classic, qui gère les deux."
+    "Aliucord plugins only work on the older Discord that Aliucord is built on, so they can't run here. This ShiftCord has ShiftCord's own plugins for the latest Discord. For Aliucord plugins, use ShiftCord Classic, which runs both.": {
+        "tr": "Aliucord eklentileri yalnızca Aliucord'un dayandığı eski Discord sürümünde çalışır, bu yüzden burada çalışamaz. Bu ShiftCord, en yeni Discord için ShiftCord'un kendi eklentilerini içerir. Aliucord eklentileri için ikisini de çalıştıran ShiftCord Classic'i kullan.",
+        "ru": "Плагины Aliucord работают только на старой версии Discord, на которой основан Aliucord, поэтому здесь они не запустятся. В этом ShiftCord есть собственные плагины ShiftCord для последней версии Discord. Для плагинов Aliucord используйте ShiftCord Classic — он поддерживает и те, и другие.",
+        "es": "Los plugins de Aliucord solo funcionan en el Discord antiguo en el que se basa Aliucord, así que aquí no pueden ejecutarse. Este ShiftCord trae los plugins propios de ShiftCord para el Discord más reciente. Para plugins de Aliucord, usa ShiftCord Classic, que ejecuta ambos.",
+        "fr": "Les plugins Aliucord ne fonctionnent que sur l'ancien Discord sur lequel Aliucord est basé, ils ne peuvent donc pas tourner ici. Cet ShiftCord propose les plugins d'ShiftCord pour le Discord le plus récent. Pour les plugins Aliucord, utilisez ShiftCord Classic, qui gère les deux."
     },
     "All add-ons will be turned off until you leave safe mode.": {
         "tr": "Güvenli moddan çıkana kadar tüm eklentiler kapalı olacak.",
@@ -977,11 +977,11 @@
         "es": "Capullo",
         "fr": "Bourgeon"
     },
-    "Built into 10MCord as {name}": {
-        "tr": "10MCord'da {name} olarak yerleşik",
-        "ru": "Встроен в 10MCord как {name}",
-        "es": "Integrado en 10MCord como {name}",
-        "fr": "Intégré à 10MCord sous le nom {name}"
+    "Built into ShiftCord as {name}": {
+        "tr": "ShiftCord'da {name} olarak yerleşik",
+        "ru": "Встроен в ShiftCord как {name}",
+        "es": "Integrado en ShiftCord como {name}",
+        "fr": "Intégré à ShiftCord sous le nom {name}"
     },
     "Built-in is on": {
         "tr": "Yerleşik açık",
@@ -1236,10 +1236,10 @@
         "fr": "Effacer les données"
     },
     "Clear JS Bundle": {
-        "tr": "İndirilen 10MCord'u Temizle",
-        "ru": "Очистить загруженный 10MCord",
-        "es": "Borrar el 10MCord descargado",
-        "fr": "Effacer l'10MCord téléchargé"
+        "tr": "İndirilen ShiftCord'u Temizle",
+        "ru": "Очистить загруженный ShiftCord",
+        "es": "Borrar el ShiftCord descargado",
+        "fr": "Effacer l'ShiftCord téléchargé"
     },
     "Clear logged messages": {
         "tr": "Kaydedilen mesajları temizle",
@@ -1337,11 +1337,11 @@
         "es": "Plugins de la comunidad",
         "fr": "Plugins de la communauté"
     },
-    "Community plugins aren't checked by 10MCord. They can read and do anything your Discord account can, so only install ones you trust.": {
-        "tr": "Topluluk eklentileri 10MCord tarafından denetlenmez. Discord hesabının yapabildiği her şeyi okuyup yapabilirler, bu yüzden yalnızca güvendiklerini kur.",
-        "ru": "10MCord не проверяет плагины сообщества. Они могут читать и делать всё, что может ваш аккаунт Discord, поэтому устанавливайте только те, которым доверяете.",
-        "es": "10MCord no revisa los plugins de la comunidad. Pueden leer y hacer todo lo que puede tu cuenta de Discord, así que instala solo los que sean de confianza.",
-        "fr": "10MCord ne vérifie pas les plugins de la communauté. Ils peuvent lire et faire tout ce que peut votre compte Discord : n'installez que ceux en qui vous avez confiance."
+    "Community plugins aren't checked by ShiftCord. They can read and do anything your Discord account can, so only install ones you trust.": {
+        "tr": "Topluluk eklentileri ShiftCord tarafından denetlenmez. Discord hesabının yapabildiği her şeyi okuyup yapabilirler, bu yüzden yalnızca güvendiklerini kur.",
+        "ru": "ShiftCord не проверяет плагины сообщества. Они могут читать и делать всё, что может ваш аккаунт Discord, поэтому устанавливайте только те, которым доверяете.",
+        "es": "ShiftCord no revisa los plugins de la comunidad. Pueden leer y hacer todo lo que puede tu cuenta de Discord, así que instala solo los que sean de confianza.",
+        "fr": "ShiftCord ne vérifie pas les plugins de la communauté. Ils peuvent lire et faire tout ce que peut votre compte Discord : n'installez que ceux en qui vous avez confiance."
     },
     "Compare two servers you're in and see which members are in both, with /mutualmembers": {
         "tr": "Üye olduğun iki sunucuyu karşılaştır ve ikisinde de olan üyeleri /mutualmembers ile gör",
@@ -1949,11 +1949,11 @@
         "es": "Se borraron {count} mensajes.",
         "fr": "{count} messages supprimés."
     },
-    "Deletes the downloaded 10MCord, so the latest one is downloaded the next time the app starts.": {
-        "tr": "İndirilen 10MCord'u siler; uygulama bir sonraki açılışta en yeni sürümü indirir.",
-        "ru": "Удаляет загруженный 10MCord, чтобы при следующем запуске загрузилась последняя версия.",
-        "es": "Elimina el 10MCord descargado para que la próxima vez que se abra la app se descargue el más reciente.",
-        "fr": "Supprime l'10MCord téléchargé : la dernière version sera téléchargée au prochain démarrage."
+    "Deletes the downloaded ShiftCord, so the latest one is downloaded the next time the app starts.": {
+        "tr": "İndirilen ShiftCord'u siler; uygulama bir sonraki açılışta en yeni sürümü indirir.",
+        "ru": "Удаляет загруженный ShiftCord, чтобы при следующем запуске загрузилась последняя версия.",
+        "es": "Elimina el ShiftCord descargado para que la próxima vez que se abra la app se descargue el más reciente.",
+        "fr": "Supprime l'ShiftCord téléchargé : la dernière version sera téléchargée au prochain démarrage."
     },
     "Deleting {count} of your messages…": {
         "tr": "{count} mesajın siliniyor…",
@@ -2225,47 +2225,47 @@
         "es": "Termina tus mensajes con un punto.",
         "fr": "Terminer vos messages par un point."
     },
-    "10MCord Toolbox": {
-        "tr": "10MCord Araç Kutusu",
-        "ru": "Инструменты 10MCord",
-        "es": "Caja de herramientas de 10MCord",
-        "fr": "Boîte à outils 10MCord"
+    "ShiftCord Toolbox": {
+        "tr": "ShiftCord Araç Kutusu",
+        "ru": "Инструменты ShiftCord",
+        "es": "Caja de herramientas de ShiftCord",
+        "fr": "Boîte à outils ShiftCord"
     },
-    "10MCord URL": {
-        "tr": "10MCord adresi",
-        "ru": "Адрес 10MCord",
-        "es": "URL de 10MCord",
-        "fr": "URL d'10MCord"
+    "ShiftCord URL": {
+        "tr": "ShiftCord adresi",
+        "ru": "Адрес ShiftCord",
+        "es": "URL de ShiftCord",
+        "fr": "URL d'ShiftCord"
     },
-    "10MCord has {name} built in. Running both at once can make them get in each other's way.": {
-        "tr": "10MCord'da {name} zaten yerleşik. İkisi aynı anda çalışırsa birbirini bozabilir.",
-        "ru": "В 10MCord уже есть встроенный {name}. Если запустить оба сразу, они могут мешать друг другу.",
-        "es": "10MCord ya incluye {name}. Si ambos funcionan a la vez, pueden estorbarse entre sí.",
-        "fr": "10MCord intègre déjà {name}. S'ils tournent tous les deux en même temps, ils peuvent se gêner."
+    "ShiftCord has {name} built in. Running both at once can make them get in each other's way.": {
+        "tr": "ShiftCord'da {name} zaten yerleşik. İkisi aynı anda çalışırsa birbirini bozabilir.",
+        "ru": "В ShiftCord уже есть встроенный {name}. Если запустить оба сразу, они могут мешать друг другу.",
+        "es": "ShiftCord ya incluye {name}. Si ambos funcionan a la vez, pueden estorbarse entre sí.",
+        "fr": "ShiftCord intègre déjà {name}. S'ils tournent tous les deux en même temps, ils peuvent se gêner."
     },
-    "10MCord is hidden from settings": {
-        "tr": "10MCord ayarlardan gizlendi",
-        "ru": "10MCord скрыт из настроек",
-        "es": "10MCord se ha ocultado de los ajustes",
-        "fr": "10MCord est masqué des paramètres"
+    "ShiftCord is hidden from settings": {
+        "tr": "ShiftCord ayarlardan gizlendi",
+        "ru": "ShiftCord скрыт из настроек",
+        "es": "ShiftCord se ha ocultado de los ajustes",
+        "fr": "ShiftCord est masqué des paramètres"
     },
-    "10MCord is shown in settings again": {
-        "tr": "10MCord ayarlarda yeniden gösteriliyor",
-        "ru": "10MCord снова показан в настройках",
-        "es": "10MCord vuelve a mostrarse en los ajustes",
-        "fr": "10MCord s'affiche à nouveau dans les paramètres"
+    "ShiftCord is shown in settings again": {
+        "tr": "ShiftCord ayarlarda yeniden gösteriliyor",
+        "ru": "ShiftCord снова показан в настройках",
+        "es": "ShiftCord vuelve a mostrarse en los ajustes",
+        "fr": "ShiftCord s'affiche à nouveau dans les paramètres"
     },
-    "10MCord updates itself every time the app starts.": {
-        "tr": "10MCord, uygulama her açıldığında kendini günceller.",
-        "ru": "10MCord обновляется при каждом запуске приложения.",
-        "es": "10MCord se actualiza cada vez que se abre la app.",
-        "fr": "10MCord se met à jour à chaque démarrage de l'application."
+    "ShiftCord updates itself every time the app starts.": {
+        "tr": "ShiftCord, uygulama her açıldığında kendini günceller.",
+        "ru": "ShiftCord обновляется при каждом запуске приложения.",
+        "es": "ShiftCord se actualiza cada vez que se abre la app.",
+        "fr": "ShiftCord se met à jour à chaque démarrage de l'application."
     },
-    "10MCord's own startup": {
-        "tr": "10MCord'un kendi açılışı",
-        "ru": "Запуск самого 10MCord",
-        "es": "Arranque de 10MCord",
-        "fr": "Démarrage d'10MCord"
+    "ShiftCord's own startup": {
+        "tr": "ShiftCord'un kendi açılışı",
+        "ru": "Запуск самого ShiftCord",
+        "es": "Arranque de ShiftCord",
+        "fr": "Démarrage d'ShiftCord"
     },
     "Enter a link that starts with https://": {
         "tr": "https:// ile başlayan bir bağlantı gir",
@@ -2801,11 +2801,11 @@
         "es": "Genera un número aleatorio entre dos valores",
         "fr": "Génère un nombre aléatoire entre deux valeurs"
     },
-    "Get 10MCord Classic": {
-        "tr": "10MCord Classic'i İndir",
-        "ru": "Скачать 10MCord Classic",
-        "es": "Obtener 10MCord Classic",
-        "fr": "Obtenir 10MCord Classic"
+    "Get ShiftCord Classic": {
+        "tr": "ShiftCord Classic'i İndir",
+        "ru": "Скачать ShiftCord Classic",
+        "es": "Obtener ShiftCord Classic",
+        "fr": "Obtenir ShiftCord Classic"
     },
     "Get a random cat or dog picture": {
         "tr": "Rastgele bir kedi veya köpek fotoğrafı al",
@@ -2981,11 +2981,11 @@
         "es": "Usuarios ocultos",
         "fr": "Utilisateurs masqués"
     },
-    "Hide 10MCord now": {
-        "tr": "10MCord'u şimdi gizle",
-        "ru": "Скрыть 10MCord сейчас",
-        "es": "Ocultar 10MCord ahora",
-        "fr": "Masquer 10MCord maintenant"
+    "Hide ShiftCord now": {
+        "tr": "ShiftCord'u şimdi gizle",
+        "ru": "Скрыть ShiftCord сейчас",
+        "es": "Ocultar ShiftCord ahora",
+        "fr": "Masquer ShiftCord maintenant"
     },
     "Hide Media": {
         "tr": "Medyayı Gizle",
@@ -3101,11 +3101,11 @@
         "es": "Ocultar mientras suena Spotify",
         "fr": "Masquer pendant la lecture Spotify"
     },
-    "Hides 10MCord's entries in Discord's settings, for screenshots and screen sharing. Plugins keep working.": {
-        "tr": "Ekran görüntüleri ve ekran paylaşımı için 10MCord'un Discord ayarlarındaki bölümlerini gizler. Eklentiler çalışmaya devam eder.",
-        "ru": "Скрывает разделы 10MCord в настройках Discord для скриншотов и демонстрации экрана. Плагины продолжают работать.",
-        "es": "Oculta las entradas de 10MCord en los ajustes de Discord, para capturas y pantalla compartida. Los plugins siguen funcionando.",
-        "fr": "Masque les entrées d'10MCord dans les paramètres de Discord, pour les captures et le partage d'écran. Les plugins continuent de fonctionner."
+    "Hides ShiftCord's entries in Discord's settings, for screenshots and screen sharing. Plugins keep working.": {
+        "tr": "Ekran görüntüleri ve ekran paylaşımı için ShiftCord'un Discord ayarlarındaki bölümlerini gizler. Eklentiler çalışmaya devam eder.",
+        "ru": "Скрывает разделы ShiftCord в настройках Discord для скриншотов и демонстрации экрана. Плагины продолжают работать.",
+        "es": "Oculta las entradas de ShiftCord en los ajustes de Discord, para capturas y pantalla compartida. Los plugins siguen funcionando.",
+        "fr": "Masque les entrées d'ShiftCord dans les paramètres de Discord, pour les captures et le partage d'écran. Les plugins continuent de fonctionner."
     },
     "Hides attachments in age-restricted channels behind a spoiler until you tap them": {
         "tr": "Yaş kısıtlamalı kanallardaki ekleri sen dokunana kadar spoiler arkasında gizler",
@@ -3863,11 +3863,11 @@
         "es": "Escuchando",
         "fr": "Écoute"
     },
-    "Load 10MCord from another address, for testing development builds": {
-        "tr": "Geliştirme sürümlerini denemek için 10MCord'u başka bir adresten yükle",
-        "ru": "Загружать 10MCord с другого адреса, для тестирования сборок",
-        "es": "Cargar 10MCord desde otra dirección, para probar versiones de desarrollo",
-        "fr": "Charger 10MCord depuis une autre adresse, pour tester des versions de développement"
+    "Load ShiftCord from another address, for testing development builds": {
+        "tr": "Geliştirme sürümlerini denemek için ShiftCord'u başka bir adresten yükle",
+        "ru": "Загружать ShiftCord с другого адреса, для тестирования сборок",
+        "es": "Cargar ShiftCord desde otra dirección, para probar versiones de desarrollo",
+        "fr": "Charger ShiftCord depuis une autre adresse, pour tester des versions de développement"
     },
     "Load React DevTools": {
         "tr": "React DevTools'u yükle",
@@ -4451,11 +4451,11 @@
         "es": "No",
         "fr": "Non"
     },
-    "No 10MCord plugins are on": {
-        "tr": "Açık 10MCord eklentisi yok",
-        "ru": "Ни один плагин 10MCord не включён",
-        "es": "No hay plugins de 10MCord activados",
-        "fr": "Aucun plugin 10MCord n'est activé"
+    "No ShiftCord plugins are on": {
+        "tr": "Açık ShiftCord eklentisi yok",
+        "ru": "Ни один плагин ShiftCord не включён",
+        "es": "No hay plugins de ShiftCord activados",
+        "fr": "Aucun plugin ShiftCord n'est activé"
     },
     "No Pokémon called {name} was found.": {
         "tr": "{name} adında bir Pokémon bulunamadı.",
@@ -4667,11 +4667,11 @@
         "es": "No en mis mensajes",
         "fr": "Pas sur mes messages"
     },
-    "Not seen online since 10MCord started watching": {
-        "tr": "10MCord izlemeye başladığından beri çevrimiçi görülmedi",
-        "ru": "Не появлялся в сети с тех пор, как 10MCord начал следить",
-        "es": "No se ha visto conectado desde que 10MCord empezó a vigilar",
-        "fr": "Pas vu en ligne depuis qu'10MCord surveille"
+    "Not seen online since ShiftCord started watching": {
+        "tr": "ShiftCord izlemeye başladığından beri çevrimiçi görülmedi",
+        "ru": "Не появлялся в сети с тех пор, как ShiftCord начал следить",
+        "es": "No se ha visto conectado desde que ShiftCord empezó a vigilar",
+        "fr": "Pas vu en ligne depuis qu'ShiftCord surveille"
     },
     "Not working": {
         "tr": "Çalışmayanlar",
@@ -4973,11 +4973,11 @@
         "es": "Abrir banner",
         "fr": "Ouvrir la bannière"
     },
-    "Open 10MCord's quick actions": {
-        "tr": "10MCord'un hızlı işlemlerini aç",
-        "ru": "Открыть быстрые действия 10MCord",
-        "es": "Abre las acciones rápidas de 10MCord",
-        "fr": "Ouvrir les actions rapides d'10MCord"
+    "Open ShiftCord's quick actions": {
+        "tr": "ShiftCord'un hızlı işlemlerini aç",
+        "ru": "Открыть быстрые действия ShiftCord",
+        "es": "Abre las acciones rápidas de ShiftCord",
+        "fr": "Ouvrir les actions rapides d'ShiftCord"
     },
     "Open Sticker Link": {
         "tr": "Çıkartma Bağlantısını Aç",
@@ -5081,11 +5081,11 @@
         "es": "Propietario",
         "fr": "Propriétaire"
     },
-    "Part of the screen crashed while drawing. A plugin, 10MCord or Discord itself can cause this.": {
-        "tr": "Ekranın bir bölümü çizilirken çöktü. Buna bir eklenti, 10MCord veya Discord'un kendisi neden olabilir.",
-        "ru": "Часть экрана завершилась сбоем при отрисовке. Причиной может быть плагин, 10MCord или сам Discord.",
-        "es": "Una parte de la pantalla falló al dibujarse. Puede deberse a un plugin, a 10MCord o al propio Discord.",
-        "fr": "Une partie de l'écran a planté pendant l'affichage. Un plugin, 10MCord ou Discord lui-même peut en être la cause."
+    "Part of the screen crashed while drawing. A plugin, ShiftCord or Discord itself can cause this.": {
+        "tr": "Ekranın bir bölümü çizilirken çöktü. Buna bir eklenti, ShiftCord veya Discord'un kendisi neden olabilir.",
+        "ru": "Часть экрана завершилась сбоем при отрисовке. Причиной может быть плагин, ShiftCord или сам Discord.",
+        "es": "Una parte de la pantalla falló al dibujarse. Puede deberse a un plugin, a ShiftCord o al propio Discord.",
+        "fr": "Une partie de l'écran a planté pendant l'affichage. Un plugin, ShiftCord ou Discord lui-même peut en être la cause."
     },
     "Part of the server's name": {
         "tr": "Sunucu adının bir kısmı",
@@ -5285,11 +5285,11 @@
         "es": "Los plugins se cargan en segundo plano, así que uno lento no retrasa Discord. Solo se cargan los que activas.",
         "fr": "Les plugins se chargent en arrière-plan, un plugin lent ne retarde donc pas Discord. Seuls ceux que vous activez sont chargés."
     },
-    "Plugins made by the community, not by 10MCord, from a list its members keep up to date. They run with full access to your Discord account; only install ones you trust.": {
-        "tr": "10MCord'un değil, topluluğun yaptığı eklentiler; listeyi topluluk üyeleri güncel tutuyor. Discord hesabına tam erişimle çalışırlar, yalnızca güvendiklerini kur.",
-        "ru": "Плагины, созданные сообществом, а не 10MCord, из списка, который поддерживают его участники. Они работают с полным доступом к вашему аккаунту Discord — устанавливайте только те, которым доверяете.",
-        "es": "Plugins hechos por la comunidad, no por 10MCord, de una lista que mantienen sus miembros. Funcionan con acceso total a tu cuenta de Discord; instala solo los que sean de confianza.",
-        "fr": "Des plugins créés par la communauté, pas par 10MCord, issus d'une liste tenue à jour par ses membres. Ils ont un accès complet à votre compte Discord : n'installez que ceux en qui vous avez confiance."
+    "Plugins made by the community, not by ShiftCord, from a list its members keep up to date. They run with full access to your Discord account; only install ones you trust.": {
+        "tr": "ShiftCord'un değil, topluluğun yaptığı eklentiler; listeyi topluluk üyeleri güncel tutuyor. Discord hesabına tam erişimle çalışırlar, yalnızca güvendiklerini kur.",
+        "ru": "Плагины, созданные сообществом, а не ShiftCord, из списка, который поддерживают его участники. Они работают с полным доступом к вашему аккаунту Discord — устанавливайте только те, которым доверяете.",
+        "es": "Plugins hechos por la comunidad, no por ShiftCord, de una lista que mantienen sus miembros. Funcionan con acceso total a tu cuenta de Discord; instala solo los que sean de confianza.",
+        "fr": "Des plugins créés par la communauté, pas par ShiftCord, issus d'une liste tenue à jour par ses membres. Ils ont un accès complet à votre compte Discord : n'installez que ceux en qui vous avez confiance."
     },
     "Plugins on": {
         "tr": "Açık eklentiler",
@@ -6713,11 +6713,11 @@
         "es": "No mostrar nada para las personas desconectadas o invisibles",
         "fr": "Ne rien afficher pour les personnes hors ligne ou invisibles"
     },
-    "Show or hide 10MCord's entries in Discord's settings": {
-        "tr": "10MCord'un Discord ayarlarındaki bölümlerini göster veya gizle",
-        "ru": "Показать или скрыть разделы 10MCord в настройках Discord",
-        "es": "Mostrar u ocultar las entradas de 10MCord en los ajustes de Discord",
-        "fr": "Afficher ou masquer les entrées d'10MCord dans les paramètres de Discord"
+    "Show or hide ShiftCord's entries in Discord's settings": {
+        "tr": "ShiftCord'un Discord ayarlarındaki bölümlerini göster veya gizle",
+        "ru": "Показать или скрыть разделы ShiftCord в настройках Discord",
+        "es": "Mostrar u ocultar las entradas de ShiftCord en los ajustes de Discord",
+        "fr": "Afficher ou masquer les entrées d'ShiftCord dans les paramètres de Discord"
     },
     "Show or hide what you're playing on your profile": {
         "tr": "Profilinde ne oynadığını göster ya da gizle",
@@ -6809,11 +6809,11 @@
         "es": "Marca los mensajes de quienes están en un canal de voz y te deja unirte a ellos desde el menú del mensaje",
         "fr": "Marque les messages des personnes en salon vocal et vous permet de les rejoindre depuis le menu du message"
     },
-    "Shows how long 10MCord and each of its plugins took to start, in the plugin's settings": {
-        "tr": "10MCord'un ve her eklentisinin açılmasının ne kadar sürdüğünü eklentinin ayarlarında gösterir",
-        "ru": "Показывает в настройках плагина, сколько запускались 10MCord и каждый из его плагинов",
-        "es": "Muestra cuánto tardaron en iniciarse 10MCord y cada uno de sus plugins, en los ajustes del plugin",
-        "fr": "Affiche le temps de démarrage d'10MCord et de chacun de ses plugins, dans les paramètres du plugin"
+    "Shows how long ShiftCord and each of its plugins took to start, in the plugin's settings": {
+        "tr": "ShiftCord'un ve her eklentisinin açılmasının ne kadar sürdüğünü eklentinin ayarlarında gösterir",
+        "ru": "Показывает в настройках плагина, сколько запускались ShiftCord и каждый из его плагинов",
+        "es": "Muestra cuánto tardaron en iniciarse ShiftCord y cada uno de sus plugins, en los ajustes del plugin",
+        "fr": "Affiche le temps de démarrage d'ShiftCord et de chacun de ses plugins, dans les paramètres du plugin"
     },
     "Shows how long you've spent in voice with each user": {
         "tr": "Her kullanıcıyla seste ne kadar zaman geçirdiğini gösterir",
@@ -7787,11 +7787,11 @@
         "es": "Tipo de tema",
         "fr": "Type de thème"
     },
-    "Themes from the community's theme marketplace and Catppuccin. Installed themes also appear in 10MCord's Themes page.": {
-        "tr": "Topluluğun tema pazarından ve Catppuccin'den temalar. Yüklenen temalar 10MCord'un Temalar sayfasında da görünür.",
-        "ru": "Темы из магазина тем сообщества и Catppuccin. Установленные темы также появляются на странице «Темы» 10MCord.",
-        "es": "Temas del mercado de temas de la comunidad y de Catppuccin. Los temas instalados también aparecen en la página Temas de 10MCord.",
-        "fr": "Des thèmes du marché de thèmes de la communauté et de Catppuccin. Les thèmes installés apparaissent aussi dans la page Thèmes d'10MCord."
+    "Themes from the community's theme marketplace and Catppuccin. Installed themes also appear in ShiftCord's Themes page.": {
+        "tr": "Topluluğun tema pazarından ve Catppuccin'den temalar. Yüklenen temalar ShiftCord'un Temalar sayfasında da görünür.",
+        "ru": "Темы из магазина тем сообщества и Catppuccin. Установленные темы также появляются на странице «Темы» ShiftCord.",
+        "es": "Temas del mercado de temas de la comunidad y de Catppuccin. Los temas instalados también aparecen en la página Temas de ShiftCord.",
+        "fr": "Des thèmes du marché de thèmes de la communauté et de Catppuccin. Les thèmes installés apparaissent aussi dans la page Thèmes d'ShiftCord."
     },
     "There's no voice channel to join.": {
         "tr": "Katılınacak ses kanalı yok.",
@@ -7817,17 +7817,17 @@
         "es": "Esta copia de seguridad está dañada y no se puede restaurar",
         "fr": "Cette sauvegarde est endommagée et ne peut pas être restaurée"
     },
-    "This backup is from a newer 10MCord. Update 10MCord, then try again.": {
-        "tr": "Bu yedek daha yeni bir 10MCord'dan. 10MCord'u güncelleyip tekrar dene.",
-        "ru": "Эта резервная копия из более новой версии 10MCord. Обнови 10MCord и попробуй снова.",
-        "es": "Esta copia de seguridad es de un 10MCord más reciente. Actualiza 10MCord y vuelve a intentarlo.",
-        "fr": "Cette sauvegarde vient d'un 10MCord plus récent. Mets 10MCord à jour, puis réessaie."
+    "This backup is from a newer ShiftCord. Update ShiftCord, then try again.": {
+        "tr": "Bu yedek daha yeni bir ShiftCord'dan. ShiftCord'u güncelleyip tekrar dene.",
+        "ru": "Эта резервная копия из более новой версии ShiftCord. Обнови ShiftCord и попробуй снова.",
+        "es": "Esta copia de seguridad es de un ShiftCord más reciente. Actualiza ShiftCord y vuelve a intentarlo.",
+        "fr": "Cette sauvegarde vient d'un ShiftCord plus récent. Mets ShiftCord à jour, puis réessaie."
     },
-    "This backup is from {date}, with {count} plugins on. It replaces your 10MCord settings, which plugins are on and their settings, and what you made with plugins, then reloads Discord. Only restore a backup you made yourself: it can turn plugins on and change what they do.": {
-        "tr": "Bu yedek {date} tarihli ve {count} eklenti açık. 10MCord ayarlarını, hangi eklentilerin açık olduğunu ve ayarlarını, eklentilerle oluşturduklarını değiştirir, sonra Discord'u yeniden başlatır. Yalnızca kendi oluşturduğun bir yedeği geri yükle: eklentileri açabilir ve ne yaptıklarını değiştirebilir.",
-        "ru": "Эта резервная копия от {date}, включено плагинов: {count}. Она заменит твои настройки 10MCord, список включённых плагинов и их настройки, а также то, что ты создал с помощью плагинов, после чего Discord перезагрузится. Восстанавливай только резервную копию, которую сделал сам: она может включать плагины и менять их поведение.",
-        "es": "Esta copia de seguridad es del {date}, con {count} plugins activados. Reemplaza tus ajustes de 10MCord, qué plugins están activados y sus ajustes, y lo que has creado con plugins, y luego recarga Discord. Restaura solo una copia de seguridad que hayas hecho tú: puede activar plugins y cambiar lo que hacen.",
-        "fr": "Cette sauvegarde date du {date}, avec {count} plugins activés. Elle remplace tes paramètres 10MCord, les plugins activés et leurs paramètres, et ce que tu as créé avec des plugins, puis recharge Discord. Ne restaure qu'une sauvegarde que tu as faite toi-même : elle peut activer des plugins et changer ce qu'ils font."
+    "This backup is from {date}, with {count} plugins on. It replaces your ShiftCord settings, which plugins are on and their settings, and what you made with plugins, then reloads Discord. Only restore a backup you made yourself: it can turn plugins on and change what they do.": {
+        "tr": "Bu yedek {date} tarihli ve {count} eklenti açık. ShiftCord ayarlarını, hangi eklentilerin açık olduğunu ve ayarlarını, eklentilerle oluşturduklarını değiştirir, sonra Discord'u yeniden başlatır. Yalnızca kendi oluşturduğun bir yedeği geri yükle: eklentileri açabilir ve ne yaptıklarını değiştirebilir.",
+        "ru": "Эта резервная копия от {date}, включено плагинов: {count}. Она заменит твои настройки ShiftCord, список включённых плагинов и их настройки, а также то, что ты создал с помощью плагинов, после чего Discord перезагрузится. Восстанавливай только резервную копию, которую сделал сам: она может включать плагины и менять их поведение.",
+        "es": "Esta copia de seguridad es del {date}, con {count} plugins activados. Reemplaza tus ajustes de ShiftCord, qué plugins están activados y sus ajustes, y lo que has creado con plugins, y luego recarga Discord. Restaura solo una copia de seguridad que hayas hecho tú: puede activar plugins y cambiar lo que hacen.",
+        "fr": "Cette sauvegarde date du {date}, avec {count} plugins activés. Elle remplace tes paramètres ShiftCord, les plugins activés et leurs paramètres, et ce que tu as créé avec des plugins, puis recharge Discord. Ne restaure qu'une sauvegarde que tu as faite toi-même : elle peut activer des plugins et changer ce qu'ils font."
     },
     "This channel has no topic.": {
         "tr": "Bu kanalın konusu yok.",
@@ -7859,17 +7859,17 @@
         "es": "Este archivo es demasiado grande para mirar dentro",
         "fr": "Ce fichier est trop volumineux pour être exploré"
     },
-    "This file isn't a theme 10MCord can use.": {
-        "tr": "Bu dosya 10MCord'un kullanabileceği bir tema değil.",
-        "ru": "Этот файл не является темой, которую может использовать 10MCord.",
-        "es": "Este archivo no es un tema que 10MCord pueda usar.",
-        "fr": "Ce fichier n'est pas un thème utilisable par 10MCord."
+    "This file isn't a theme ShiftCord can use.": {
+        "tr": "Bu dosya ShiftCord'un kullanabileceği bir tema değil.",
+        "ru": "Этот файл не является темой, которую может использовать ShiftCord.",
+        "es": "Este archivo no es un tema que ShiftCord pueda usar.",
+        "fr": "Ce fichier n'est pas un thème utilisable par ShiftCord."
     },
-    "This file isn't an 10MCord backup": {
-        "tr": "Bu dosya bir 10MCord yedeği değil",
-        "ru": "Этот файл не является резервной копией 10MCord",
-        "es": "Este archivo no es una copia de seguridad de 10MCord",
-        "fr": "Ce fichier n'est pas une sauvegarde 10MCord"
+    "This file isn't a ShiftCord backup": {
+        "tr": "Bu dosya bir ShiftCord yedeği değil",
+        "ru": "Этот файл не является резервной копией ShiftCord",
+        "es": "Este archivo no es una copia de seguridad de ShiftCord",
+        "fr": "Ce fichier n'est pas une sauvegarde ShiftCord"
     },
     "This font pack is linked to an address. To edit its fonts yourself, detach it from that link first.": {
         "tr": "Bu yazı tipi paketi bir adrese bağlı. Yazı tiplerini kendin düzenlemek için önce onu bu bağlantıdan ayır.",
@@ -7907,17 +7907,17 @@
         "es": "Esto necesita iOS 17 o posterior.",
         "fr": "Cela nécessite iOS 17 ou une version ultérieure."
     },
-    "This needs a newer 10MCord. Install the latest 10MCord IPA.": {
-        "tr": "Bunun için daha yeni bir 10MCord gerekiyor. En son 10MCord IPA'sını kur.",
-        "ru": "Для этого нужна более новая версия 10MCord. Установите последний IPA 10MCord.",
-        "es": "Esto necesita un 10MCord más reciente. Instala el IPA de 10MCord más reciente.",
-        "fr": "Cela nécessite une version plus récente d'10MCord. Installez le dernier IPA d'10MCord."
+    "This needs a newer ShiftCord. Install the latest ShiftCord IPA.": {
+        "tr": "Bunun için daha yeni bir ShiftCord gerekiyor. En son ShiftCord IPA'sını kur.",
+        "ru": "Для этого нужна более новая версия ShiftCord. Установите последний IPA ShiftCord.",
+        "es": "Esto necesita un ShiftCord más reciente. Instala el IPA de ShiftCord más reciente.",
+        "fr": "Cela nécessite une version plus récente d'ShiftCord. Installez le dernier IPA d'ShiftCord."
     },
-    "This needs a newer 10MCord. Install it again with 10MCord Installer.": {
-        "tr": "Bunun için daha yeni bir 10MCord gerekiyor. 10MCord Installer ile yeniden kur.",
-        "ru": "Для этого нужен более новый 10MCord. Установите его заново через 10MCord Installer.",
-        "es": "Esto necesita un 10MCord más reciente. Vuelve a instalarlo con 10MCord Installer.",
-        "fr": "Cela nécessite un 10MCord plus récent. Réinstallez-le avec 10MCord Installer."
+    "This needs a newer ShiftCord. Install it again with ShiftCord Installer.": {
+        "tr": "Bunun için daha yeni bir ShiftCord gerekiyor. ShiftCord Installer ile yeniden kur.",
+        "ru": "Для этого нужен более новый ShiftCord. Установите его заново через ShiftCord Installer.",
+        "es": "Esto necesita un ShiftCord más reciente. Vuelve a instalarlo con ShiftCord Installer.",
+        "fr": "Cela nécessite un ShiftCord plus récent. Réinstallez-le avec ShiftCord Installer."
     },
     "This only works in DMs and group DMs.": {
         "tr": "Bu yalnızca DM'lerde ve grup DM'lerinde çalışır.",
@@ -8183,11 +8183,11 @@
         "es": "Código de país de dos letras, como TR o US",
         "fr": "Code pays à deux lettres, comme TR ou US"
     },
-    "Type /hide10MCord in any chat to show 10MCord's settings again": {
-        "tr": "10MCord ayarlarını yeniden göstermek için herhangi bir sohbette /hide10MCord yaz",
-        "ru": "Введите /hide10MCord в любом чате, чтобы снова показать настройки 10MCord",
-        "es": "Escribe /hide10MCord en cualquier chat para volver a mostrar los ajustes de 10MCord",
-        "fr": "Tapez /hide10MCord dans n'importe quelle discussion pour réafficher les paramètres d'10MCord"
+    "Type /hideshiftcord in any chat to show ShiftCord's settings again": {
+        "tr": "ShiftCord ayarlarını yeniden göstermek için herhangi bir sohbette /hideshiftcord yaz",
+        "ru": "Введите /hideshiftcord в любом чате, чтобы снова показать настройки ShiftCord",
+        "es": "Escribe /hideshiftcord en cualquier chat para volver a mostrar los ajustes de ShiftCord",
+        "fr": "Tapez /hideshiftcord dans n'importe quelle discussion pour réafficher les paramètres d'ShiftCord"
     },
     "Type a message to preview it": {
         "tr": "Önizlemek için bir mesaj yaz",
@@ -9707,11 +9707,11 @@
         "es": "Esta cuenta ya está guardada",
         "fr": "Ce compte est déjà enregistré"
     },
-    "10MCord will copy {account} and sign you out. Discord's normal login screen will open; enter your password there. 10MCord does not save passwords or login tokens.": {
-        "tr": "10MCord {account} bilgisini panoya kopyalayacak ve oturumunuzu kapatacak. Discord'un normal giriş ekranı açılacak; parolanızı oraya girin. 10MCord parolaları veya oturum belirteçlerini kaydetmez.",
-        "ru": "10MCord скопирует {account} и завершит сеанс. Откроется обычный экран входа Discord; введите там пароль. 10MCord не сохраняет пароли или токены входа.",
-        "es": "10MCord copiará {account} y cerrará tu sesión. Se abrirá la pantalla de inicio de sesión normal de Discord; escribe allí tu contraseña. 10MCord no guarda contraseñas ni tokens de acceso.",
-        "fr": "10MCord copiera {account} et vous déconnectera. L'écran de connexion normal de Discord s'ouvrira ; saisissez-y votre mot de passe. 10MCord n'enregistre ni mots de passe ni jetons de connexion."
+    "ShiftCord will copy {account} and sign you out. Discord's normal login screen will open; enter your password there. ShiftCord does not save passwords or login tokens.": {
+        "tr": "ShiftCord {account} bilgisini panoya kopyalayacak ve oturumunuzu kapatacak. Discord'un normal giriş ekranı açılacak; parolanızı oraya girin. ShiftCord parolaları veya oturum belirteçlerini kaydetmez.",
+        "ru": "ShiftCord скопирует {account} и завершит сеанс. Откроется обычный экран входа Discord; введите там пароль. ShiftCord не сохраняет пароли или токены входа.",
+        "es": "ShiftCord copiará {account} y cerrará tu sesión. Se abrirá la pantalla de inicio de sesión normal de Discord; escribe allí tu contraseña. ShiftCord no guarda contraseñas ni tokens de acceso.",
+        "fr": "ShiftCord copiera {account} et vous déconnectera. L'écran de connexion normal de Discord s'ouvrira ; saisissez-y votre mot de passe. ShiftCord n'enregistre ni mots de passe ni jetons de connexion."
     },
     "Accounts": {
         "tr": "Hesaplar",
@@ -9945,19 +9945,5 @@
         "es": "No se pudo cargar tu cuenta de Discord.",
         "fr": "Impossible de charger votre compte Discord.",
         "pt": "Não foi possível carregar sua conta do Discord."
-    },
-    "Download server banner": {
-        "tr": "Sunucu afişini indir",
-        "ru": "Скачать баннер сервера",
-        "es": "Descargar el banner del servidor",
-        "fr": "Télécharger la bannière du serveur",
-        "pt": "Baixar banner"
-    },
-    "Download server icon": {
-        "tr": "Sunucu simgesini indir",
-        "ru": "Скачать значок сервера",
-        "es": "Descargar el icono del servidor",
-        "fr": "Télécharger l’icône du serveur",
-        "pt": "Baixar ícone"
     }
 }

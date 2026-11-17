@@ -1,9 +1,9 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
- * 10MCord PC's plugins that change a message as you send it. They all run through onSend, in a fixed order: text
+ * ShiftCord PC's plugins that change a message as you send it. They all run through onSend, in a fixed order: text
  * rewrites first, then formatting, then the signature, so they combine the same way every time.
  *
  * What more than one of these plugins uses.

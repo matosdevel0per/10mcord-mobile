@@ -19,7 +19,7 @@
     <string name="msg_invalid_apk">APK bozulmuş, önbelleği temizleyip yeniden kurmayı dene</string>
     <string name="msg_download_cancelled">İndirme iptal edildi</string>
     <string name="msg_download_failed">İndirme başarısız</string>
-    <string name="msg_unsigned_module">Kendi modül dosyan kullanılıyor: 10MCord\'un imzalı sürümüyle karşılaştırılmıyor</string>
+    <string name="msg_unsigned_module">Kendi modül dosyan kullanılıyor: ShiftCord\'un imzalı sürümüyle karşılaştırılmıyor</string>
     <string name="msg_download_verify_failed">İndirilen dosya doğrulanamadı, ayrıntılar için kayıtlara bakın</string>
     <string name="msg_copied">Panoya kopyalandı</string>
 
@@ -31,11 +31,11 @@
     <string name="step_dl_lib">Kütüphane APK\'sı indiriliyor</string>
     <string name="step_dl_lang">Dil APK\'sı indiriliyor</string>
     <string name="step_dl_res">Kaynak APK\'sı indiriliyor</string>
-    <string name="step_dl_mod">10MCord indiriliyor</string>
+    <string name="step_dl_mod">ShiftCord indiriliyor</string>
 
     <string name="step_change_icon">Uygulama simgesi değiştiriliyor</string>
     <string name="step_patch_manifests">Uygulama bildirimleri yamalanıyor</string>
-    <string name="step_add_mod">10MCord ekleniyor</string>
+    <string name="step_add_mod">ShiftCord ekleniyor</string>
 
     <string name="step_signing">APK\'lar imzalanıyor</string>
     <string name="step_installing">APK\'lar kuruluyor</string>
@@ -73,7 +73,7 @@
     <string name="action_reload">Yenile</string>
     <string name="action_open_about">Hakkında sayfasını aç</string>
     <string name="action_open_settings">Ayarları aç</string>
-    <string name="action_tap_to_install">Discord %1$s için 10MCord\'u kurmak için dokun</string>
+    <string name="action_tap_to_install">Discord %1$s için ShiftCord\'u kurmak için dokun</string>
     <string name="action_confirm_exit">Yine de çık</string>
     <string name="action_dismiss_nevermind">Vazgeç</string>
     <string name="action_dismiss_no_thanks">Hayır, teşekkürler</string>
@@ -125,10 +125,10 @@
     <string name="settings_check_updates">Discord güncellemelerini denetle</string>
 
     <string name="settings_customization">Kişiselleştirme</string>
-    <string name="settings_customization_description">10MCord kurulumunu özelleştir</string>
+    <string name="settings_customization_description">ShiftCord kurulumunu özelleştir</string>
     <string name="settings_app_name">Uygulama adı</string>
     <string name="settings_app_icon">Uygulama simgesini değiştir</string>
-    <string name="settings_app_icon_description">Discord\'un simgesi yerine 10MCord\'un simgesini kullanır</string>
+    <string name="settings_app_icon_description">Discord\'un simgesi yerine ShiftCord\'un simgesini kullanır</string>
 
     <string name="settings_advanced">Gelişmiş</string>
     <string name="settings_advanced_description">İndirme ve kurulum ayarları</string>
@@ -152,7 +152,7 @@
     <string name="settings_logs_alternate_lines">Satırları dönüşümlü renklendir</string>
     <string name="settings_logs_line_wrap">Satırları kaydır</string>
 
-    <string name="update_description">10MCord Installer %1$s yayında!</string>
+    <string name="update_description">ShiftCord | Installer %1$s yayında!</string>
 
     <string name="channel_stable">Kararlı</string>
     <string name="channel_beta">Beta</string>
@@ -183,13 +183,13 @@
     <string name="source_download">Discord\'u indir</string>
     <string name="source_download_desc">Discord %1$s, en yeni sürüm</string>
 
-    <string name="edition_title">Hangi 10MCord?</string>
-    <string name="edition_10MCord">10MCord</string>
-    <string name="edition_10MCord_desc">Güncel Discord uygulamasında, 300+ 10MCord eklentisiyle</string>
-    <string name="edition_classic">10MCord Classic</string>
-    <string name="edition_classic_desc">Aliucord\'un eski Discord sürümünde, 230+ 10MCord eklentisi ve Aliucord eklentileriyle</string>
-    <string name="classic_body">10MCord Classic, Aliucord üzerine kurulu. Aliucord\'un desteklediği eski Discord sürümünde çalıştığı için 10MCord\'un kendi eklentilerinin yanında Aliucord eklentilerini de kullanabilir.</string>
-    <string name="classic_note">Kendi uygulamasıyla, 10MCord Classic Installer ile kurulur ve güncellenir. Güncellemeler için onu telefonda tut.</string>
-    <string name="action_get_classic_installer">10MCord Classic Installer\'ı indir</string>
-    <string name="action_open_classic_installer">10MCord Classic Installer\'ı aç</string>
+    <string name="edition_title">Hangi ShiftCord?</string>
+    <string name="edition_10MCord">ShiftCord</string>
+    <string name="edition_10MCord_desc">Güncel Discord uygulamasında, 300+ ShiftCord eklentisiyle</string>
+    <string name="edition_classic">ShiftCord Classic</string>
+    <string name="edition_classic_desc">Aliucord\'un eski Discord sürümünde, 230+ ShiftCord eklentisi ve Aliucord eklentileriyle</string>
+    <string name="classic_body">ShiftCord Classic, Aliucord üzerine kurulu. Aliucord\'un desteklediği eski Discord sürümünde çalıştığı için ShiftCord\'un kendi eklentilerinin yanında Aliucord eklentilerini de kullanabilir.</string>
+    <string name="classic_note">Kendi uygulamasıyla, ShiftCord Classic Installer ile kurulur ve güncellenir. Güncellemeler için onu telefonda tut.</string>
+    <string name="action_get_classic_installer">ShiftCord Classic Installer\'ı indir</string>
+    <string name="action_open_classic_installer">ShiftCord Classic Installer\'ı aç</string>
 </resources>

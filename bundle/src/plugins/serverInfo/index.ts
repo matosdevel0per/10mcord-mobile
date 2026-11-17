@@ -1,5 +1,5 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -77,11 +77,6 @@ export default definePlugin({
                     { type: 10, content: `**${t("Created")}**: <t:${created}:D> · <t:${created}:R>\n**${t("ID")}**: \`${guild.id}\`${guild.vanityURLCode ? `\n**${t("Vanity URL")}**: discord.gg/${guild.vanityURLCode}` : ""}` },
                 ];
                 if (images.length) components.push({ type: 12, items: images.map(image => ({ media: { url: image.url }, description: image.description })) });
-                const downloadButtons = [
-                    icon && { type: 2, style: 5, label: t("Download server icon"), url: icon },
-                    banner && { type: 2, style: 5, label: t("Download server banner"), url: banner },
-                ].filter(Boolean);
-                if (downloadButtons.length) components.push({ type: 1, components: downloadButtons });
 
                 const user = getStore("UserStore")?.getCurrentUser?.();
                 if (!user?.id) {

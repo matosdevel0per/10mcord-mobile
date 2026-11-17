@@ -1,9 +1,9 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
- * CustomProfile's editor: 10MCord PC's Custom Profile window, as a page.
+ * CustomProfile's editor: ShiftCord PC's Custom Profile window, as a page.
  */
 
 import { t } from "@core/i18n";
@@ -398,12 +398,12 @@ const EffectTile = memo(function EffectTile({ effect, size, active, onPick }: { 
         style={[styles.tile, size, styles.effectTile, active && styles.pillOn]}
     >
         {effect.thumbnail && <Image source={{ uri: effect.thumbnail }} style={styles.effectImage} resizeMode="cover" resizeMethod="resize" />}
-        {/* 10MCord PC names the effect when the pointer rests on it; a touch screen has no pointer */}
+        {/* ShiftCord PC names the effect when the pointer rests on it; a touch screen has no pointer */}
         <PlainText numberOfLines={2} style={styles.effectName}>{effect.name}</PlainText>
     </Pressable>;
 });
 
-// The shop has hundreds of effects: a list that only draws the rows on screen, in a box like 10MCord PC's
+// The shop has hundreds of effects: a list that only draws the rows on screen, in a box like ShiftCord PC's
 const EffectPicker = memo(function EffectPicker({ selected, set }: { selected?: string; set: Setter; }) {
     const styles = useStyles();
     const shopEffects = useShopProfileEffects();
@@ -477,7 +477,7 @@ function useShopProfileEffects() {
             const item = product?.items?.length === 1 ? product.items[0] : null;
             if (item?.type !== COLLECTIBLE_PROFILE_EFFECT || seen.has(product.skuId)) continue;
             seen.add(product.skuId);
-            // The shop's preview, like 10MCord PC, but shrunk to the tile: the originals are over a megabyte each, and
+            // The shop's preview, like ShiftCord PC, but shrunk to the tile: the originals are over a megabyte each, and
             // the list shows dozens at once
             const preview = item.thumbnailPreviewSrc ?? item.staticFrameSrc ?? item.reducedMotionSrc;
             list.push({ skuId: product.skuId, name: product.name, thumbnail: preview && shopThumbnail(preview, EFFECT_THUMB_WIDTH, EFFECT_THUMB_WIDTH * EFFECT_ASPECT) });
@@ -495,7 +495,7 @@ function useAccounts(): any[] {
             const users = getStore("MultiAccountStore")?.getUsers?.();
             if (Array.isArray(users) && users.length) return users;
         } catch (e) {
-            console.error("[10MCord] CustomProfile couldn't list the accounts", e);
+            console.error("[ShiftCord] CustomProfile couldn't list the accounts", e);
         }
         const me = getStore("UserStore")?.getCurrentUser?.();
         return me ? [me] : [];
@@ -563,7 +563,7 @@ export default function CustomProfileEditor({ onClose }: { onClose: () => void; 
         try {
             repair();
         } catch (e) {
-            console.error("[10MCord] CustomProfile repair failed", e);
+            console.error("[ShiftCord] CustomProfile repair failed", e);
         }
         onClose();
     };

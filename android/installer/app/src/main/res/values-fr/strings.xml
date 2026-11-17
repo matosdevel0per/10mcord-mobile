@@ -19,7 +19,7 @@
     <string name="msg_invalid_apk">L\'APK est corrompu, videz le cache puis réinstallez</string>
     <string name="msg_download_cancelled">Téléchargement annulé</string>
     <string name="msg_download_failed">Échec du téléchargement</string>
-    <string name="msg_unsigned_module">Votre propre fichier de module est utilisé : il n\'est pas vérifié par rapport à la version signée d\'10MCord</string>
+    <string name="msg_unsigned_module">Votre propre fichier de module est utilisé : il n\'est pas vérifié par rapport à la version signée d\'ShiftCord</string>
     <string name="msg_download_verify_failed">Impossible de vérifier le fichier téléchargé, consultez les journaux</string>
     <string name="msg_copied">Copié dans le presse-papiers</string>
 
@@ -31,11 +31,11 @@
     <string name="step_dl_lib">Téléchargement de l\'APK des bibliothèques</string>
     <string name="step_dl_lang">Téléchargement de l\'APK de langue</string>
     <string name="step_dl_res">Téléchargement de l\'APK des ressources</string>
-    <string name="step_dl_mod">Téléchargement d\'10MCord</string>
+    <string name="step_dl_mod">Téléchargement d\'ShiftCord</string>
 
     <string name="step_change_icon">Changement de l\'icône de l\'application</string>
     <string name="step_patch_manifests">Modification des manifestes de l\'application</string>
-    <string name="step_add_mod">Injection d\'10MCord</string>
+    <string name="step_add_mod">Injection d\'ShiftCord</string>
 
     <string name="step_signing">Signature des APK</string>
     <string name="step_installing">Installation des APK</string>
@@ -73,7 +73,7 @@
     <string name="action_reload">Recharger</string>
     <string name="action_open_about">Ouvrir À propos</string>
     <string name="action_open_settings">Ouvrir les paramètres</string>
-    <string name="action_tap_to_install">Appuyez pour installer 10MCord pour Discord %1$s</string>
+    <string name="action_tap_to_install">Appuyez pour installer ShiftCord pour Discord %1$s</string>
     <string name="action_confirm_exit">Quitter quand même</string>
     <string name="action_dismiss_nevermind">Laisser tomber</string>
     <string name="action_dismiss_no_thanks">Non merci</string>
@@ -125,10 +125,10 @@
     <string name="settings_check_updates">Vérifier les mises à jour de Discord</string>
 
     <string name="settings_customization">Personnalisation</string>
-    <string name="settings_customization_description">Personnalisez votre installation d\'10MCord</string>
+    <string name="settings_customization_description">Personnalisez votre installation d\'ShiftCord</string>
     <string name="settings_app_name">Nom de l\'application</string>
     <string name="settings_app_icon">Remplacer l\'icône de l\'application</string>
-    <string name="settings_app_icon_description">Utilise l\'icône d\'10MCord à la place de celle de Discord</string>
+    <string name="settings_app_icon_description">Utilise l\'icône d\'ShiftCord à la place de celle de Discord</string>
 
     <string name="settings_advanced">Avancé</string>
     <string name="settings_advanced_description">Paramètres de téléchargement et d\'installation</string>
@@ -152,7 +152,7 @@
     <string name="settings_logs_alternate_lines">Alterner le fond des lignes</string>
     <string name="settings_logs_line_wrap">Retour à la ligne</string>
 
-    <string name="update_description">10MCord Installer %1$s est disponible !</string>
+    <string name="update_description">ShiftCord | Installer %1$s est disponible !</string>
 
     <string name="channel_stable">Stable</string>
     <string name="channel_beta">Bêta</string>
@@ -183,13 +183,13 @@
     <string name="source_download">Télécharger Discord</string>
     <string name="source_download_desc">Discord %1$s, la dernière version</string>
 
-    <string name="edition_title">Quel 10MCord ?</string>
-    <string name="edition_10MCord">10MCord</string>
-    <string name="edition_10MCord_desc">Sur l\'application Discord actuelle, avec plus de 300 plugins 10MCord</string>
-    <string name="edition_classic">10MCord Classic</string>
-    <string name="edition_classic_desc">Sur l\'ancienne version de Discord d\'Aliucord, avec plus de 230 plugins 10MCord et les plugins Aliucord</string>
-    <string name="classic_body">10MCord Classic est basé sur Aliucord. Il fonctionne sur l\'ancienne version de Discord prise en charge par Aliucord : en plus des plugins d\'10MCord, il peut utiliser ceux d\'Aliucord.</string>
-    <string name="classic_note">Il s\'installe et se met à jour avec sa propre application, 10MCord Classic Installer. Gardez-la sur votre téléphone pour les mises à jour.</string>
-    <string name="action_get_classic_installer">Télécharger 10MCord Classic Installer</string>
-    <string name="action_open_classic_installer">Ouvrir 10MCord Classic Installer</string>
+    <string name="edition_title">Quel ShiftCord ?</string>
+    <string name="edition_10MCord">ShiftCord</string>
+    <string name="edition_10MCord_desc">Sur l\'application Discord actuelle, avec plus de 300 plugins ShiftCord</string>
+    <string name="edition_classic">ShiftCord Classic</string>
+    <string name="edition_classic_desc">Sur l\'ancienne version de Discord d\'Aliucord, avec plus de 230 plugins ShiftCord et les plugins Aliucord</string>
+    <string name="classic_body">ShiftCord Classic est basé sur Aliucord. Il fonctionne sur l\'ancienne version de Discord prise en charge par Aliucord : en plus des plugins d\'ShiftCord, il peut utiliser ceux d\'Aliucord.</string>
+    <string name="classic_note">Il s\'installe et se met à jour avec sa propre application, ShiftCord Classic Installer. Gardez-la sur votre téléphone pour les mises à jour.</string>
+    <string name="action_get_classic_installer">Télécharger ShiftCord Classic Installer</string>
+    <string name="action_open_classic_installer">Ouvrir ShiftCord Classic Installer</string>
 </resources>

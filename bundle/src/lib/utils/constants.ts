@@ -1,8 +1,8 @@
 export const DISCORD_SERVER = "https://discord.gg/q5ny7wg9ap";
 export const GITHUB = "https://github.com/matosdevel0per/10mcord-mobile/tree/next";
-/** 10MCord Classic: Aliucord-based, on an older Discord, with Aliucord plugin support */
+/** ShiftCord Classic: Aliucord-based, on an older Discord, with Aliucord plugin support */
 export const CLASSIC_URL = "https://github.com/matosdevel0per/10mcord-mobile/tree/main";
-/** Where the Build workflow publishes 10MCord for the current Discord app */
+/** Where the Build workflow publishes ShiftCord for the current Discord app */
 export const BUILDS_URL = `https://raw.githubusercontent.com/matosdevel0per/10mcord-mobile/${__BUILDS_BRANCH__}`;
 export const HTTP_REGEX = /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_+.~#?&/=]*)$/;
 export const HTTP_REGEX_MULTI = /https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_+.~#?&//=]*)/g;

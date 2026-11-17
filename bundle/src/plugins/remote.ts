@@ -1,5 +1,5 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
@@ -54,7 +54,7 @@ export function remoteJson<T>(url: string, options: { parse: (json: any) => T; r
                 try {
                     cb();
                 } catch (e) {
-                    console.error("[10MCord] a remote data listener failed", e);
+                    console.error("[ShiftCord] a remote data listener failed", e);
                 }
             }
         } finally {

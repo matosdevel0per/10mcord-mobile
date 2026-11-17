@@ -1,5 +1,5 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -7,7 +7,7 @@
 import { awaitStorage, createMMKVBackend, createStorage, wrapSync } from "@core/vendetta/storage";
 import { useEffect, useState } from "react";
 
-/** When each plugin was first seen, like 10MCord PC's "existing plugins" list */
+/** When each plugin was first seen, like ShiftCord PC's "existing plugins" list */
 const firstSeen = wrapSync(createStorage<Record<string, number>>(createMMKVBackend("ENDCORD_PLUGINS_FIRST_SEEN")));
 
 const NEW_FOR = 2 * 24 * 60 * 60 * 1000;

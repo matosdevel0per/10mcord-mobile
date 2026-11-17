@@ -35,7 +35,7 @@ jobs:
         run: bun run lint
       - name: Check the translations
         working-directory: bundle
-        # Without 10MCord PC checked out, the shipped translations are checked: every string in all five languages
+        # Without ShiftCord PC checked out, the shipped translations are checked: every string in all five languages
         run: node scripts/i18n-sync.mjs --strict
       - name: Build
         working-directory: bundle

@@ -1,5 +1,5 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -17,8 +17,8 @@ function TimingsPage() {
     const plugins = Object.entries(timings.plugins).sort((a, b) => b[1] - a[1]);
     const total = plugins.reduce((n, [, ms]) => n + ms, 0);
     return <Stack spacing={12}>
-        <TableRowGroup title={t("10MCord")}>
-            <TableRow label={t("10MCord's own startup")} trailing={<TableRow.TrailingText text={timings.ready ? `${timings.ready - timings.loaded} ms` : "…"} />} />
+        <TableRowGroup title={t("ShiftCord")}>
+            <TableRow label={t("ShiftCord's own startup")} trailing={<TableRow.TrailingText text={timings.ready ? `${timings.ready - timings.loaded} ms` : "…"} />} />
             <TableRow label={t("Plugins started")} subLabel={t("{count} plugins", { count: plugins.length })} trailing={<TableRow.TrailingText text={`${total} ms`} />} />
         </TableRowGroup>
         {plugins.length > 0 && <TableRowGroup title={t("Plugins")}>
@@ -31,7 +31,7 @@ function TimingsPage() {
 export default definePlugin({
     id: "10MCord.startup-timings",
     name: "StartupTimings",
-    description: tx("Shows how long 10MCord and each of its plugins took to start, in the plugin's settings"),
+    description: tx("Shows how long ShiftCord and each of its plugins took to start, in the plugin's settings"),
     icon: "TimerIcon",
     tags: ["Utility"],
     SettingsComponent: TimingsPage,

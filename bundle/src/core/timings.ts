@@ -1,19 +1,19 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
- * How long 10MCord's startup took, for the StartupTimings plugin and the emulator self-test.
+ * How long ShiftCord's startup took, for the StartupTimings plugin and the emulator self-test.
  */
 
 export interface Timings {
     /** When the bundle started running */
     loaded: number;
-    /** When 10MCord's own startup finished */
+    /** When ShiftCord's own startup finished */
     ready?: number;
-    /** How long each 10MCord plugin took to start, in milliseconds */
+    /** How long each ShiftCord plugin took to start, in milliseconds */
     plugins: Record<string, number>;
-    /** How long each step of 10MCord's startup took, in milliseconds, until what it returned settled */
+    /** How long each step of ShiftCord's startup took, in milliseconds, until what it returned settled */
     steps?: Record<string, number>;
 }
 

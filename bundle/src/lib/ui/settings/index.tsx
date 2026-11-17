@@ -20,7 +20,7 @@ export const registeredSections = {} as {
     [key: string]: RowConfig[];
 };
 
-/** Set by the Hide10MCord plugin: 10MCord's sections are left out of Discord's settings */
+/** Set by the Hide ShiftCord plugin: ShiftCord's sections are left out of Discord's settings */
 export const sectionVisibility = { hidden: false };
 
 /** The sections to show: empty ones (kept for plugins that add rows to them) and hidden ones are left out */

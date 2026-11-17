@@ -8,13 +8,13 @@
  * Every user-visible string is English text: the values of src/core/i18n/default.json, and every literal passed to
  * t() or tx() anywhere in src/. Each one is translated from, in order:
  *   1. src/core/i18n/overrides.json, for wording that is specific to mobile
- *   2. 10MCord PC's translation tables (src/utils/i18n.ts in the 10MCord repository), so both clients say the same
- *   3. 10MCord PC's plugin description tables, matched through the plugin's English description
+ *   2. ShiftCord PC's translation tables (src/utils/i18n.ts in the ShiftCord repository), so both clients say the same
+ *   3. ShiftCord PC's plugin description tables, matched through the plugin's English description
  *
  *   node scripts/i18n-sync.mjs [--pc ../../10MCord-pc] [--strict]
  *
  * --strict exits with an error when a string has no translation, which is how CI keeps the five languages complete.
- * Without --pc (or when the 10MCord PC checkout isn't there), the translations already in locales/ are kept for strings
+ * Without --pc (or when the ShiftCord PC checkout isn't there), the translations already in locales/ are kept for strings
  * that overrides.json doesn't cover, so the script also works on a machine that only has this repository.
  */
 import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "fs";
@@ -58,10 +58,10 @@ for (const file of walk(path.join(root, "src"))) {
 }
 needed.delete(", ");
 
-// 2. 10MCord PC's tables
+// 2. ShiftCord PC's tables
 function evalObjectAfter(source, marker) {
     const start = source.indexOf(marker);
-    if (start === -1) throw new Error(`Couldn't find '${marker}' in 10MCord PC's i18n.ts`);
+    if (start === -1) throw new Error(`Couldn't find '${marker}' in ShiftCord PC's i18n.ts`);
     const open = source.indexOf("({", start);
     let depth = 0, inStr = null, i = open;
     for (; i < source.length; i++) {
@@ -87,7 +87,7 @@ if (existsSync(pcI18n)) {
     const dict = evalObjectAfter(source, "const buildDict");
     const pluginDesc = evalObjectAfter(source, "const buildPluginDescDict");
 
-    // English plugin descriptions, read from 10MCord PC's plugin definitions
+    // English plugin descriptions, read from ShiftCord PC's plugin definitions
     const descByText = {};
     for (const file of walk(path.join(pcRoot, "src/plugins"))) {
         const code = readFileSync(file, "utf8");
@@ -96,9 +96,9 @@ if (existsSync(pcI18n)) {
         if (name && desc) descByText[unescape(desc)] = name;
     }
     pc = { dict, pluginDesc, descByText };
-    console.log(`10MCord PC tables: ${Object.keys(dict.tr).length} strings, ${Object.keys(pluginDesc.tr).length} plugin descriptions`);
+    console.log(`ShiftCord PC tables: ${Object.keys(dict.tr).length} strings, ${Object.keys(pluginDesc.tr).length} plugin descriptions`);
 } else {
-    console.log(`10MCord PC not found at ${pcRoot}; keeping the existing translations for strings it would provide`);
+    console.log(`ShiftCord PC not found at ${pcRoot}; keeping the existing translations for strings it would provide`);
 }
 
 // The hash the bundle looks translations up by; must match textHash in src/core/i18n/index.ts

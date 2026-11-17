@@ -1,9 +1,9 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
- * 10MCord PC's CustomProfile: your username, display name, avatar, banner, bio, pronouns, profile colors, Nitro,
+ * ShiftCord PC's CustomProfile: your username, display name, avatar, banner, bio, pronouns, profile colors, Nitro,
  * badges, avatar decoration, profile effect, account creation date, email and phone, as only you see them. Profiles
  * are kept per account and can be saved as presets.
  */
@@ -41,7 +41,7 @@ const EditorPage = ({ close }: { close: () => void; }) => {
     return <CustomProfileEditor onClose={close} />;
 };
 
-/** Opens the editor: from the plugin's settings, as the next page there; from the chat or 10MCordToolbox, as a window */
+/** Opens the editor: from the plugin's settings, as the next page there; from the chat or ShiftCord Toolbox, as a window */
 const openEditor = (navigation?: any) => openPage(t("Custom Profile"), EditorPage, navigation);
 
 function OpenButton() {
@@ -427,7 +427,7 @@ const plugin = definePlugin({
         );
         if (migrate()) redraw();
 
-        // Where the editor opens from: a button beside the message box and 10MCordToolbox, like 10MCord PC's header
+        // Where the editor opens from: a button beside the message box and ShiftCord Toolbox, like ShiftCord PC's header
         // bar button and toolbox entry
         optional("The chat bar button", () => cleanup(
             addChatButton({

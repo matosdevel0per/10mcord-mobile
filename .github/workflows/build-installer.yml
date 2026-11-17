@@ -1,6 +1,6 @@
 name: Build Installer
 
-# 10MCord Classic's installer, built from main. GitHub only offers a manual run of workflows on the default branch, so
+# ShiftCord Classic's installer, built from main. GitHub only offers a manual run of workflows on the default branch, so
 # this file is here for the button: pick main under "Use workflow from".
 on:
   workflow_dispatch:

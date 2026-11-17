@@ -195,7 +195,7 @@ void reloadApp(UIViewController *viewController) {
 
 void deletePlugins(void) {
     NSFileManager *fm = [NSFileManager defaultManager];
-    // 10MCord's plugin settings and installed plugins, and the Vendetta plugins'
+    // ShiftCord's plugin settings and installed plugins, and the Vendetta plugins'
     [fm removeItemAtURL:[getPyoncordDirectory() URLByAppendingPathComponent:@"plugins"] error:nil];
     [fm removeItemAtURL:[getStorageDirectory() URLByAppendingPathComponent:@"VENDETTA_PLUGINS"] error:nil];
 }

@@ -68,7 +68,7 @@ class PreferenceManager(context: Context) :
 
     var hasAskedForBatteryOpt by booleanPreference("has_asked_for_battery_opt", false)
 
-    /** Which 10MCord the home screen installs */
+    /** Which ShiftCord the home screen installs */
     var edition by enumPreference("edition", Edition.TENMCORD)
 
     init {
@@ -107,12 +107,12 @@ enum class Mirror(val baseUrl: String) {
 }
 
 enum class Edition {
-    /** 10MCord on the current Discord app, installed here */
+    /** ShiftCord on the current Discord app, installed here */
     TENMCORD,
     /** Legacy preference value, migrated to [TENMCORD] on startup. */
     @Deprecated("Retained only to migrate the previously stored preference")
     ENDCORD,
-    /** 10MCord Classic on Aliucord's older Discord, installed by its own installer */
+    /** ShiftCord Classic on Aliucord's older Discord, installed by its own installer */
     CLASSIC
 }
 

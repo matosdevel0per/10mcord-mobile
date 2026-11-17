@@ -1,9 +1,9 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
- * More of 10MCord PC's voice channel plugins: what's going on in your call, and acting on everyone in it.
+ * More of ShiftCord PC's voice channel plugins: what's going on in your call, and acting on everyone in it.
  *
  * What more than one of these plugins uses.
  */

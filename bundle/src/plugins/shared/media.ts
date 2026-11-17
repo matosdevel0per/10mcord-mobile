@@ -1,9 +1,9 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
- * 10MCord PC's file and media plugins: viewing documents and archives, keeping favourites, and better YouTube titles.
+ * ShiftCord PC's file and media plugins: viewing documents and archives, keeping favourites, and better YouTube titles.
  *
  * What more than one of the FileViewer, PdfViewer, ZipPreview, FixFileExtensions, FavoriteAnything and GifCollections plugins uses.
  */

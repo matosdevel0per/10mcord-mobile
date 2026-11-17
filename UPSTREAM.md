@@ -1,9 +1,9 @@
 # Upstream.
 
-10MCord for Android (new) is built from the Revenge project, and 10MCord for iOS loads the same bundle with a tweak
+ShiftCord for Android (new) is built from the Revenge project, and ShiftCord for iOS loads the same bundle with a tweak
 built from RainTweak. Each part lives in its own directory and was imported from the upstream repository at the commit
 listed below. To bring in upstream fixes, fetch the upstream repository and merge or cherry-pick into the matching
-directory (the directories keep upstream's layout, so `git diff` against these commits shows exactly what 10MCord
+directory (the directories keep upstream's layout, so `git diff` against these commits shows exactly what ShiftCord
 changed).
 
 | Directory | Upstream | Imported commit | License |

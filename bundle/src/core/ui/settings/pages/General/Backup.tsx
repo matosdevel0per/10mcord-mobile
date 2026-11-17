@@ -20,14 +20,14 @@ const cancelled = (e: any) => {
 /** Runs a row's action, showing what went wrong; the user backing out of Android's file screen isn't an error */
 const run = (action: () => Promise<unknown>) => () => void action().catch(e => {
     if (cancelled(e)) return;
-    console.error("[10MCord] backup", e);
+    console.error("[ShiftCord] backup", e);
     showToast(e instanceof Error ? e.message : String(e), findAssetId("CircleXIcon-primary"));
 });
 
 async function saveBackup() {
     const text = await createBackup();
     const picker = documents();
-    if (!picker) return void await Share.share({ message: text, title: "10MCord" });
+    if (!picker) return void await Share.share({ message: text, title: "ShiftCord" });
 
     const fileName = `10MCord-backup-${new Date().toISOString().slice(0, 10)}.json`;
     await NativeFileModule.writeFile("cache", fileName, text, "utf8");
@@ -51,7 +51,7 @@ async function openFile(): Promise<string> {
     if (!picker) throw new Error(t("This version of Discord can't open files"));
 
     const [file] = await picker.pick({ type: [picker.types?.allFiles ?? "*/*"] });
-    if (typeof file?.size === "number" && file.size > MAX_BACKUP_SIZE) throw new Error(t("This file isn't an 10MCord backup"));
+    if (typeof file?.size === "number" && file.size > MAX_BACKUP_SIZE) throw new Error(t("This file isn't an ShiftCord backup"));
     const [copy] = await picker.keepLocalCopy({
         files: [{ uri: file.uri, fileName: "10MCord-restore.json" }],
         destination: "cachesDirectory",
@@ -79,7 +79,7 @@ async function pickBackup() {
     const date = Date.parse(backup.createdAt);
     openAlert("10MCord-restore-backup", <AlertModal
         title={t("Restore this backup?")}
-        content={t("This backup is from {date}, with {count} plugins on. It replaces your 10MCord settings, which plugins are on and their settings, and what you made with plugins, then reloads Discord. Only restore a backup you made yourself: it can turn plugins on and change what they do.", {
+        content={t("This backup is from {date}, with {count} plugins on. It replaces your ShiftCord settings, which plugins are on and their settings, and what you made with plugins, then reloads Discord. Only restore a backup you made yourself: it can turn plugins on and change what they do.", {
             date: Number.isNaN(date) ? "?" : formatDate(date, { year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit" }),
             count: Object.values(backup.plugins).filter(Boolean).length,
         })}

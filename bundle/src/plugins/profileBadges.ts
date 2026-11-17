@@ -1,5 +1,5 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
@@ -52,7 +52,7 @@ function patch() {
             try {
                 result = extend(userId, result);
             } catch (e) {
-                console.error(`[10MCord] ${key} couldn't change the badges`, e);
+                console.error(`[ShiftCord] ${key} couldn't change the badges`, e);
             }
         }
         return result;

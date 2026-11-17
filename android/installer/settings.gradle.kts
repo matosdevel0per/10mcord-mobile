@@ -1,4 +1,4 @@
-rootProject.name = "10MCord"
+rootProject.name = "ShiftCord"
 
 pluginManagement {
     repositories {

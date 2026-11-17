@@ -1,9 +1,9 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
- * 10MCord PC's message context menu items, as rows in the sheet that opens when you long-press a message.
+ * ShiftCord PC's message context menu items, as rows in the sheet that opens when you long-press a message.
  *
  * What more than one of these plugins uses.
  */

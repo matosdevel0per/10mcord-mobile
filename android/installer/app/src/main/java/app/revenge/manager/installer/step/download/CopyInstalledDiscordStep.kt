@@ -16,7 +16,7 @@ import org.koin.core.component.inject
 import java.io.File
 
 /**
- * Copies the APKs of the Discord already installed on the phone (usually from the Play Store), so 10MCord is built
+ * Copies the APKs of the Discord already installed on the phone (usually from the Play Store), so ShiftCord is built
  * from exactly the version the user has instead of a download.
  *
  * @param workingDir Where the copies are patched

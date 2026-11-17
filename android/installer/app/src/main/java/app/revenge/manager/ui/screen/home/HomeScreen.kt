@@ -102,17 +102,17 @@ class HomeScreen : Screen {
                 }
             }
 
-        // 10MCord is built from the Discord on the phone when there is one, unless the user picks a download
+        // ShiftCord is built from the Discord on the phone when there is one, unless the user picks a download
         var source by remember { mutableStateOf(prefs.discordSource) }
         val installedDiscord = viewModel.installedDiscord
         val useInstalled = installedDiscord != null && source == DiscordSource.INSTALLED
         val latestVersion = if (useInstalled) installedDiscord else downloadVersion
 
-        // 10MCord on the current Discord is installed here; 10MCord Classic, on Aliucord's older Discord, by its own
+        // ShiftCord on the current Discord is installed here; ShiftCord Classic, on Aliucord's older Discord, by its own
         // installer, which this one fetches and opens
         var edition by remember { mutableStateOf(prefs.edition) }
 
-        // Back from installing 10MCord Classic Installer, the button opens it
+        // Back from installing ShiftCord Classic Installer, the button opens it
         val lifecycleOwner = LocalLifecycleOwner.current
         DisposableEffect(lifecycleOwner) {
             val observer = LifecycleEventObserver { _, event ->
@@ -314,7 +314,7 @@ class HomeScreen : Screen {
                         selected = edition == value,
                         onClick = { onChange(value) },
                         shape = SegmentedButtonDefaults.itemShape(index, editions.size),
-                        // The fill shows the choice; a checkmark would cut "10MCord Classic" short on a narrow phone
+                        // The fill shows the choice; a checkmark would cut "ShiftCord Classic" short on a narrow phone
                         icon = {},
                         label = { Text(stringResource(label), maxLines = 1, overflow = TextOverflow.Ellipsis) }
                     )

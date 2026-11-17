@@ -1,5 +1,5 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -10,7 +10,7 @@ import { safeFetch } from "@lib/utils";
 import { definePlugin } from "../api";
 import { onSend } from "../hooks";
 
-// The ClearURLs project's rules, as on 10MCord PC
+// The ClearURLs project's rules, as on ShiftCord PC
 const RULES_URL = "https://raw.githubusercontent.com/ClearURLs/Rules/master/data.min.json";
 
 interface RuleSet {

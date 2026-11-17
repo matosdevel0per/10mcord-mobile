@@ -3,7 +3,7 @@
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
- * 10MCord's built-in plugins as bunny["10MCord"], like 10MCord PC's 10MCord.Plugins: for DevTools and the self-test.
+ * 10MCord's built-in plugins as bunny["10MCord"], like ShiftCord PC's 10MCord.Plugins: for DevTools and the self-test.
  * Only the manifest is loaded with it; everything else is required when used, so it costs nothing at startup.
  */
 

@@ -29,7 +29,7 @@ export const showToast = (content: string, asset?: number) => {
             icon: iconFor(asset),
         });
     } catch (e) {
-        console.error("[10MCord] couldn't show a toast", e);
+        console.error("[ShiftCord] couldn't show a toast", e);
     }
 };
 

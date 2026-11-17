@@ -1,9 +1,9 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
- * What CustomProfile saves, per account like on 10MCord PC: each account's profile and whether it's on, its presets
+ * What CustomProfile saves, per account like on ShiftCord PC: each account's profile and whether it's on, its presets
  * and its badge layout.
  */
 

@@ -9,7 +9,7 @@ const IntlMessageFormat = findByNameLazy("MessageFormat") as typeof import("intl
 
 export type TenMCordLanguage = "en" | "tr" | "ru" | "es" | "fr" | "pt";
 
-/** Languages 10MCord recognizes; Portuguese falls back to English for untranslated text. */
+/** Languages ShiftCord recognizes; Portuguese falls back to English for untranslated text. */
 export const LANGUAGES: { code: TenMCordLanguage; nativeName: string; }[] = [
     { code: "en", nativeName: "English" },
     { code: "tr", nativeName: "Türkçe" },
@@ -86,7 +86,7 @@ export function normalizeLanguage(locale?: string | null): TenMCordLanguage {
     return "en";
 }
 
-/** The language 10MCord is shown in: the one picked in 10MCord's settings, or Discord's own */
+/** The language ShiftCord is shown in: the one picked in ShiftCord's settings, or Discord's own */
 export function getLanguage(): TenMCordLanguage {
     const picked = settings.language;
     return picked && picked !== "auto" ? picked : normalizeLanguage(discordLocale());

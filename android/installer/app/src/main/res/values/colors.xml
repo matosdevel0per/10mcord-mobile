@@ -2,6 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="brand">#FEB23A42</color>
-    <color name="ic_launcher_background">#FF10182A</color>
+    <color name="brand">#FF5F65F5</color>
+    <color name="ic_launcher_background">#FF171A3D</color>
 </resources>

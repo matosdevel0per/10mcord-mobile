@@ -1,9 +1,9 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
- * 10MCord PC's chat plugins: long messages, reactions, replies and mentions, an AI helper, and feeling a ping.
+ * ShiftCord PC's chat plugins: long messages, reactions, replies and mentions, an AI helper, and feeling a ping.
  *
  * Helpers of the SplitLargeMessages plugin, which other code uses too.
  */

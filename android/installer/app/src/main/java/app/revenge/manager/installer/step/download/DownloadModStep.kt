@@ -22,7 +22,7 @@ import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.util.zip.ZipInputStream
 
-/** Downloads the single published 10MCord release ZIP, extracts its Xposed APK and verifies it. */
+/** Downloads the single published ShiftCord release ZIP, extracts its Xposed APK and verifies it. */
 @Stable
 class DownloadModStep(
     private val workingDir: File
@@ -47,7 +47,7 @@ class DownloadModStep(
             if (!destination.exists() || destination.length() <= 0L) {
                 error("Developer-selected module is missing: ${destination.absolutePath}")
             }
-            runner.logger.i("Using the module at $destination as it is; it isn't checked against the 10MCord signed release")
+            runner.logger.i("Using the module at $destination as it is; it isn't checked against the ShiftCord signed release")
             mainThread { context.showToast(R.string.msg_unsigned_module) }
             destination.copyTo(workingCopy, overwrite = true)
             return

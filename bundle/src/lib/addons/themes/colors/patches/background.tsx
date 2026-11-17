@@ -57,7 +57,7 @@ export default function patchChatBackground() {
         return <ThemeBackground>{ret}</ThemeBackground>;
     };
 
-    // Discord loads its chat when a chat first shows, so it's patched then rather than loaded with 10MCord
+    // Discord loads its chat when a chat first shows, so it's patched then rather than loaded with ShiftCord
     return patchWhenLoaded(MessagesModule, module => {
         try {
             return typeof module.default === "function"

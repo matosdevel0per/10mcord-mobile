@@ -147,18 +147,18 @@ export async function createBackup(): Promise<string> {
     return JSON.stringify(backup, null, 2);
 }
 
-/** The backup in a file's text, keeping only what 10MCord takes from backups; throws, with a message to show, when it isn't one */
+/** The backup in a file's text, keeping only what ShiftCord takes from backups; throws, with a message to show, when it isn't one */
 export function parseBackup(text: string): Backup {
     let parsed: any;
     try {
         parsed = JSON.parse(text);
     } catch {
-        throw new Error(t("This file isn't an 10MCord backup"));
+        throw new Error(t("This file isn't a ShiftCord backup"));
     }
     if (!isPlainObject(parsed) || parsed.format !== FORMAT || typeof parsed.version !== "number") {
-        throw new Error(t("This file isn't an 10MCord backup"));
+        throw new Error(t("This file isn't a ShiftCord backup"));
     }
-    if (parsed.version > VERSION) throw new Error(t("This backup is from a newer 10MCord. Update 10MCord, then try again."));
+    if (parsed.version > VERSION) throw new Error(t("This backup is from a newer ShiftCord. Update ShiftCord, then try again."));
     if (!isSafe(parsed)) throw new Error(t("This backup is damaged and can't be restored"));
 
     const object = (value: unknown): JsonObject => isPlainObject(value) ? value : {};
@@ -196,7 +196,7 @@ export function parseBackup(text: string): Backup {
 }
 
 /**
- * Replaces 10MCord's settings with a backup's. Discord should reload right after: plugins that are running hold their
+ * Replaces ShiftCord's settings with a backup's. Discord should reload right after: plugins that are running hold their
  * settings in memory until then. Resolves to how many themes and fonts couldn't be installed again.
  */
 export async function restoreBackup(backup: Backup): Promise<number> {

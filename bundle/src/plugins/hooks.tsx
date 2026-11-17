@@ -1,9 +1,9 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
- * The extension points most of 10MCord's plugins are built on, each patched once and shared, like 10MCord PC's
+ * The extension points most of ShiftCord's plugins are built on, each patched once and shared, like ShiftCord PC's
  * MessageEvents, Commands and context menu APIs:
  *  - onSend: change, or stop, a message before it is sent or edited
  *  - onMessageRow: change how a message is drawn in the chat
@@ -276,7 +276,7 @@ function normalizeLocalMessageMedia(message: Record<string, any>) {
     return { ...message, components, embeds };
 }
 
-/** Puts a message into the chat that only you see, as if it was sent by someone (like 10MCord PC's FakeMessage) */
+/** Puts a message into the chat that only you see, as if it was sent by someone (like ShiftCord PC's FakeMessage) */
 export function receiveLocalMessage(channelId: string, message: Record<string, any>) {
     (MessageActions()?.receiveMessage ?? messageUtil?.receiveMessage)?.(channelId, normalizeLocalMessageMedia(message));
 }
@@ -310,7 +310,7 @@ export async function runTransforms(channelId: string, message: any, editing: bo
             if (result === null) return false;
             if (typeof result === "string") message.content = result;
         } catch (e) {
-            console.error(`[10MCord] ${key} couldn't process a message`, e);
+            console.error(`[ShiftCord] ${key} couldn't process a message`, e);
         }
     }
     return true;
@@ -350,7 +350,7 @@ export function onSend(key: string, fn: SendTransform, order = 0) {
     };
 }
 
-/** Text inside code blocks and inline code is left alone by most text transforms, like on 10MCord PC */
+/** Text inside code blocks and inline code is left alone by most text transforms, like on ShiftCord PC */
 export function outsideCode(content: string, fn: (text: string) => string): string {
     return content.split(/(```[\s\S]*?```|`[^`\n]*`)/g).map((part, i) => i % 2 ? part : fn(part)).join("");
 }
@@ -375,7 +375,7 @@ function filterMessage(message: any): any {
             if (result === null) return null;
             if (result && typeof result === "object") current = result;
         } catch (e) {
-            console.error(`[10MCord] ${key} couldn't check a message`, e);
+            console.error(`[ShiftCord] ${key} couldn't check a message`, e);
         }
     }
     return current;
@@ -491,7 +491,7 @@ export function onMessageRow(key: string, fn: RowDecorator, order: number = RowO
                 try {
                     decorate(message, args.message);
                 } catch (e) {
-                    console.error(`[10MCord] ${k} couldn't decorate a message`, e);
+                    console.error(`[ShiftCord] ${k} couldn't decorate a message`, e);
                 }
             }
         });
@@ -575,12 +575,12 @@ function TenMCordActions({ message, channel }: { message: any; channel: any; }) 
                     try {
                         action.onPress(message, channel);
                     } catch (e) {
-                        console.error(`[10MCord] ${action.key} failed`, e);
+                        console.error(`[ShiftCord] ${action.key} failed`, e);
                     }
                 }}
             />);
         } catch (e) {
-            console.error(`[10MCord] ${action.key} couldn't be shown`, e);
+            console.error(`[ShiftCord] ${action.key} couldn't be shown`, e);
         }
     }
     if (!rows.length) return null;
@@ -604,7 +604,7 @@ export function addMessageAction(action: MessageAction) {
                     sheet.props.children = children;
                 }
             } catch (e) {
-                console.error("[10MCord] couldn't add to the message sheet", e);
+                console.error("[ShiftCord] couldn't add to the message sheet", e);
             }
             return tree;
         });

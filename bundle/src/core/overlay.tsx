@@ -1,5 +1,5 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
@@ -86,7 +86,7 @@ function wrap(App: any, key: string) {
     </View>;
     Wrapped.displayName = `10MCordRoot(${App?.displayName ?? App?.name ?? key})`;
     Wrapped.__10MCordRoot = true;
-    console.log(`[10MCord] overlay host attached to ${key}`);
+    console.log(`[ShiftCord] overlay host attached to ${key}`);
     return Wrapped;
 }
 
@@ -123,7 +123,7 @@ export function initOverlayHost() {
             (registry.setWrapperComponentProvider as (p: unknown) => void)(null);
         }
     } catch (e) {
-        console.error("[10MCord] overlay host couldn't be installed", e);
+        console.error("[ShiftCord] overlay host couldn't be installed", e);
     }
     return () => unpatches.forEach(u => u());
 }

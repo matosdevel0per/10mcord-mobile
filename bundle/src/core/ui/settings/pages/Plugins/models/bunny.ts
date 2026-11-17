@@ -1,5 +1,5 @@
 import { t } from "@core/i18n";
-import { TenMCordIcon } from "@core/ui/settings";
+import { ShiftCordIcon } from "@core/ui/settings";
 import { disablePlugin, enablePlugin, getPluginSettingsComponent, isPluginEnabled, pluginSettings } from "@lib/addons/plugins";
 import { BunnyPluginManifest } from "@lib/addons/plugins/types";
 import { findAssetId } from "@lib/api/assets";
@@ -22,7 +22,7 @@ export default function unifyBunnyPlugin(manifest: BunnyPluginManifest): Unified
 
         getBadges() {
             // 10MCord's own plugins don't need a badge saying where they come from
-            return manifest.extras?.["10MCord"] ? [] : [{ source: { uri: TenMCordIcon } }];
+            return manifest.extras?.["10MCord"] ? [] : [{ source: { uri: ShiftCordIcon } }];
         },
         isEnabled: () => isPluginEnabled(manifest.id),
         isInstalled: () => manifest.id in pluginSettings,

@@ -36,7 +36,7 @@ static const void *kSystemCursorKey = &kSystemCursorKey;
 - (void)setNeedsSelectionUpdate;
 @end
 
-/** CSS's timing functions, which 10MCord PC's caret transition uses */
+/** CSS's timing functions, which ShiftCord PC's caret transition uses */
 static CAMediaTimingFunction *timingNamed(NSString *name)
 {
     if ([name isEqualToString:@"linear"]) return [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];

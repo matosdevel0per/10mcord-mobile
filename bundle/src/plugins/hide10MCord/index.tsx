@@ -1,5 +1,5 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -15,16 +15,16 @@ import { definePlugin, onSettingChange } from "../api";
 
 const plugin = definePlugin({
     id: "10MCord.hide-10MCord",
-    name: "Hide10MCord",
-    description: tx("Hides 10MCord's entries in Discord's settings, for screenshots and screen sharing. Plugins keep working."),
+    name: "Hide ShiftCord",
+    description: tx("Hides ShiftCord's entries in Discord's settings, for screenshots and screen sharing. Plugins keep working."),
     popular: 3,
     icon: "EyeSlashIcon",
     tags: ["Privacy", "Utility"],
     settings: {
         hidden: {
             type: "boolean",
-            label: tx("Hide 10MCord now"),
-            description: tx("Type /hide10MCord in any chat to show 10MCord's settings again"),
+            label: tx("Hide ShiftCord now"),
+            description: tx("Type /hideshiftcord in any chat to show ShiftCord's settings again"),
             default: false,
         },
     },
@@ -35,12 +35,12 @@ const plugin = definePlugin({
                 if (key === "hidden") sectionVisibility.hidden = store.hidden;
             }),
             registerCommand({
-                name: "hide10MCord",
-                description: t("Show or hide 10MCord's entries in Discord's settings"),
+                name: "hideshiftcord",
+                description: t("Show or hide ShiftCord's entries in Discord's settings"),
                 options: [],
                 execute() {
                     store.hidden = !store.hidden;
-                    showToast(store.hidden ? t("10MCord is hidden from settings") : t("10MCord is shown in settings again"), findAssetId(store.hidden ? "EyeSlashIcon" : "EyeIcon"));
+                    showToast(store.hidden ? t("ShiftCord is hidden from settings") : t("ShiftCord is shown in settings again"), findAssetId(store.hidden ? "EyeSlashIcon" : "EyeIcon"));
                 },
             }),
             () => sectionVisibility.hidden = false,

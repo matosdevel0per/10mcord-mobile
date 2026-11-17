@@ -22,7 +22,7 @@ const key = createPrivateKey(pem);
 const baseUrl = process.env.TENMCORD_RELEASE_BASE_URL;
 /** @type {Record<string, { size: number; sha256: string; url?: string; }>} */
 const files = {};
-const PUBLISHED = /^(10MCord(\.v\d+\.hbc|\.min\.js)|10MCord-(xposed|installer|classic-installer)\.apk)$/;
+const PUBLISHED = /^(ShiftCord(\.v\d+\.hbc|\.min\.js)|10MCord-(xposed|installer|classic-installer)\.apk)$/;
 for (const name of readdirSync(folder).filter(n => PUBLISHED.test(n)).sort()) {
     const file = path.join(folder, name);
     files[name] = {

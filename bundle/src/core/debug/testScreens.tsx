@@ -1,9 +1,9 @@
 /*
- * 10MCord for Android
+ * ShiftCord for Android
  * Copyright (c) 2026 rootpoi and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
- * Only in --test bundles: shows 10MCord's settings pages over whatever Discord shows (the login screen, on the
+ * Only in --test bundles: shows ShiftCord's settings pages over whatever Discord shows (the login screen, on the
  * emulator), inside a navigator of their own, so the emulator workflow can take screenshots of them.
  */
 

@@ -1,14 +1,14 @@
 <div align="center">
 
-<img src="docs/images/banner.png" alt="10MCord" width="420">
+<img src="docs/images/banner.png" alt="ShiftCord" width="420">
 
-# 10MCord Mobile
+# ShiftCord Mobile
 
 **Plugins, themes and privacy for the Discord app on your Android phone, iPhone and iPad**
 
 [![Download for Android](https://img.shields.io/badge/Download-Android%20APK-777777?style=for-the-badge&logo=android&logoColor=white)](https://github.com/matosdevel0per/10mcord-mobile/releases/download/next-installer-v1.0.3/10MCord-installer-v1.0.3.apk)
 [![Download for iOS](https://img.shields.io/badge/Download-iOS%20IPA-000000?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/matosdevel0per/10mcord-mobile/releases/download/ios-v1.0.7/10MCord.ipa)
-[![Join the Discord](https://img.shields.io/badge/Discord-Join%20us-777777?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/10MCord)
+[![Join the Discord](https://img.shields.io/badge/Discord-Join%20us-777777?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/q5ny7wg9ap)
 
 ![Plugins](https://img.shields.io/badge/plugins-303-777777)
 ![Android](https://img.shields.io/badge/Android-9%2B-777777?logo=android&logoColor=white)
@@ -17,27 +17,27 @@
 ![Languages](https://img.shields.io/badge/languages-5-777777)
 ![License](https://img.shields.io/badge/license-GPL--3.0-777777)
 
-[Website](https://10MCord.com) · [10MCord PC](https://github.com/10MCord/10MCord) · [10MCord Classic](https://github.com/matosdevel0per/10mcord-mobile/tree/main) · [Plugin list](docs/PLUGINS.md)
+[Website](https://10MCord.com) · [ShiftCord PC](https://github.com/10MCord/10MCord) · [ShiftCord Classic](https://github.com/matosdevel0per/10mcord-mobile/tree/main) · [Plugin list](docs/PLUGINS.md)
 
 </div>
 
-10MCord is on every platform: this repository is the mobile app for **Android** and **iOS / iPadOS**, and
-[10MCord PC](https://github.com/10MCord/10MCord) covers **Windows, macOS, Linux and the web**.
+ShiftCord is on every platform: this repository is the mobile app for **Android** and **iOS / iPadOS**, and
+[ShiftCord PC](https://github.com/10MCord/10MCord) covers **Windows, macOS, Linux and the web**.
 
 | | Android | iOS and iPadOS |
 | --- | --- | --- |
 | **Version** | Android 9 or newer | iOS 16 or newer, Discord 332 or newer |
-| **Install with** | 10MCord Installer | An IPA, with Sideloadly, AltStore, SideStore, Feather, KSign or ESign |
+| **Install with** | ShiftCord \| Installer | An IPA, with Sideloadly, AltStore, SideStore, Feather, KSign or ESign |
 | **Root or jailbreak** | Not needed | Not needed |
 | **Plugins, themes, fonts** | Yes | Yes |
 | **Signed updates** | Yes | Yes |
 | **Code** | [`android/`](android) | [`ios/`](ios) |
 
-Both run the same 10MCord, from [`bundle/`](bundle), so plugins and themes work the same on each.
+Both run the same ShiftCord, from [`bundle/`](bundle), so plugins and themes work the same on each.
 
 ## Features
 
-- **303 plugins built in.** 261 of them come from 10MCord PC and 42 are made for phones. They are all off until you
+- **303 plugins built in.** 261 of them come from ShiftCord PC and 42 are made for phones. They are all off until you
   turn them on, each with its own settings, and you can search and filter them by tag like on desktop. See the
   [full list](docs/PLUGINS.md).
 - **Themes and fonts.** Browse community themes and Catppuccin without leaving the app, or add your own. The status
@@ -47,7 +47,7 @@ Both run the same 10MCord, from [`bundle/`](bundle), so plugins and themes work 
 - **Your language.** English, Türkçe, Русский, Español and Français, following Discord's language or the one you pick.
 - **Light on older phones.** Only a list of plugins loads when Discord starts. A plugin's code loads the first time you
   turn it on.
-- **Always up to date.** 10MCord updates itself every time the app starts. On Android, the installer rebuilds it when
+- **Always up to date.** ShiftCord updates itself every time the app starts. On Android, the installer rebuilds it when
   Discord updates.
 - **Signed updates.** Every update is signed, and the app checks that signature and refuses older versions, so changing
   the files on the server isn't enough to run code on your phone.
@@ -57,27 +57,27 @@ Both run the same 10MCord, from [`bundle/`](bundle), so plugins and themes work 
 
 ## Install on Android
 
-No root needed. 10MCord installs next to Discord as a separate app, and your Discord stays exactly as it is.
+No root needed. ShiftCord installs next to Discord as a separate app, and your Discord stays exactly as it is.
 
-1. Download **[10MCord Installer](https://github.com/matosdevel0per/10mcord-mobile/releases/download/next-installer-v1.0.3/10MCord-installer-v1.0.3.apk)**
+1. Download **[ShiftCord | Installer](https://github.com/matosdevel0per/10mcord-mobile/releases/download/next-installer-v1.0.3/10MCord-installer-v1.0.3.apk)**
    and open it. If Android asks, allow your browser to install apps.
-2. In **10MCord Installer**, tap **Install**. It uses the Discord on your phone, or downloads the latest one.
-3. Open **10MCord** and sign in. 10MCord's settings are in Discord's settings, under **10MCord**.
+2. In **ShiftCord | Installer**, tap **Install**. It uses the Discord on your phone, or downloads the latest one.
+3. Open **ShiftCord** and sign in. ShiftCord's settings are in Discord's settings, under **ShiftCord**.
 
 Requires Android 9 or newer. If Google Play Protect warns about the installer, tap **More details → Install anyway**:
 it warns about every app that doesn't come from the Play Store.
 
 <details>
-<summary><b>Rooted? Run 10MCord inside the real Discord with LSPosed</b></summary>
+<summary><b>Rooted? Run ShiftCord inside the real Discord with LSPosed</b></summary>
 
 <br>
 
-Nothing is reinstalled: the Play Store Discord runs 10MCord.
+Nothing is reinstalled: the Play Store Discord runs ShiftCord.
 
 1. Install [LSPosed](https://github.com/JingMatrix/LSPosed) or another Xposed framework.
 2. Download `10MCord-xposed.apk` from the [`builds-next` branch](https://github.com/matosdevel0per/10mcord-mobile/tree/builds-next)
    and install it.
-3. In LSPosed, enable the **10MCord Xposed** module for **Discord** (`com.discord`).
+3. In LSPosed, enable the **ShiftCord Xposed** module for **Discord** (`com.discord`).
 4. Force-stop Discord and open it again.
 
 </details>
@@ -103,7 +103,7 @@ No jailbreak needed. iOS 16 or newer.
    - **AltStore or SideStore**, adding this source:
      `https://raw.githubusercontent.com/matosdevel0per/10mcord-mobile/builds-ios/apps.json`
    - **Feather, KSign or ESign**, with a certificate of your own.
-3. Open **10MCord** and sign in. 10MCord's settings are in Discord's settings, under **10MCord**.
+3. Open **ShiftCord** and sign in. ShiftCord's settings are in Discord's settings, under **ShiftCord**.
 
 With a free Apple ID the app has to be signed again every 7 days. Shared free certificates can be revoked by Apple at
 any time, and everything signed with one then stops opening until it's signed with another.
@@ -136,8 +136,8 @@ background, and passkeys and sharing to Discord from other apps don't work. Smoo
 <br>
 
 Not in this app. Aliucord plugins are written for the older Discord that Aliucord is built on and can't run on the
-current one. [10MCord Classic](https://github.com/matosdevel0per/10mcord-mobile/tree/main) runs both 10MCord's and
-Aliucord's plugins, and 10MCord Installer can set it up for you.
+current one. [ShiftCord Classic](https://github.com/matosdevel0per/10mcord-mobile/tree/main) runs both ShiftCord's and
+Aliucord's plugins, and ShiftCord | Installer can set it up for you.
 
 </details>
 
@@ -146,21 +146,21 @@ Aliucord's plugins, and 10MCord Installer can set it up for you.
 
 <br>
 
-You don't need to do anything for 10MCord itself: it downloads its newest version every time the app starts. On
-Android, when Discord updates, 10MCord Installer sends a notification: tap it to rebuild 10MCord. The installer also
+You don't need to do anything for ShiftCord itself: it downloads its newest version every time the app starts. On
+Android, when Discord updates, ShiftCord | Installer sends a notification: tap it to rebuild ShiftCord. The installer also
 tells you when a new version of itself is out. On iOS, a new Discord comes as a new IPA, which AltStore and SideStore
 update for you.
 
 </details>
 
 <details>
-<summary><b>10MCord won't start, or a plugin broke something</b></summary>
+<summary><b>ShiftCord won't start, or a plugin broke something</b></summary>
 
 <br>
 
-- Shake the phone for the recovery menu, or on Android hold two fingers on the screen for 3 seconds right after 10MCord
-  opens: reload, recovery mode (plugins and themes off), delete the downloaded 10MCord, or reset the loader settings.
-- 10MCord → General → **Safe Mode** reloads without plugins and themes.
+- Shake the phone for the recovery menu, or on Android hold two fingers on the screen for 3 seconds right after ShiftCord
+  opens: reload, recovery mode (plugins and themes off), delete the downloaded ShiftCord, or reset the loader settings.
+- ShiftCord → General → **Safe Mode** reloads without plugins and themes.
 - A plugin that fails to start turns itself off and says so. Turn it back on after the next update.
 
 </details>
@@ -170,7 +170,7 @@ update for you.
 
 <br>
 
-Client mods are against Discord's Terms of Service. Bans for using one are rare, but they can happen, so use 10MCord
+Client mods are against Discord's Terms of Service. Bans for using one are rare, but they can happen, so use ShiftCord
 at your own risk. Plugins that act for you, like scheduled messages, stay off until you turn them on.
 
 </details>
@@ -179,21 +179,21 @@ at your own risk. Plugins that act for you, like scheduled messages, stay off un
 
 | Directory | What it is |
 | --- | --- |
-| [`bundle/`](bundle) | The 10MCord that runs inside Discord on both platforms: plugins, themes and settings |
-| [`android/`](android) | The Android loader and 10MCord Installer |
+| [`bundle/`](bundle) | The ShiftCord that runs inside Discord on both platforms: plugins, themes and settings |
+| [`android/`](android) | The Android loader and ShiftCord \| Installer |
 | [`ios/`](ios) | The iOS tweak, and its tests |
 | [`docs/`](docs) | Development, the plugin list and how to write a plugin |
 
 ## Contributing
 
 Bug reports, translations and plugins are welcome: open an issue or come to our
-[Discord](https://discord.gg/10MCord). [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) explains how the repository is laid
-out, how to build and test 10MCord, and how releases work; [docs/PLUGINS.md](docs/PLUGINS.md) shows how to write a
+[Discord](https://discord.gg/q5ny7wg9ap). [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) explains how the repository is laid
+out, how to build and test ShiftCord, and how releases work; [docs/PLUGINS.md](docs/PLUGINS.md) shows how to write a
 plugin.
 
 ## Credits and license
 
-10MCord Mobile is a fork of [Revenge](https://github.com/revenge-mod), which continues Bunny and Vendetta, and its iOS
+ShiftCord Mobile is a fork of [Revenge](https://github.com/revenge-mod), which continues Bunny and Vendetta, and its iOS
 tweak of [RainTweak](https://codeberg.org/raincord/RainTweak); see [UPSTREAM.md](UPSTREAM.md) for the exact upstream
 commits. It would not exist without them,
 [LSPatch](https://github.com/LSPosed/LSPatch) and the Vendetta tracker mirrors that serve the Discord APKs.
@@ -203,9 +203,9 @@ MessageLogger and FakeNitro follow the approaches of the
 and the community [theme marketplace](https://github.com/kmmiio99o/theme-marketplace).
 
 © 2026 rootpoi and contributors. Each directory keeps the license of the project it was forked from: `bundle/`
-BSD-3-Clause, `android/loader/` GPL-3.0, `android/installer/` and `ios/` OSL-3.0. 10MCord's plugins (`bundle/src/plugins`) and the other files
-marked `SPDX-License-Identifier: GPL-3.0-or-later` are GPL-3.0-or-later, like 10MCord PC, so the built bundle as a
+BSD-3-Clause, `android/loader/` GPL-3.0, `android/installer/` and `ios/` OSL-3.0. ShiftCord's plugins (`bundle/src/plugins`) and the other files
+marked `SPDX-License-Identifier: GPL-3.0-or-later` are GPL-3.0-or-later, like ShiftCord PC, so the built bundle as a
 whole is distributed under the GPL-3.0. The original copyright notices of Team Vendetta, pylixonly and Team Revenge
 are kept in the source files and shown in the installer's About screen.
 
-<sub>10MCord is not affiliated with or endorsed by Discord Inc., Apple or the Revenge and Rain teams.</sub>
+<sub>ShiftCord is not affiliated with or endorsed by Discord Inc., Apple or the Revenge and Rain teams.</sub>

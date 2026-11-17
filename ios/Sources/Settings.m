@@ -9,7 +9,7 @@
 - (instancetype)initWithVersion:(NSString *)version {
     self = [super init];
     if (self) {
-        self.title = [NSString stringWithFormat:@"10MCord v%@ Recovery Menu", version];
+        self.title = [NSString stringWithFormat:@"ShiftCord v%@ Recovery Menu", version];
     }
     return self;
 }
