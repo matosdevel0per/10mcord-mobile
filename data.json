@@ -1,0 +1,10 @@
+{
+  "bundle": "10MCord.min.js",
+  "bytecode": ["10MCord.v98.hbc","10MCord.v99.hbc"],
+  "loader": "10MCord-xposed.apk",
+  "installer": "10MCord-installer.apk",
+  "loaderVersion": "1.0.0",
+  "loaderVersionCode": 1,
+  "commit": "eff82c66bc66b752bc39561645ef92075f30bb71",
+  "builtAt": "2026-11-19T21:51:04Z"
+}
