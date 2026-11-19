@@ -28,7 +28,7 @@ fun AppIcon(
     }
 
     Image(
-        painter = painterResource(id = R.drawable.ic_discord_icon),
+        painter = painterResource(id = R.drawable.shiftcord_symbol),
         contentDescription = null,
         modifier = modifier
             .clip(CircleShape)

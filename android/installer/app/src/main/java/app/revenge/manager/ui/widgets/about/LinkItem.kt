@@ -10,11 +10,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.material3.Icon
+import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.ripple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalUriHandler
@@ -26,7 +28,8 @@ import androidx.compose.ui.unit.dp
 fun LinkItem(
     @DrawableRes icon: Int,
     @StringRes label: Int,
-    link: String
+    link: String,
+    tint: Color? = null
 ) {
     val uriHandler = LocalUriHandler.current
 
@@ -44,7 +47,8 @@ fun LinkItem(
         Icon(
             painter = painterResource(icon),
             contentDescription = stringResource(label),
-            modifier = Modifier.size(30.dp)
+            modifier = Modifier.size(30.dp),
+            tint = tint ?: LocalContentColor.current
         )
         Text(
             text = stringResource(label),

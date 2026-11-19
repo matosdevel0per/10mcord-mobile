@@ -35,6 +35,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
@@ -134,9 +135,10 @@ class AboutScreen : Screen {
                         )
 
                         LinkItem(
-                            icon = R.drawable.ic_discord,
+                            icon = R.drawable.shiftcord_symbol,
                             label = R.string.label_discord,
-                            link = BuildConfig.INVITE_LINK
+                            link = BuildConfig.INVITE_LINK,
+                            tint = Color.Unspecified
                         )
                     }
                 }
