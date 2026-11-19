@@ -1,3 +1,4 @@
+import ShiftCordIcon from "@assets/icons/ShiftCord.png";
 import { t } from "@core/i18n";
 import { useProxy } from "@core/vendetta/storage";
 import { findAssetId } from "@lib/api/assets";
@@ -63,7 +64,7 @@ export default function Accounts() {
                     arrow
                     label={account}
                     subLabel={t("Tap to copy this login and open Discord's normal sign-in")}
-                    icon={<TableRow.Icon source={findAssetId("ClydeIcon")!} />}
+                    icon={<TableRow.Icon source={{ uri: ShiftCordIcon }} />}
                     onPress={() => switchTo(account)}
                     trailing={<TableRow.TrailingText text={t("Sign in")} />}
                 />)}
@@ -79,7 +80,7 @@ export default function Accounts() {
             />
             <TableRow
                 label={t("Save account")}
-                icon={<TableRow.Icon source={findAssetId("ClydeIcon")!} />}
+                icon={<TableRow.Icon source={{ uri: ShiftCordIcon }} />}
                 disabled={!draft.trim()}
                 onPress={saveAccount}
             />

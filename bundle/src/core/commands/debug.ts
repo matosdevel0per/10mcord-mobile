@@ -17,7 +17,7 @@ export default () => <ApplicationCommand>{
         const info = getDebugInfo();
         const content = [
             "**ShiftCord Debug Info**",
-            `> 10MCord: ${info.bunny.version} (${info.bunny.loader.name} ${info.bunny.loader.version})`,
+            `> ShiftCord: ${info.bunny.version} (${info.bunny.loader.name.replace(/^10MCord/, "ShiftCord")} ${info.bunny.loader.version})`,
             `> Discord: ${info.discord.version} (${info.discord.build})`,
             `> React: ${info.react.version} (RN ${info.react.nativeVersion})`,
             `> Hermes: ${info.hermes.version} (bcv${info.hermes.bytecodeVersion})`,

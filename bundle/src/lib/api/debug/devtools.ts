@@ -65,7 +65,7 @@ export function connectDt(url: string, quiet?: boolean) {
 
     client.connect(
         `ws://${url}`,
-        `${info.discord.version} (${info.bunny.loader.name}-${info.bunny.loader.version})`,
+        `${info.discord.version} (${info.bunny.loader.name.replace(/^10MCord/, "ShiftCord")}-${info.bunny.loader.version})`,
     );
 
     const ws = client.ws!;

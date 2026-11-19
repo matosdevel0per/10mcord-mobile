@@ -20,7 +20,7 @@ export default function About() {
         {
             label: "Discord",
             version: `${debugInfo.discord.version} (${debugInfo.discord.build})`,
-            icon: "ClydeIcon",
+            icon: { uri: ShiftCordIcon },
         },
         {
             label: "React",
@@ -42,7 +42,7 @@ export default function About() {
     const platformInfo = [
         {
             label: Strings.LOADER,
-            version: `${debugInfo.bunny.loader.name} (${debugInfo.bunny.loader.version})`,
+            version: `${debugInfo.bunny.loader.name.replace(/^10MCord/, "ShiftCord")} (${debugInfo.bunny.loader.version})`,
             icon: "DownloadIcon",
         },
         {

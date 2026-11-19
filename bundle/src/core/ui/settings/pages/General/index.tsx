@@ -1,3 +1,4 @@
+import ShiftCordIcon from "@assets/icons/ShiftCord.png";
 import { isSafeMode, toggleSafeMode } from "@core/debug/safeMode";
 import { getLanguage, LANGUAGES, Strings, t } from "@core/i18n";
 import About from "@core/ui/settings/pages/General/About";
@@ -32,7 +33,7 @@ export default function General() {
                     />
                     <TableRow
                         label={"Discord"}
-                        icon={<TableRow.Icon source={findAssetId("ClydeIcon")!} />}
+                        icon={<TableRow.Icon source={{ uri: ShiftCordIcon }} />}
                         trailing={<TableRow.TrailingText text={`${debugInfo.discord.version} (${debugInfo.discord.build})`} />}
                     />
                     <TableRow
@@ -64,7 +65,7 @@ export default function General() {
                         arrow
                         label={t("Saved accounts")}
                         subLabel={t("Choose an account and sign in with Discord's normal login")}
-                        icon={<TableRow.Icon source={findAssetId("ClydeIcon")!} />}
+                        icon={<TableRow.Icon source={{ uri: ShiftCordIcon }} />}
                         onPress={() => navigation.push("BUNNY_CUSTOM_PAGE", {
                             title: t("Saved accounts"),
                             render: () => <Accounts />,
@@ -75,7 +76,7 @@ export default function General() {
                     <TableRow
                         arrow={true}
                         label={Strings.DISCORD_SERVER}
-                        icon={<TableRow.Icon source={findAssetId("ClydeIcon")!} />}
+                        icon={<TableRow.Icon source={{ uri: ShiftCordIcon }} />}
                         onPress={() => Linking.openURL(DISCORD_SERVER)}
                     />
                 </TableRowGroup>

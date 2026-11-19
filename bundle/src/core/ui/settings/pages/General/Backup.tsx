@@ -29,7 +29,7 @@ async function saveBackup() {
     const picker = documents();
     if (!picker) return void await Share.share({ message: text, title: "ShiftCord" });
 
-    const fileName = `10MCord-backup-${new Date().toISOString().slice(0, 10)}.json`;
+    const fileName = `ShiftCord-backup-${new Date().toISOString().slice(0, 10)}.json`;
     await NativeFileModule.writeFile("cache", fileName, text, "utf8");
     try {
         const [result] = await picker.saveDocuments({
@@ -53,7 +53,7 @@ async function openFile(): Promise<string> {
     const [file] = await picker.pick({ type: [picker.types?.allFiles ?? "*/*"] });
     if (typeof file?.size === "number" && file.size > MAX_BACKUP_SIZE) throw new Error(t("This file isn't an ShiftCord backup"));
     const [copy] = await picker.keepLocalCopy({
-        files: [{ uri: file.uri, fileName: "10MCord-restore.json" }],
+        files: [{ uri: file.uri, fileName: "ShiftCord-restore.json" }],
         destination: "cachesDirectory",
     });
     if (copy?.status !== "success") throw new Error(copy?.copyError ?? t("The file couldn't be opened"));

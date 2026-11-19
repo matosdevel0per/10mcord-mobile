@@ -25,7 +25,7 @@ async function initializeRevenge() {
         alert([
             "Failed to load ShiftCord!\n",
             `Build Number: ${NativeClientInfoModule?.getConstants?.().Build}`,
-            `10MCord: ${version}`,
+            `ShiftCord: ${version}`,
             stack || e?.toString?.(),
         ].join("\n"));
     }

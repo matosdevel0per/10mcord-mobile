@@ -66,7 +66,7 @@ object Strings {
             "reload" to "Перезагрузить",
             "later" to "Позже",
             "update_failed_title" to "Не удалось загрузить ShiftCord",
-            "update_failed_message" to "Не удалось загрузить ShiftCord, обычно из-за соединения. Пока загрузка невозможна, Discord открывается без 10MCord.",
+            "update_failed_message" to "Не удалось загрузить ShiftCord, обычно из-за соединения. Пока загрузка невозможна, Discord открывается без ShiftCord.",
             "error" to "Ошибка: %s",
             "dismiss" to "Закрыть",
             "retry" to "Повторить",
