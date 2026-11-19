@@ -1,0 +1,32 @@
+{
+    "format": 1,
+    "sequence": 1795125065,
+    "commit": "eff82c66bc66b752bc39561645ef92075f30bb71",
+    "files": {
+        "10MCord-installer.apk": {
+            "size": 19546461,
+            "sha256": "b2ce1bba077c83576d4fc1d070e11c70026e54d14c105a50ff2a542ee822bf1d",
+            "url": "https://raw.githubusercontent.com/matosdevel0per/10mcord-mobile/4989704a39d1556194039f6b19e187b523d8b7c0/10MCord-installer.apk"
+        },
+        "10MCord-xposed.apk": {
+            "size": 6995958,
+            "sha256": "55b41c97b8a028658a3442c0b1700066f7d312446c6610f02bbf7b652ff93c71",
+            "url": "https://raw.githubusercontent.com/matosdevel0per/10mcord-mobile/4989704a39d1556194039f6b19e187b523d8b7c0/10MCord-xposed.apk"
+        },
+        "10MCord.min.js": {
+            "size": 1264400,
+            "sha256": "851a47da7ad4ab9410c6ad698341b8b10742cf841000eeb0cceea4a7240047b2",
+            "url": "https://raw.githubusercontent.com/matosdevel0per/10mcord-mobile/4989704a39d1556194039f6b19e187b523d8b7c0/10MCord.min.js"
+        },
+        "10MCord.v98.hbc": {
+            "size": 2531834,
+            "sha256": "fbd114f71a967b20d6b031af821fe8ef611bf914cf2129d9bc80d8c02d5d7b9c",
+            "url": "https://raw.githubusercontent.com/matosdevel0per/10mcord-mobile/4989704a39d1556194039f6b19e187b523d8b7c0/10MCord.v98.hbc"
+        },
+        "10MCord.v99.hbc": {
+            "size": 2509744,
+            "sha256": "444fa17b7017d732f32c567f480c35f66307690469f411850810823584b5304a",
+            "url": "https://raw.githubusercontent.com/matosdevel0per/10mcord-mobile/4989704a39d1556194039f6b19e187b523d8b7c0/10MCord.v99.hbc"
+        }
+    }
+}
